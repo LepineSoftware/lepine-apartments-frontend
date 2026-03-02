@@ -199,8 +199,6 @@ export async function getStaticProps() {
   const { apiUrl } = require("../utils/apiUrl");
   const { parseStrapiSingleImage } = require("../utils/parseStrapiImages");
   const { populate } = require("../utils/populate");
-  const { baseUrl } = require("../utils/baseUrl");
-  const qs = require("qs");
 
   // 1. Fetch Home Page Content directly (replaces /api/home)
   const homeRes = await fetch(`${apiUrl}/home-page?${populate}`);
