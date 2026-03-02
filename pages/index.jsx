@@ -196,26 +196,91 @@ const Home = ({
 };
 
 export async function getStaticProps() {
-  const homeV2Url = `${appUrl}/api/home`;
-  const homeV2Res = await fetch(homeV2Url);
-  const homeV2Data = await homeV2Res.json();
+  const { apiUrl } = require("../utils/apiUrl");
+  const { parseStrapiSingleImage } = require("../utils/parseStrapiImages");
+  const { populate } = require("../utils/populate");
+  const { baseUrl } = require("../utils/baseUrl");
+  const qs = require("qs");
 
-  const testimonialsUrl = `${appUrl}/api/testimonials`;
-  const testimonialsRes = await fetch(testimonialsUrl);
+  // 1. Fetch Home Page Content directly (replaces /api/home)
+  const homeRes = await fetch(`${apiUrl}/home-page?${populate}`);
+  const homeData = await homeRes.json();
+  const homeJSON = homeData.data.attributes;
+
+  const homeV2 = {
+    hero: {
+      header: homeJSON.hero.header,
+      video: homeJSON.hero.video,
+    },
+    lifestyle: {
+      header: homeJSON.lifestyle.header,
+      subtitle: homeJSON.lifestyle.subtitle,
+      copy: homeJSON.lifestyle.copy,
+      image: parseStrapiSingleImage(homeJSON.lifestyle.image),
+    },
+    overview: {
+      header: homeJSON.overview.header,
+      copy: homeJSON.overview.copy,
+      image: parseStrapiSingleImage(homeJSON.overview.image),
+      items: homeJSON.overview.items.map((item) => ({
+        header: item.header,
+        copy: item.copy,
+        icon: parseStrapiSingleImage(item.icon),
+      })),
+    },
+    neighbourhoods: {
+      header: homeJSON.neighbourhoods.header,
+      copy: homeJSON.neighbourhoods.copy,
+    },
+    renaissance: {
+      header: homeJSON.renaissance.header,
+      subtitle: homeJSON.renaissance.subtitle,
+      copy: homeJSON.renaissance.copy,
+      backgroundImage: parseStrapiSingleImage(
+        homeJSON.renaissance.backgroundImage,
+      ),
+      image: parseStrapiSingleImage(homeJSON.renaissance.image),
+      copyIcon: parseStrapiSingleImage(homeJSON.renaissance.copyIcon),
+    },
+    herosRidge: {
+      header: homeJSON.herosRidge.header,
+      subtitle: homeJSON.herosRidge.subtitle,
+      copy: homeJSON.herosRidge.copy,
+      image: parseStrapiSingleImage(homeJSON.herosRidge.image),
+      copyIcon: parseStrapiSingleImage(homeJSON.herosRidge.copyIcon),
+    },
+    meta: homeJSON.meta,
+  };
+
+  // 2. Fetch Testimonials directly (replaces /api/testimonials)
+  const testimonialsRes = await fetch(
+    `${apiUrl}/testimonials?populate[1]=image&populate[2]=properties&sort[3]=video:asc`,
+  );
   const testimonialsData = await testimonialsRes.json();
+  const testimonials = testimonialsData.data.map((testimonial) => {
+    const { name, description, copy, image, video } = testimonial.attributes;
+    return {
+      name,
+      description,
+      copy,
+      image: parseStrapiSingleImage(image),
+      video,
+    };
+  });
 
+  // 3. Use Refactored Utilities (Ensure these now fetch from apiUrl directly)
   const posts = await fetchPosts();
+  const instagramPosts = await fetchInstagramRecentPosts(10);
+  const neighbourhoods = await fetchNeighbourhoods();
 
+  // 4. Fetch Contact Us Content directly
   const contactUsUrl = `${apiUrl}/home?populate[0]=contactUs.images`;
   const contactUsRes = await fetch(contactUsUrl);
   const contactUsData = await contactUsRes.json();
 
-  const instagramPosts = await fetchInstagramRecentPosts(10);
-
-  const neighbourhoods = await fetchNeighbourhoods();
-
-  let popup;
-  const popupUrl = homeV2Data?.popup?.url ? homeV2Data.popup.url : null;
+  // 5. Popup Logic
+  let popup = null;
+  const popupUrl = homeJSON?.popup?.url ? homeJSON.popup.url : null;
 
   if (popupUrl) {
     const popupRes = await fetch(popupUrl);
@@ -243,24 +308,21 @@ export async function getStaticProps() {
               .googleMaps,
         },
       },
-      type: homeV2Data?.popup?.collection,
+      type: homeJSON?.popup?.collection,
     };
-  } else {
-    popup = null;
   }
 
   return {
     props: {
       popup,
-      testimonials: testimonialsData,
+      testimonials,
       posts,
       contactUs: contactUsData.data.attributes.contactUs,
-      homeV2: homeV2Data,
-      instagramPosts: instagramPosts.data,
+      homeV2,
+      instagramPosts: instagramPosts.data || [],
       neighbourhoods,
     },
     revalidate: 1,
   };
 }
-
 export default Home;
