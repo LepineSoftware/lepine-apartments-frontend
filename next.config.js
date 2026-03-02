@@ -16,6 +16,7 @@ const nextConfig = {
       "www.solutioneers.dev",
       "solutioneers.dev",
       "lepineapartments.com",
+      "lepinepreview.solutioneers.dev",
       "walrus-app-59jan.ondigitalocean.app",
       "lepineapartments.rhenti.com",
       "finelinevirtualtours.com",
