@@ -1,0 +1,1 @@
+export const prodURL = 'https://www.lepineapartments.com';

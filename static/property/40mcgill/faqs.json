@@ -1,0 +1,90 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "What amenities are included in my apartment rental in the building?",
+        "answer": "40 McGill offers a variety of high-end amenities, located at our sister property next door, The Cristina. These amenities include a fully equipped gym, yoga studio, games lounge, communal garden, built-in home offices, lobby, courtyard, gazebo, parcel locker, heated underground parking and storage lockers. These Smiths Falls apartment amenities are designed to enhance your living experience and build a sense of community."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking is available for an extra cost per month."
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      },
+      {
+        "question": "What types of apartments are available at 40 McGill?",
+        "answer": "At 40 McGill, we offer a variety of spacious 2-bedroom apartments that are designed to suit your lifestyle needs. Each suite has modern finishes and open layouts to create a comfortable, spacious living space."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "To schedule a tour of our Smiths Falls apartment rentals, simply [fill out our contact form](#contactform), give us a call or [send us an email](mailto:leasing@lepineapartments.com)."
+      },
+      {
+        "question": "What is the application process like to rent an apartment?",
+        "answer": "The application process is simple! Simply give us a call and we can either walk you through it or send you a lease application form for your apartment rental in Smiths Falls."
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, please [contact our leasing office](#contactform)."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": [
+      {
+        "question": "What makes Smiths Falls a great place to live?",
+        "answer": "Smiths Falls offers a unique blend of small-town charm and modern conveniences, making it a sought-after destination for families, professionals and retirees alike. With affordable living, a strong sense of community, and easy access to parks, trails, and waterways, it’s the perfect place for those who enjoy a balanced lifestyle."
+      },
+      {
+        "question": "What amenities are available in Smiths Falls?",
+        "answer": "Residents of Smiths Falls enjoy a full range of amenities, including grocery stores, local markets, healthcare services, pharmacies, banks and fitness centers. The town also has a thriving restaurant and café scene, boutique shopping and entertainment options, ensuring everything you need is close."
+      },
+      {
+        "question": "What is the lifestyle like in Smiths Falls?",
+        "answer": "Life in Smiths Falls is all about comfort, convenience and connection to nature. Whether you prefer relaxing by the Rideau Canal, exploring local trails, or attending lively community events, the town offers something for everyone. Its walkable downtown, family-friendly neighborhoods and growing business sector make it a fantastic place to put down roots."
+      },
+      {
+        "question": "How accessible is Smiths Falls for commuting?",
+        "answer": "Smiths Falls is well-connected to major roadways, making it easy to commute to Ottawa, Kingston, or other surrounding areas."
+      },
+      {
+        "question": "Why choose Smiths Falls over a larger city?",
+        "answer": "Smiths Falls provides the best of both worlds. You get the space, tranquility and affordability of a smaller town without sacrificing modern amenities and services. The welcoming community, lower cost of living and access to outdoor activities make it an excellent alternative to city life."
+      }
+    ]
+  }
+]

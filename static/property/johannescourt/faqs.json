@@ -1,0 +1,94 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "What amenities are included in my apartment rental in the building?",
+        "answer": "Johanne's Court offers a variety of high-end amenities in Carleton Place, including a fully equipped gym, yoga studio, games lounge, communal garden, lobby, courtyard, gazebo, garden path network, giant chess, shuffleboard, heated underground parking and storage lockers."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking is available for an extra cost per month."
+      },
+      {
+        "question": "How do I schedule a tour of the apartments?",
+        "answer": "To schedule a tour of our apartments in Carleton Place, contact us by [contact form](#contactform), phone or [email](mailto:leasing@lepineapartments.com). Our team will happily show you around the property and help you find your new rental apartment in Carleton Place."
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      },
+      {
+        "question": "What types of apartments are available at Johanne’s Court?",
+        "answer": "At Johanne’s Court, we offer a variety of [spacious 1-bedroom](https://lepineapartments.com/newsroom/bungalow-sized-apartments) and 2-bedroom apartments in Carleton Place designed to suit your lifestyle needs. Each suite has modern finishes and open layouts to create a comfortable, spacious living space."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "To schedule a tour of our Carleton Place apartment rentals, simply fill out our [contact form](#contactform), give us a call or [send us an email](mailto:leasing@lepineapartments.com)."
+      },
+      {
+        "question": "What is the application process like to rent an apartment?",
+        "answer": "The application process is simple! Simply give us a call and we can either walk you through it or send you a lease application form for your apartment rental in Carleton Place."
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, [please contact our leasing office](#contactform)."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": [
+      {
+        "question": "What amenities and services are available in Carleton Place?",
+        "answer": "Carleton Place offers a wide variety of amenities, including grocery stores, clothing stores, healthcare services, schools, restaurants, breweries and coffee shops. The town also boasts parks, trails and recreational facilities, making it a convenient and appealing spot for families and young professionals.\n"
+      },
+      {
+        "question": "What is there to do in Carleton Place?",
+        "answer": "Carleton Place has plenty to offer, from outdoor activities like hiking, kayaking and biking to incredible dining, boutique shopping and local breweries."
+      },
+      {
+        "question": "Is Carleton Place a walkable town?",
+        "answer": "Yes, Carleton Place features a walkable downtown area with easy access to parks, shops, restaurants and local services, making it ideal for those who enjoy exploring on foot."
+      },
+      {
+        "question": "Is Carleton Place an excellent place to raise a family?",
+        "answer": "Yes. With excellent schools, safe neighbourhoods and a ton of parks and family-friendly activities, Carleton Place provides a great environment for families."
+      },
+      {
+        "question": "What is near Carleton Place?",
+        "answer": "Johanne’s Court is centrally located, with close proximity to grocery stores, restaurants, cafés, healthcare facilities, schools and parks. Everything you need for daily living and fun is just minutes away."
+      }
+    ]
+  }
+]

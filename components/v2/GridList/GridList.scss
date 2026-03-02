@@ -1,0 +1,161 @@
+.gridList {
+    position: relative;
+    background-position: bottom 25px right 0;
+    background-size: contain;
+    background-repeat:no-repeat;
+
+    &[data-type="peaceOfMind"] {
+        .gridList__container {
+            flex-flow: row-reverse nowrap;
+
+            @include breakpointDown(1100px) {
+                flex-flow: column nowrap;
+            }
+        }
+    }
+
+    @include breakpointDown($bp-tablet-md) {
+        background-size: 150%;
+        background-position: bottom 25px right 35%;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 50px;
+        row-gap: 25px;
+
+        @include breakpointDown(1100px) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    &__logo {
+        max-width: 242px;
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+
+        @include breakpointDown(1100px) {
+            max-width: 150px;
+        }
+    }
+
+    &__image {
+        flex: 1 0 38%;
+        min-width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpointDown($bp-desktop-sm) {
+            min-width: unset;
+        }
+
+        @include breakpointDown(1100px) {
+            width: 100%;
+            flex: unset;
+        }
+
+        img {
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+
+            @include breakpointDown(1100px) {
+                max-height: 50vh;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        flex: 1 1 58%;
+        
+        &[data-type="list"] {
+            row-gap: 25px;
+        }
+
+        &[data-type="copy"] {
+            h2, h3 {
+                margin: 0;
+            }
+            row-gap: 25px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap: 15px;
+
+        &[data-type="number"] {
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        &--icon {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &[data-type="number"] {
+                background: #A9A39C50;
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                position: relative;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                span {
+                    position: absolute;
+                    top: 35px;
+                    left: 20px;
+                    margin: 0;
+                    font-size: 50px;
+                    font-family: $f-crimson;    
+                    line-height: 0;
+                }
+            }
+
+            img {
+                height: 100px;
+                width: 100px;
+                object-fit: contain;
+                object-position: center;
+
+                @include breakpointDown($bp-tablet-md) {
+                    height: 80px;
+                    width: 80px;    
+                }
+
+                @include breakpointDown($bp-mobile-lg) {
+                    height: 60px;
+                    width: 60px;    
+                }
+            }
+        }
+
+        &--copy {
+            display: flex;
+            flex-flow: column nowrap;
+            column-gap: 15px;
+            row-gap: 5px;
+            flex: 1 1;
+
+            h3 {
+                font-family: $f-futura;
+                margin: 0;
+            }
+        }
+    }
+}

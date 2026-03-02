@@ -1,0 +1,1030 @@
+// styles/pages/relocate.module.scss
+
+@import '../../styles/generic/variables';
+@import '../../styles/generic/mixins';
+
+$c-relocatePrimary: #0b4566;
+$c-relocateAccent: #5b8ba7;
+
+// --- 1. CORE TYPOGRAPHY MIXINS ---
+
+@mixin heading-style {
+    font-family: 'Jost', sans-serif;
+    color: $c-relocatePrimary;
+    margin-bottom: 1.25rem !important;
+    line-height: 1.2;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+@mixin body-text-style {
+    font-family: 'Jost', sans-serif;
+    color: $c-lepineDarkGrey1;
+    line-height: 1.8;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+
+    strong {
+        font-weight: 700;
+        color: $c-relocatePrimary;
+    }
+
+    @include breakpointDown($bp-mobile-lg) {
+        font-size: 1.1rem;
+    }
+}
+
+@mixin body-text-small {
+    @include body-text-style;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+// --- 2. GLOBAL WRAPPER & THEME ---
+
+.relocateWrapper {
+    :global {
+        @import "../../styles/generic/animations";
+        @import "../../styles/generic/base";
+        @import "../../styles/generic/globals";
+        @import "../../styles/generic/fonts";
+        @import "../../styles/generic/swiper";
+        @import "../../styles/sections/footer";
+        @import "../../styles/components/popup";
+        @import "../../styles/components/container";
+        @import "../../styles/components/btn";
+        @import "../../styles/components/themes";
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/TranslucentButton/TranslucentButton";
+        @import "../../components/v2/V2misc";
+        @import "../../components/v2/NeighbourhoodCard/NeighbourhoodCard";
+        @import "../../components/MicroPopup/MicroPopup.scss";
+        @import "../../styles/2025";
+
+        overflow-x: hidden;
+
+        .navV3 {
+            svg path {
+                fill: $c-white !important;
+            }
+
+            svg circle {
+                fill: $c-relocateAccent !important;
+            }
+
+            &.sticky .navV3__phone--copy span {
+                color: $c-relocateAccent;
+            }
+        }
+
+        .footer {
+            background-color: $c-relocatePrimary;
+
+            svg path {
+                fill: $c-relocatePrimary;
+
+                &:hover {
+                    fill: $c-white;
+                }
+            }
+
+            .btn {
+                background-color: $c-relocateAccent !important;
+                border-color: $c-relocateAccent !important;
+                color: $c-white !important;
+            }
+        }
+
+        .contactPopupTrigger {
+            background-color: $c-relocateAccent;
+
+            &:hover {
+                background-color: darken($c-relocateAccent, 10%);
+            }
+        }
+
+        .contactFormPopup {
+            h2 {
+                color: $c-relocatePrimary;
+            }
+
+            h3 {
+                color: $c-relocateAccent;
+            }
+
+            &__close {
+                background-color: $c-relocateAccent;
+                border-color: $c-relocateAccent;
+                color: $c-white;
+
+                &:hover {
+                    background-color: darken($c-relocateAccent, 10%);
+                }
+            }
+
+            .hs-button {
+                background-color: $c-relocateAccent !important;
+                border-color: $c-relocateAccent !important;
+                color: $c-white !important;
+
+                &:hover {
+                    background-color: darken($c-relocateAccent, 10%) !important;
+                }
+            }
+        }
+    }
+
+    // Global Button Override to ensure visibility
+    .btn {
+        background-color: $c-relocateAccent !important;
+        border-color: $c-relocateAccent !important;
+        color: $c-white !important;
+
+        &:hover {
+            background-color: darken($c-relocateAccent, 10%) !important;
+            border-color: darken($c-relocateAccent, 10%) !important;
+        }
+    }
+}
+
+// --- 3. REUSABLE ATOMS ---
+
+.heading {
+    @include heading-style;
+}
+
+.subheading {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    color: $c-relocateAccent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.bodyText {
+    @include body-text-style;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    background-color: $c-relocateAccent !important;
+    color: $c-white !important;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid $c-relocateAccent !important;
+    text-decoration: none !important;
+    text-align: center;
+
+    @include breakpointDown($bp-mobile-lg) {
+        margin: auto;
+        padding: 1rem;
+    }
+}
+
+// --- 4. SECTION STYLES ---
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: min-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+
+    @include breakpointDown($bp-mobile-lg) {
+        margin-top: 50px;
+        padding: 0;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.80) 100%);
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 900px;
+        padding: 0 2rem;
+        color: $c-white;
+
+        h1 {
+            @include heading-style;
+            color: $c-white;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+            @include breakpointDown($bp-mobile-lg) {
+                font-size: 2.2rem;
+            }
+        }
+
+        p {
+            @include body-text-style;
+            color: $c-white;
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+.splitSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 600px;
+
+    @include breakpointDown($bp-tablet-sm) {
+        display: flex; // Force flex for predictable stacking
+        flex-direction: column; // Image on top by default
+        min-height: auto;
+    }
+
+    &.reverse {
+        direction: rtl;
+
+        .splitSection__content {
+            direction: ltr;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            flex-direction: column; // Force Image on top even for reversed sections
+            direction: ltr; // Reset direction for mobile
+        }
+    }
+
+    &__image {
+        width: 100%;
+        position: relative;
+        height: 100%;
+
+        @include breakpointDown($bp-tablet-sm) {
+            height: 300px;
+            width: 100%;
+            order: 1;
+        }
+
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include breakpointDown($bp-tablet-sm) {
+                position: relative;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 4rem 5rem;
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 3rem 2rem;
+            order: 2;
+        }
+
+        h2.heading {
+            @include breakpointDown($bp-mobile-lg) {
+                font-size: 2rem;
+            }
+        }
+
+        .btn {
+            align-self: flex-start;
+
+            @include breakpointDown($bp-mobile-lg) {
+                align-self: center;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    }
+}
+
+.advantageCard {
+    background: $c-white;
+    padding: 2.5rem;
+    border: 1px solid rgba($c-relocatePrimary, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+    .timeLabel {
+        font-family: 'Jost', sans-serif;
+        font-weight: 700;
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: $c-relocatePrimary;
+    }
+
+    h3 {
+        @include heading-style;
+        font-size: 1.25rem;
+        margin-bottom: 1rem !important;
+    }
+
+    p {
+        @include body-text-small;
+    }
+}
+
+.comparisonSection {
+    padding: 4rem 2rem;
+
+    &__inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.comparisonTable {
+    width: 100%;
+    background: $c-white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba($c-relocatePrimary, 0.1);
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 1px solid #f0f0f0;
+
+        &.header {
+            background: $c-relocatePrimary;
+            color: $c-white !important;
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+        }
+    }
+
+    &__cell {
+        @include body-text-small; // RESTORED FONTS
+        padding: 1rem;
+
+        &.gta {
+            background-color: #fafafa;
+            font-style: italic;
+        }
+
+        &.lepine {
+            color: $c-relocatePrimary;
+            font-weight: 600;
+            border-left: 1px solid #f0f0f0;
+        }
+    }
+}
+
+.contactSection {
+    position: relative;
+    padding: 4rem 2rem;
+    text-align: center;
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(6px);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+
+        p {
+            @include body-text-style;
+            color: $c-white;
+        }
+
+        a {
+            color: $c-white;
+            font-weight: 700;
+        }
+    }
+}
+
+.inlineContactForm {
+    background-color: $c-white;
+    padding: 3.5rem 3rem;
+    border-radius: 8px;
+    text-align: left;
+
+    @include breakpointDown($bp-mobile-lg) {
+        padding: 1rem;
+    }
+
+    :global {
+        @include hubspotPopupForm();
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .hs-submit {
+            width: 100%;
+            text-align: center;
+
+            input {
+                background-color: $c-relocateAccent !important;
+                border-color: $c-relocateAccent !important;
+                color: $c-white !important;
+                padding: 1rem 3rem !important;
+                border-radius: 4px !important;
+
+                &:hover {
+                    background-color: darken($c-relocateAccent, 10%) !important;
+                }
+            }
+        }
+    }
+}
+
+.gridSection {
+    padding: 6rem 2rem;
+    background-color: #fff;
+
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // 4 per row
+        gap: 2.5rem;
+        max-width: 1400px; // Matches landing grid width
+        margin: 0 auto;
+
+        @include breakpointDown($bp-tablet-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        background: $c-white;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba($c-relocatePrimary, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+        }
+
+        &__imageWrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9; // Ensures image doesn't overflow or stretch
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__content {
+            padding: 2.5rem 2rem;
+            flex-grow: 1;
+            text-align: center;
+
+            h3 {
+                @include heading-style; // Restores primary font color/style
+                font-size: 1.3rem;
+                margin-bottom: 1rem !important;
+            }
+
+            p {
+                @include body-text-small;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.transitionSection {
+    padding: 4rem 2rem;
+    max-width: $bp-desktop-sm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @include breakpointDown($bp-tablet-sm) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // Force stack
+    &__image {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+        @include breakpointDown($bp-tablet-sm) {
+            order: 1;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include breakpointDown($bp-tablet-sm) {
+            order: 2;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 1.5rem;
+
+        .number {
+            font-family: $f-futura;
+            font-size: 2rem;
+            color: $c-relocateAccent;
+            width: 75px;
+            height: 75px;
+            flex-shrink: 0;
+        }
+
+        .text p {
+            @include body-text-style;
+            margin: 0;
+        }
+    }
+}
+
+.moreLepineSection {
+    background-color: $c-white;
+    text-align: center;
+    padding: 4rem 0;
+
+    &__wrapper {
+        padding: 0 2rem;
+        margin-bottom: 4rem;
+
+        h2 {
+            @include heading-style;
+        }
+
+        p {
+            @include body-text-style;
+        }
+    }
+}
+
+.indexBgBlack {
+    background-color: #000;
+}
+
+.fixedBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(10px); // CONTRAST BLUR
+        transform: scale(1.1); // PREVENTS EDGE ARTIFACTS
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+    }
+}
+
+.indexMain {
+    position: relative;
+    z-index: 1;
+    padding-top: 15vh;
+
+    @include breakpointDown($bp-mobile-lg) {
+        padding-top: 100px;
+    }
+}
+
+.indexHero {
+    height: auto !important;
+
+    &__title {
+        color: $c-white !important;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        font-size: 3.5rem !important;
+
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 2.2rem !important;
+        }
+    }
+
+    &__description {
+        color: $c-white !important;
+        font-size: 1.4rem !important;
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.indexGridSection {
+    padding: 0 2rem 10rem;
+    background-color: transparent !important; // OVERRIDE GLOBAL SECTION
+}
+
+.indexGrid {
+    max-width: 1400px !important; // WIDER DESKTOP VIEW
+    margin: 0 auto;
+}
+
+.indexCardLink {
+    text-decoration: none !important;
+}
+
+.discoveryCard {
+    @extend .advantageCard; // INHERIT HOVER TRANSITIONS
+    height: 100%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border: none !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 0 !important; // HIT EDGE WITH IMAGE
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    &__imageContainer {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+    }
+
+    &:hover &__imageContainer img {
+        transform: scale(1.05);
+    }
+
+    &__body {
+        padding: 2.5rem 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__label {
+        color: $c-relocateAccent;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    &__title {
+        @include heading-style;
+        font-size: 1.3rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.4;
+        min-height: 2.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    &__description {
+        @include body-text-small;
+        color: #444;
+        line-height: 1.7;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__cta {
+        margin-top: auto;
+        color: #53575A;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+}
+
+.bestOfList {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    border-left: 3px solid $c-relocateAccent; // The light blue vertical line
+    padding-left: 1.5rem;
+
+    li {
+        @include body-text-small;
+        margin-bottom: 0.75rem;
+
+        strong {
+            color: $c-relocatePrimary; // The dark blue bold text
+        }
+    }
+}
+
+.valueSection {
+    padding: 6rem 2rem;
+
+    &__wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    &__header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 6rem; // Breathing room before grid
+    }
+}
+
+.valueGridSideBySide {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include breakpointDown($bp-tablet-lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpointDown($bp-mobile-lg) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.valueCardFlashy {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba($c-relocatePrimary, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+        &__comparisonStacked {
+            display: flex;
+            flex-direction: column; // Force stack
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+    
+            .comparisonItem {
+                text-align: center;
+    
+                .compLabel {
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: #99a6b1;
+                    margin-bottom: 0.25rem;
+                    display: block;
+                }
+    
+                .compValue__old {
+                    color: #b0bac3;
+                    text-decoration: line-through;
+                    font-weight: 700;
+                    font-size: 1.25rem; // Slightly larger for readability
+                }
+    
+                .compValue__new {
+                    color: $c-relocatePrimary;
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+    // --- ONLY THE FIRST CARD (HERO) IS INVERTED ---
+    &.heroCardInverted {
+        background: linear-gradient(135deg, $c-relocatePrimary 0%, $c-relocateAccent 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 50px rgba($c-relocatePrimary, 0.2);
+
+        .reclaimedHero {
+            &__label {
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            &__sub {
+                color: #fff;
+                opacity: 0.9;
+            }
+
+            &__number {
+                color: #fff !important;
+
+                span {
+                    font-size: 4.5rem;
+                    line-height: 1;
+                    display: block;
+                    -webkit-text-fill-color: #fff !important; // Restore solid white
+                }
+
+                small {
+                    font-weight: 700;
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__label {
+        @include heading-style;
+        font-size: 1.4rem;
+        margin: 0 0 2rem 0 !important;
+    }
+
+    &__comparison {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        width: 100%;
+
+        .compLabel {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #99a6b1;
+            margin-bottom: 0.25rem;
+        }
+
+        .compValue__old {
+            color: #b0bac3;
+            text-decoration: line-through;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparisonArrow {
+            color: $c-relocateAccent;
+            font-weight: 900;
+        }
+
+        .compValue__new {
+            color: $c-relocatePrimary;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Flashy Hero Typography
+.reclaimedHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__label {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__number {
+        @include heading-style;
+        margin-bottom: 0 !important;
+
+        span {
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, $c-relocatePrimary 0%, $c-relocateAccent 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__sub {
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+}
+
+.disclaimer {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #99a6b1;
+    font-style: italic;
+}

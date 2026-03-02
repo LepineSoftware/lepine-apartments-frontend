@@ -1,0 +1,62 @@
+// styles/pages/property.module.scss
+
+// 1. Configuration
+@import "../generic/variables";
+@import "../generic/mixins";
+
+// 2. Scoped Styles
+.propertyWrapper {
+    :global {
+        // --- Generics & Base ---
+        @import "../generic/base";
+        @import "../generic/globals";
+        @import "../generic/fonts";
+        @import "../generic/animations";
+        @import "../generic/swiper";
+
+        // --- Global Components & Themes ---
+        @import "../components/container";
+        @import "../components/btn";
+        @import "../components/popup";
+        @import "../components/hero"; // Standard hero support
+
+        // --- Page Sections ---
+        @import "../sections/footer";
+        @import "../sections/navSecondary.scss";
+        @import "../sections/propertyGallery"; // For the gallery lightbox/grid
+
+        // --- V2 Components (Verified from HTML) ---
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/ImageCopyBlock/ImageCopyBlock"; // "Upgrade Your Lifestyle" section
+        @import "../../components/v2/ShowcaseImage/ShowcaseImage"; // Used within ImageCopyBlock
+        @import "../../components/v2/CornerImage/CornerImage"; // Rounded corner images
+        @import "../../components/v2/GridList/GridList"; // "Peace of Mind" leasing steps
+        @import "../../components/v2/TranslucentButton/TranslucentButton";
+        @import "../../components/v2/V2misc";
+        @import "../sections/newsroom";
+        @import "../../sections/Newsroom/Newsroom";
+
+        // --- V3 Components (Verified from HTML) ---
+        @import "../../components/v3/FullVideoHero/FullVideoHero"; // Top video section
+        @import "../../components/v3/ModelSuites/ModelSuites"; // Model suite swiper
+        @import "../../components/v3/MediaCard/MediaCard"; // Used for Model Suites, Testimonials, News
+        @import "../../components/v3/FeaturedListingsz/FeaturedListings"; // Listings grid
+        @import "../../components/v3/FeaturedListingsz/FeaturedListingsCard"; // Listing cards
+        @import "../../components/v3/SuiteDesignAndFeatures/SuiteDesignAndFeatures.component"; // Features lists
+        @import "../../components/v3/PropertyFeatures/PropertyFeatures"; // Amenities icons section
+        @import "../../components/v3/PropertyMap/PropertyMap"; // Map section
+        @import "../../components/v3/MediaCard/MediaCard.scss"; // Map section
+        @import "../../components/v3/InstagramFeed/InstagramFeed"; // Social feed
+        @import "../../components/v3/FAQ/FAQ"; // FAQ Accordion
+        @import "../../components/v3/NewsroomSection/NewsroomSection"; // "Latest News" section
+        @import "../../components/MicroPopup/MicroPopup.scss";
+        @import "../../components/HubSpotContact/HubSpotContact.scss";
+
+        // --- Overrides ---
+        @import "../2025";
+
+        @import "../components/themes"; // CRITICAL: Handles .themeHeader, .themeBGDark, .themeBGLight
+    }
+}

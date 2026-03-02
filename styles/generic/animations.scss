@@ -1,0 +1,25 @@
+@keyframes navFadeUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    } to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+@keyframes navFadeDown {
+    from {
+        transform: translateY(-100%);
+    } to {
+        transform: translateY(0);  
+    }
+}
+@keyframes navFadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    } 60% {
+        opacity: 1;
+        transform: translateY(0);  
+    }
+}

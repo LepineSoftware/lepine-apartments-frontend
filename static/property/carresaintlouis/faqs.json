@@ -1,0 +1,65 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking is available for an extra cost per month."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "What amenities are included in the building?",
+        "answer": "A Lobby, Games Lounge, Party Room, Fitness Centre, Yoga Studio, Pool, Sauna, Change Rooms, Courtyard, Terrace, Retail Space, Heated Underground Parking, Resident Storage Lockers and Bicycle Storage."
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "Give us a call, complete the contact form or schedule a meeting with using the contact form below."
+      },
+      {
+        "question": "What is the application process like?",
+        "answer": "Give us a call and our leasing agents are happy to walk you through the application process or send you a lease application form."
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, please [contact our leasing office](#contactform)."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": []
+  }
+]

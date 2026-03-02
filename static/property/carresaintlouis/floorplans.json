@@ -1,0 +1,56 @@
+[
+  {
+    "type": "main",
+    "name": "Unit 528",
+    "unitType": "2 Bed + Balcony",
+    "sqft": 1037,
+    "description": "This expansive 2-bedroom apartment offers 1,037 sq. ft. of thoughtfully designed, open-concept living, complete with a private balcony. The versatile office provides the perfect space for working from home or a quiet retreat. Premium finishes include multilayered hardwood flooring, granite countertops, natural wood cabinetry, and soaring 9-foot ceilings. Solid concrete construction ensures superior soundproofing, while floor-to-ceiling windows flood the space with natural light. Enjoy modern comforts such as individual temperature control and high-efficiency climate systems for year-round comfort.",
+    "image": "/assets/carresaintlouis/thumbnail/1050-Saint-Louis-Floorplans_31 (528, 628) 2BR.png",
+    "pdf": "/assets/carresaintlouis/pdf/1050-Saint-Louis-Floorplans_31 (528, 628) 2BR.pdf"
+  },
+  {
+    "type": "main",
+    "name": "Unit 118",
+    "unitType": "2 Bed + Terrace",
+    "sqft": 1190,
+    "description": "Enjoy refined, open-concept living in this spacious 2-bedroom apartment featuring a private walk-out terrace ideal for outdoor relaxation and entertaining. The thoughtfully designed layout showcases multilayered hardwood flooring, granite kitchen countertops, natural wood cabinetry, and 9-foot ceilings throughout the main living area. Solid concrete construction provides enhanced soundproofing, while acoustically insulated panoramic windows fill the suite with natural light. Year-round comfort is ensured with individual temperature control and high-efficiency heating and cooling systems.",
+    "image": "/assets/carresaintlouis/thumbnail/1050-Saint-Louis-Floorplans_29 (118-318) 2BR.png",
+    "pdf": "/assets/carresaintlouis/pdf/1050-Saint-Louis-Floorplans_29 (118-318) 2BR.pdf"
+  },
+  {
+    "type": "sub",
+    "name": "Unit 603",
+    "unitType": "2 Bed",
+    "sqft": 1365,
+    "description": null,
+    "image": "/assets/carresaintlouis/thumbnail/1050-Saint-Louis-Floorplans_33 (603, 675, 677, 679 LUX) 2BR.png",
+    "pdf": "/assets/carresaintlouis/pdf/1050-Saint-Louis-Floorplans_33 (603, 675, 677, 679 LUX) 2BR.pdf"
+  },
+  {
+    "type": "sub",
+    "name": "Unit 153",
+    "unitType": "2 Bed + Office",
+    "sqft": 1343,
+    "description": null,
+    "image": "/assets/carresaintlouis/thumbnail/1050-Saint-Louis-Floorplans_45 (153-553) Handicap 2BR+O.png",
+    "pdf": "/assets/carresaintlouis/pdf/1050-Saint-Louis-Floorplans_45 (153-553) Handicap 2BR+O.pdf"
+  },
+  {
+    "type": "sub",
+    "name": "Unit 207",
+    "unitType": "1 Bed LX + Office",
+    "sqft": 889,
+    "description": null,
+    "image": "/assets/carresaintlouis/thumbnail/105-Saint-Louis-Floodplans-Showroom_09.png",
+    "pdf": "/assets/carresaintlouis/pdf/105-Saint-Louis-Floodplans-Showroom_09.pdf"
+  },
+  {
+    "type": "sub",
+    "name": "Unit 330",
+    "unitType": "3 Bed",
+    "sqft": 1661,
+    "description": null,
+    "image": "/assets/carresaintlouis/thumbnail/105-Saint-Louis-Floodplans-Showroom_70.png",
+    "pdf": "/assets/carresaintlouis/pdf/105-Saint-Louis-Floodplans-Showroom_70.pdf"
+  }
+]

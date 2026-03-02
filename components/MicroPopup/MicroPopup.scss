@@ -1,0 +1,264 @@
+.microPopup {
+    width: 100%;
+    animation: OpenHouseFadeIn 0.5s ease-in-out;
+
+    // THE FIX: Follows the shape of the children rows rather than the container box
+    filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.25));
+    will-change: transform, filter; // Optimizes performance for the animation
+
+    @include breakpointDown($bp-tablet-md) {
+        border-radius: 25px;
+        position: relative;
+        width: unset;
+        animation: OpenHouseFadeInMobile 0.5s ease-in-out;
+        // Adjust shadow for mobile if needed
+        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.4));
+    }
+
+    &__wrapper {
+        background: transparent;
+        width: 360px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &[data-close="true"] {
+            animation: OpenHouseFadeOutMobile 0.15s ease-in-out;
+        }
+
+        @include breakpointDown($bp-tablet-md) {
+            background: #00000080;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            padding: 25px;
+        }
+    }
+
+    // Ensure the container itself has no background to prevent shadow squaring
+    background: transparent !important;
+
+    &__close {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+        z-index: 5;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &[data-close="true"] {
+        animation: OpenHouseFadeOut 0.15s ease-in-out;
+
+        @include breakpointDown($bp-tablet-md) {
+            animation: OpenHouseFadeOutMobile 0.15s ease-in-out;
+        }
+    }
+
+    &__row {
+        &[data-row="header"] {
+            border-radius: 0 100px 0 0;
+            position: relative;
+            padding: 15px 50px;
+
+            @include breakpointDown($bp-tablet-md) {
+                border-radius: 25px 25px 0 0;
+            }
+
+            h3,
+            h4 {
+                margin: 0;
+                text-transform: uppercase;
+                color: #fff !important;
+            }
+
+            hr {
+                margin: 15px 0;
+                border: 1px solid #fff;
+            }
+        }
+
+        &[data-row="copy"] {
+            background: #fff;
+            padding: 25px;
+            text-align: start;
+            display: flex;
+            flex-flow: column nowrap;
+            row-gap: 15px;
+
+            @include breakpointDown($bp-tablet-md) {
+                border-radius: 0 0 25px 25px;
+                align-items: center;
+                text-align: center;
+            }
+
+            p {
+                color: #000 !important;
+                font-family: "Jost", sans-serif;
+                margin: 0;
+            }
+        }
+    }
+
+    &__eventDate {
+        h3 {
+            font-size: 24px !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+
+    &__address {
+        p {
+            font-size: 16px !important;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__countdown {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        background: #F2F2F2;
+        text-align: center;
+
+        h4 {
+            color: #000 !important;
+            font-family: "Jost", sans-serif;
+            font-size: 10px !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        span {
+            color: #000 !important;
+            font-family: "Jost", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+
+    &__calendar {
+        p {
+            font-size: 12px !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px !important;
+        }
+    }
+
+    &__calendarIcons {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-start;
+
+        @include breakpointDown($bp-tablet-md) {
+            justify-content: center;
+        }
+
+        a {
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 25px;
+
+        h3 {
+            text-align: right;
+            font-size: 40px !important;
+            line-height: 40px !important;
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+
+        h4 {
+            font-size: 16px;
+        }
+    }
+}
+
+// --- Theme Implementation ---
+[data-theme="lepinelodge"] {
+    .microPopup__row[data-row="header"] {
+        background: #044704 !important;
+    }
+
+    .microPopup__eventDate h3 {
+        color: #044704 !important;
+    }
+}
+
+[data-theme="lepine"] {
+    .microPopup__row[data-row="header"] {
+        background: #6b4e31 !important;
+    }
+
+    // Example brown
+    .microPopup__eventDate h3 {
+        color: #6b4e31 !important;
+    }
+}
+
+[data-theme="thecristina"] {
+    .microPopup__row[data-row="header"] {
+        background: #a84b1a !important;
+    }
+
+    .microPopup__eventDate h3 {
+        color: #a84b1a !important;
+    }
+}
+
+[data-theme="thenormand"] {
+    .microPopup__row[data-row="header"] {
+        background: #1C87A1 !important;
+    }
+
+    .microPopup__eventDate h3 {
+        color: #1C87A1 !important;
+    }
+}
+
+[data-theme="saintemilion"] {
+    .microPopup__row[data-row="header"] {
+        background: #8C857B !important;
+    }
+
+    .microPopup__eventDate h3 {
+        color: #8C857B !important;
+    }
+}

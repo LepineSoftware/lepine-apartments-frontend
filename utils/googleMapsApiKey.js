@@ -1,0 +1,1 @@
+export const googleMapsApiKey = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY : '';

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1024806,
+    "sqft": 741,
+    "numOfBeds": 1,
+    "numOfBaths": 1,
+    "officeDen": false,
+    "image": "1024_UNIT_306-1906.png",
+    "pdf": "1024_UNIT_306-1906.pdf"
+  },
+  {
+    "id": 10241605,
+    "sqft": 1052,
+    "numOfBeds": 1,
+    "numOfBaths": 1,
+    "officeDen": false,
+    "image": "1024_UNIT_305-1905.png",
+    "pdf": "1024_UNIT_305-1905.pdf"
+  },
+  {
+    "id": 1024315,
+    "sqft": 1298,
+    "numOfBeds": 2,
+    "numOfBaths": 2,
+    "officeDen": false,
+    "image": "1024_UNIT_315-515.png",
+    "pdf": "1024_UNIT_315-515.pdf"
+  },
+  {
+    "id": 1024301,
+    "sqft": 1497,
+    "numOfBeds": 2,
+    "numOfBaths": 2,
+    "officeDen": true,
+    "image": "1024_UNIT_301-1701.png",
+    "pdf": "1024_UNIT_301-1701.pdf"
+  }
+]

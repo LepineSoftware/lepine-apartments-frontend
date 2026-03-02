@@ -1,0 +1,18 @@
+<svg id="Group_14362" data-name="Group 14362" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="92.853" height="99.845" viewBox="0 0 92.853 99.845">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_8929" data-name="Rectangle 8929" width="92.853" height="99.845" fill="#5e514d"/>
+    </clipPath>
+  </defs>
+  <path id="Path_83703" data-name="Path 83703" d="M191.475,88.167v41.527H204.29V114.161h3.869v-9.732h3.385V88.167Zm8.414,39.353H197.31v-6.448h2.579Zm0-9.349H197.31v-6.448h2.579Zm0-9.349H197.31v-6.448h2.579Zm0-9.552H197.31V92.822h2.579Zm6.328,0h-2.579V92.822h2.579Z" transform="translate(-168.326 -77.508)" fill="#5e514d"/>
+  <path id="Path_83704" data-name="Path 83704" d="M329.867,247.509v-9.843H313.545v9.843h-4.07v13.61H333.9v-13.61Zm-12.7,10.106h-2.579v-6.448h2.579Zm6.024,0h-2.579v-6.448h2.579Zm5.372,0h-2.579v-6.448h2.579Z" transform="translate(-272.059 -208.932)" fill="#5e514d"/>
+  <rect id="Rectangle_8928" data-name="Rectangle 8928" width="92.853" height="7.636" transform="translate(0 53.66)" fill="#5e514d"/>
+  <path id="Path_83705" data-name="Path 83705" d="M3.615,519.178l9.761,18.538h12l20.685,18.538L61,539.006l25.749-6.932,8.841-12.9Z" transform="translate(-3.178 -456.409)" fill="#5e514d"/>
+  <g id="Group_14361" data-name="Group 14361">
+    <g id="Group_14360" data-name="Group 14360" clip-path="url(#clip-path)">
+      <path id="Path_83706" data-name="Path 83706" d="M615.3,238.036S614.47,227.2,608.009,225c-6.461,2.2-7.294,13.037-7.294,13.037.285,7.2,3.579,8.946,5.642,9.331v4.553h3.063v-4.513c2.036-.293,5.588-1.884,5.884-9.371" transform="translate(-528.088 -197.797)" fill="#5e514d"/>
+      <path id="Path_83707" data-name="Path 83707" d="M84.51,289.1s-.631-8.194-5.518-9.861c-4.887,1.668-5.517,9.861-5.517,9.861.219,5.552,2.807,6.818,4.359,7.074V299.6h2.317v-3.428c1.552-.256,4.14-1.522,4.359-7.074" transform="translate(-64.592 -245.478)" fill="#5e514d"/>
+      <path id="Path_83708" data-name="Path 83708" d="M426.062,5.8V0H411.747V5.8H408.4V26.921h10.1v9.712h4.178V52.186h6.731V5.8Z" transform="translate(-359.025 0)" fill="#5e514d"/>
+    </g>
+  </g>
+</svg>

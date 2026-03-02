@@ -1,0 +1,183 @@
+@keyframes stickyAnimation {
+    from {
+        position: fixed;
+        top: 0;
+        left: 0;
+    } to {
+        position: fixed;
+        top: 120px;
+        left: 0;
+    }
+}
+@keyframes stickyAnimation2 {
+    from {
+        position: fixed;
+        top: 0;
+        left: 0;
+        // opacity: 0;
+    } to {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        // opacity: 1;
+    }
+}
+
+.navSecondary {
+    color: $c-white;
+    height: 50px;
+    width: 100%;
+    user-select: none;
+    
+
+    svg path {
+        fill: #5E514D;
+    }
+
+    
+    @include breakpointDown($bp-mobile-lg) {
+        display: none;
+    }
+
+
+    &[data-page="v2"] {
+        @include breakpointDown($bp-tablet-sm) {
+            display: none;
+        }
+
+    }
+
+    &__placeholder {
+        // height: 50px;
+
+        @include breakpointDown($bp-tablet-sm) {
+            height: 0;
+        }
+    }
+
+    &.sticky {
+        animation: stickyAnimation 0.25s ease-in-out;
+        position: fixed;
+        top: 49px;
+        left: 0;
+        z-index: 11;
+
+        @include breakpointDown($bp-tablet-md) {
+            display: none;
+        }
+
+        &[data-page="v2"] {
+            animation: stickyAnimation2 0.25s ease-in-out;
+            top: 49px;
+
+            @include breakpointDown($bp-tablet-md) {
+                display: none;
+            }
+
+            .navSecondary__externalLinks {
+                visibility: visible;
+                opacity: 1;
+            }
+
+        }
+
+        .navSecondary__externalLinks {
+            visibility: none;
+            opacity: 0;
+            user-select: none;
+
+        }
+    }
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    &__wrapper {
+        background: #5E514D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 2560px;
+        margin: auto;
+        height: 100%;
+
+        @include breakpointDown($bp-tablet-sm) {
+            display: none;
+        }
+
+    }
+
+    &__logo {
+        img {
+            height: 35px;
+            width: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__links {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        column-gap: 25px;
+        flex: 1 1;
+        max-width: 40%;
+
+        @include breakpointDown($bp-tablet-md) {
+            max-width: unset;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        font-family: $f-futura;
+        opacitY: 0.5;
+        transition: opacity 0.25s;
+
+        &:hover {
+            transition: opacity 0.25s;
+            opacity: 1;
+        }
+
+        &.active {
+            transition: opacity 0.25s;
+            opacity: 1;
+        }
+    }
+
+    &__externalLinks {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 25px;
+        color: $c-white;
+        transition: 0.25s opacity;
+
+        @include breakpointDown($bp-tablet-md) {
+            display: none;
+        }
+
+        span, a {
+            color: $c-white !important;
+        }
+         
+        .nav__phone--icon {
+            height: 30px;
+            width: 30px;
+            svg {
+                circle {
+                    fill: $c-white !important;
+                }
+            }
+        }
+    }
+}

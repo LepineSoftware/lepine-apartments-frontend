@@ -1,0 +1,192 @@
+.sideImageContent {
+    background: #F3F3F1;
+    color: $c-white;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px repeat(10, auto) 50px;
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    ol {
+        text-align: left;
+    }
+
+    li {
+        padding-right: 0;
+        list-style-position: inside;
+    }
+
+    &__col {
+        &[data-col="img1"] {
+            overflow: hidden;
+            grid-column: 1 / 4;
+            grid-row: 1 / 7;
+            border-radius: 0 0 50px 0;
+
+            @include breakpointDown($bp-tablet-md) {
+                display: none;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+
+        &[data-col="img2"] {
+            overflow: hidden;
+            grid-column: 10 / 13;
+            grid-row: 7 / 13;
+            border-radius: 50px 0 0 0;
+
+            @include breakpointDown($bp-tablet-md) {
+                display: none;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+
+        &[data-col="cta"] {
+            grid-column: 1 / 13;
+            grid-row: 2 / 12;
+            z-index: 5;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__rt {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 25px;
+    }
+
+    &__copy {
+        h2 {
+            margin: 0;
+        }
+
+        background: $c-white;
+        color: #53575A;
+        border-radius: 25px;
+        box-shadow: 5px 5px 5px #00000035;
+        width: 832px;
+        max-width: 60%;
+        padding: 50px;
+        box-sizing: border-box;
+        z-index: 3;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 25px;
+
+        @include breakpointDown($bp-desktop-md) {
+            order: 3;
+        }
+
+        @include breakpointDown(1366px) {
+            // margin-top: -15%;
+            max-width: 80%;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            padding: 25px;
+            // margin-top: 0;
+            max-width: 95%;
+        }
+   
+    }
+}
+
+.propertyContact {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    &__submitted {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__form {
+        @include breakpointUp(1366px) {
+            max-width: 562px;
+        }
+
+        @include hubspotForm();
+    }
+
+
+    &__image {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex: 1 0 48%;
+        min-height: 837px;
+
+        @include breakpointDown(1366px) {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            user-select: none;
+        }
+     }
+
+     &__header {
+        margin: 0;
+     }
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex: 1 0 48%;
+        row-gap: 25px;
+        padding: 60px 100px;
+
+        @include breakpointDown(1366px) {
+            padding: 45px 35px;
+        }
+
+        &--wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            row-gap: 25px;
+            max-width: 562px;
+
+    
+        }
+    }
+
+    &__subtitle {
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-family: 'Futura LT Medium', sans-serif;
+    }
+}

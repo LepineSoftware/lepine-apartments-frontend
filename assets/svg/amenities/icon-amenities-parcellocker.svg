@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_9699" data-name="Rectangle 9699" width="106.37" height="104.359"/>
+    </clipPath>
+    <clipPath id="clip-icon-amenities-parcellocker">
+      <rect width="120" height="120"/>
+    </clipPath>
+  </defs>
+  <g id="icon-amenities-parcellocker" clip-path="url(#clip-icon-amenities-parcellocker)">
+    <g id="Group_14989" data-name="Group 14989" transform="translate(6.815 7.82)">
+      <path id="Path_83934" data-name="Path 83934" d="M53.127,33.851l21.5-7.271L24.736,9.229,6.519,15.434,2.8,16.7Z" transform="translate(0.075 0.246)"/>
+      <path id="Path_83935" data-name="Path 83935" d="M52.431,0,28.919,8.008l49.81,17.248,23.5-8.177Z" transform="translate(0.771)"/>
+      <g id="Group_14988" data-name="Group 14988" transform="translate(0 0)">
+        <g id="Group_14987" data-name="Group 14987" clip-path="url(#clip-path)">
+          <path id="Path_83936" data-name="Path 83936" d="M53.522,103.863l51.321-16.769.108-68.46L53.291,36.316Zm5.409-26.436A1.581,1.581,0,0,1,60.1,75.9l23-6.143a1.579,1.579,0,0,1,1.987,1.527v16.15a1.577,1.577,0,0,1-1.14,1.516l-23,6.671a1.58,1.58,0,0,1-2.02-1.517Z" transform="translate(1.42 0.496)"/>
+          <path id="Path_83937" data-name="Path 83937" d="M81.087,72.468,62.444,77.449V90L81.087,84.6Z" transform="translate(1.664 1.931)"/>
+          <path id="Path_83938" data-name="Path 83938" d="M51.439,103.863,0,87.153V18.635l51.632,17.7Z" transform="translate(0 0.497)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

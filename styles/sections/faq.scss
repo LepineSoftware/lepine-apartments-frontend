@@ -1,0 +1,187 @@
+.faq {
+    position: relative;
+
+    .cornerFloatImage {
+        max-width: unset;
+        width: 20% !important;
+        height: 500px !important;
+
+        @include breakpointDown(1800px) {
+            display: none;
+        }
+    }
+
+    &__header {
+        text-align: center;
+    }
+
+    &__container {
+        box-shadow: $box-shadow;
+        position: relative;
+        z-index: 2;
+        background: $c-white;
+    }
+
+    &__btn {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        column-gap: 25px;
+        align-items: center;
+        background: $c-lepineBrownLight;
+        color: $c-white;
+        flex: 1 0 30%;
+        padding: 25px;
+        transition: 0.2s background;
+
+        cursor: pointer;
+
+        @include breakpointDown($bp-tablet-sm) {
+            justify-content: flex-start;
+        }
+
+        &.active {
+            transition: 0.2s background;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 15px;
+        }
+
+        &--icon {
+            height: 25px;
+            width: 25px;
+            border: 2.5px solid $c-white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 60%;
+                width: 60%;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            &.active {
+                background: $c-white;
+            }
+        }
+
+        &--copy {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Futura LT Medium', sans-serif;
+
+        }
+
+        &--container {
+            display: flex;
+            flex-flow: row nowrap;
+            border-bottom: 1px solid $c-white;
+
+            @include breakpointDown($bp-tablet-sm) {
+                flex-flow: column nowrap;
+            }
+        }
+
+        &:nth-of-type(2) {
+            @include breakpointDown($bp-tablet-sm) {
+                border-top: 1px solid $c-white;
+                border-bottom: 1px solid $c-white;
+             }
+        }
+    }
+
+    &__category {
+        width: 100%;
+
+        &--container {
+            display: flex;
+        }
+
+        display: none;
+        flex-flow: column nowrap;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        &.active {
+            .faq__question {
+                background: #E1E1E1;
+                // border-bottom: 1px solid #5e514d;
+
+                h3 {
+                    font-family: 'Futura LT Medium', sans-serif;
+                    // color: $c-white;
+                }
+
+                &--icon {
+                    background: $c-white;
+                    border: 2.5px solid $c-white;
+                }
+            }
+
+            .faq__answer {
+                display: block;
+                position: unset;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__question {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 25px;
+        border-bottom: 1px solid #E2E2E2;
+        background: $c-white;
+
+        h3 {
+            margin: 0;
+            color: #5e514d;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 15px;
+        }
+
+        &--icon {
+            height: 25px;
+            width: 25px;
+            border: 2.5px solid #5e514d;
+            font-size: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+
+        }
+    }
+
+    &__answer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+
+        display: none;
+        padding: 25px;
+        border-bottom: 1px solid #E2E2E2;
+        background: $c-white;
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 15px;
+        }
+    }
+}

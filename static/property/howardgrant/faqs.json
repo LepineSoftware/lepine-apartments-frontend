@@ -1,0 +1,94 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "What amenities are included in my apartment rental in the building?",
+        "answer": "Residents at Howard Grant enjoy a full suite of amenities, including a fully-equipped fitness center, yoga studio, saltwater pool, sauna, games lounge, sundeck, and more. Additional conveniences include underground parking, secure storage options and beautiful [outdoor spaces](https://lepineapartments.com/newsroom/beyond-concrete-jungles) for relaxation."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking and outdoor parking is available for an extra cost per month."
+      },
+      {
+        "question": "How do I schedule a tour of the apartments?",
+        "answer": "To schedule a tour of our apartments in Barrhaven, simply contact us by [contact form](#contactform), phone or [email](mailto:leasing@lepineapartments.com). Our team will happily show you around the property and help you find your new rental apartment in Barrhaven."
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      },
+      {
+        "question": "What types of apartments are available at Howard Grant?",
+        "answer": "We offer a range of spacious 1-bedroom and 2-bedroom apartments, including rental apartments with dedicated home office spaces. Each suite has modern finishes and open layouts to create a comfortable, spacious living space."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "What is the application process like to rent an apartment?",
+        "answer": "The application process is simple! Simply give us a call and we can either walk you through it or send you a lease application form for your apartment rental in Barrhaven."
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, [please contact our leasing office](#contactform)."
+      },
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "To schedule a tour of our Barrhaven apartment rentals, simply fill out our [contact form](#contactform), give us a call or [send us an email](mailto:leasing@lepineapartments.com)."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": [
+      {
+        "question": "What makes Barrhaven a great place to live?",
+        "answer": "Barrhaven is known for its family-friendly environment, vibrant community, and excellent amenities. With schools, parks, shopping and dining options all nearby, it’s a neighbourhood that truly has it all."
+      },
+      {
+        "question": "What is near Howard Grant?",
+        "answer": "Howard Grant is ideally situated near major shopping centers, schools, restaurants, and recreational facilities, making it an exceptional location for modern living."
+      },
+      {
+        "question": "Is Barrhaven easily accessible?",
+        "answer": "Yes, Barrhaven is well-connected by public transit and major roadways, making it easy to navigate and reach downtown Ottawa."
+      },
+      {
+        "question": "Is Barrhaven a good place to raise a family?",
+        "answer": "Absolutely! With excellent schools, safe neighbourhoods and [family-focused activities](https://lepineapartments.com/newsroom/family-friendly-living), Barrhaven is perfect for families. Our Barrhaven apartment rentals offer family-friendly living all under one roof."
+      },
+      {
+        "question": "Is Barrhaven a walkable neighbourhood?",
+        "answer": "Yes, with pedestrian-friendly streets and easy access to parks, shops and transit options, Barrhaven is ideal for walking."
+      }
+    ]
+  }
+]

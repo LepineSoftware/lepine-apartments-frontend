@@ -1,0 +1,35 @@
+:root {
+    --jost-font: var(--font-jost), sans-serif;
+    --opensans-font: var(--font-open-sans), sans-serif;
+    --poppins-font: var(--font-poppins), sans-serif;
+}
+
+.noscroll {
+    overflow: hidden;
+    margin-right: 19px;
+}
+
+.privacyPolicy {
+    padding: 25px 0;
+
+    &__logo {
+        margin: auto;
+    }
+}
+
+.privacyPolicy, .privacyPolicy div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+    column-gap: 25px;
+    row-gap: 25px;
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    h1, h2, h3, h4, p {
+        margin: 0;
+    }
+}

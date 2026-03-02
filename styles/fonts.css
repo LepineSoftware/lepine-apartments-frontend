@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+@font-face {
+    font-family: 'Futura LT Medium';
+    src: url('/fonts/Futura/Futura_LT_Medium.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Futura LT Book';
+    src: url('/fonts/Futura/Futura_LT_Book.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir/Avenir.ttc');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('/fonts/Open_Sans/OpenSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Semi Bold';
+    src: url('/fonts/Crimson_Text/CrimsonText-Semibold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}

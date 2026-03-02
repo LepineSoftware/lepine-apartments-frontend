@@ -1,0 +1,98 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "What amenities are included in my apartment rental in the building?",
+        "answer": "Lépine Lodge offers a variety of premium amenities, including a fully equipped fitness center, games lounge, yoga studio, saltwater pool, sauna, pickleball court, change rooms, lobby, library, heated underground parking, storage lockers, recreational vehicle storage, courtyard, terrace, gazebo, garden path network and communal garden. These apartment amenities are designed to enhance your living experience and build a sense of community."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking and outdoor parking is available for an extra cost per month."
+      },
+      {
+        "question": "How do I schedule a tour of the apartments?",
+        "answer": "To schedule a tour of our Renfrew apartment rentals, simply fill out our [contact form](#contactform), give us a call or [send us an email](mailto:leasing@lepineapartments.com). Our team will happily show you around the property and help you find your new rental apartment in Renfrew."
+      },
+      {
+        "question": "Are there any community events or social activities for apartment residents?",
+        "answer": "Yes, we host a variety of community events throughout the year for the [whole family](https://www.lepineapartments.com/newsroom/family-friendly-living), from fitness classes to holiday gatherings and BBQs. There’s always something happening at Lépine Lodge!"
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      },
+      {
+        "question": "What types of apartments are available at Lépine Lodge?",
+        "answer": "We offer a range of [spacious 1-bedroom apartments](https://www.lepineapartments.com/newsroom/sarahs-story-of-freedom-and-flexibility-at-lepine), 2-bedroom apartments, and 3-bedroom apartments to suit your lifestyle needs, including rental apartments with home offices. Each suite has modern finishes and open layouts to create a comfortable, spacious living space."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "What is the application process like to rent an apartment?",
+        "answer": "The application process is simple! Simply give us a call and we can either walk you through it or send you a lease application form for your apartment rental in Renfrew.\n"
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, please [contact our leasing office](#contactform)."
+      },
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "To schedule a tour of our Renfrew apartment rentals, simply fill out our [contact form](#contactform), give us a call or [send us an email](mailto:leasing@lepineapartments.com)."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": [
+      {
+        "question": "What is there to do in Renfrew?",
+        "answer": "Renfrew offers plenty to do, from outdoor activities like hiking and fishing to community events, festivals, local dining, and shopping. There's always something for everyone."
+      },
+      {
+        "question": "Is Renfrew a walkable town?",
+        "answer": "Yes, with its downtown area, parks, restaurants and stores easily accessible on foot, making it convenient for daily errands and walks around town."
+      },
+      {
+        "question": "Is Renfrew a good place to raise a family?",
+        "answer": "Yes, Renfrew is family-friendly with safe neighbourhoods, great schools, parks, and community events. The town also hosts many community events and festivals that create a fun community atmosphere."
+      },
+      {
+        "question": "What is near the Lépine Lodge?",
+        "answer": "Lépine Lodge is conveniently located near a ton of local amenities. Just 5 minutes away, you'll find a grocery store and a variety of restaurants and coffee shops. Additionally, nearby parks, healthcare facilities, and schools provide further convenience and make it a great location for both leisure and everyday living."
+      },
+      {
+        "question": "What amenities and services are available in Renfrew?",
+        "answer": "Renfrew offers grocery stores, hardware stores, schools, healthcare facilities, and restaurants and coffee shops, along with parks, trails and recreational facilities."
+      }
+    ]
+  }
+]

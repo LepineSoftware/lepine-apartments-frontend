@@ -1,0 +1,49 @@
+.translucentButton {
+    background: $c-white;
+    border: 2px solid $c-white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.25s;
+
+    svg {
+        height: 60%;
+        width: 60%;
+        object-position: center;
+        object-fit: contain;
+
+        path {
+            fill: $c-lepineBrown;
+        }
+
+        circle {
+            fill: $c-lepineBrown;
+        }
+
+        text {
+            fill: $c-lepineBrown;
+        }
+    }
+
+    &:hover {
+        background: transparent;
+        transition: all 0.25s;
+
+        svg {
+            path {
+                fill: $c-white;
+            }
+
+            circle {
+                fill: $c-white;
+            }
+
+            text {
+                fill: $c-white;
+            }
+        }
+    }
+}

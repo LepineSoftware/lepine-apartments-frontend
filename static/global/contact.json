@@ -1,0 +1,23 @@
+{
+  "info": {
+    "id": 1,
+    "address": "555 Legget Drive, Suite 206, K2K 3B8",
+    "city": "Kanata, ON",
+    "postalCode": " ",
+    "phone": "1-888-453-7463",
+    "email": "leasing@lepineapartments.com",
+    "corporatePhone": "613-591-9090",
+    "hours": {
+      "id": 1,
+      "weekday": "Open for walk-ins",
+      "weekend": "Open for walk-ins"
+    }
+  },
+  "form": {
+    "id": 1,
+    "header": "Inquire",
+    "subheader": "Leasing Office: 1136 Maritime Way, Kanata",
+    "disclaimer": "*Your privacy is a human right. We are committed to keeping your personal information safe and secure. We promise we will never share it with anyone without your permission. We will only use it to communicate with you and to ensure we are providing you with valuable information about our products.",
+    "consent": "I agree to receive other communications from Lépine Apartments. You can unsubscribe from these communications at any time."
+  }
+}

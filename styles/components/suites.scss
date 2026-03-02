@@ -1,0 +1,285 @@
+.suites {  
+    &[data-items="3"] {
+        .suites__cards {
+            .imageCard {
+                flex: 1 0 30%;
+                max-width: unset;
+            }
+        }
+    }  
+
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 75px;
+        row-gap: 25px;
+
+        @include breakpointDown($bp-tablet-lg) {
+            column-gap: 50px;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    &__image {
+        flex: 1 0 48%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        @include contentPaddingTop();
+
+        @include breakpointDown($bp-tablet-sm) {
+            display: none;
+        }
+
+    }
+
+    &__copy {
+        flex: 1 1 48%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 10px;
+
+        h2 {
+            margin-bottom: 35px;
+        }
+
+        p {
+            @include contentMarginBottom();
+        }
+
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 50px;
+        // overflow-x: hidden;
+        @include contentPaddingTop();
+
+        @include breakpointDown($bp-tablet-lg) {
+            display: none;
+        }
+    }
+
+    &__swiper {
+        display: none;
+        overflow-x: hidden;
+
+        &--controls {
+            display: none;
+            justify-content: flex-end;
+            align-items: center;
+            column-gap: 15px;
+            margin-bottom: 25px;
+
+             @include breakpointDown($bp-tablet-lg) {
+                display: flex;
+            }
+        }
+
+        @include breakpointDown($bp-tablet-lg) {
+            display: block;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        height: 100%;
+        width: 100%;
+        padding-top: 50px;
+
+        &--wrapper {
+            flex: 1 0 48%;
+
+            @include breakpointDown($bp-tablet-sm) {
+                padding-top: 35px;
+                width: 100%;
+            }
+        }
+
+        .contentWrapper {
+            @include breakpointUp($bp-tablet-sm) {
+                padding: 0;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-flow: column nowrap;
+            column-gap: 15px;
+            row-gap: 15px;
+            width: 100%;
+            padding-left: 25px;
+
+            @include breakpointDown($bp-tablet-sm) {
+                flex-flow: row wrap;
+            }
+        }
+
+        li {
+            @include bodyCopyTypography();
+
+            @include breakpointDown($bp-tablet-sm) {
+                flex: 1 0 48%;
+            }
+
+            @include breakpointDown($bp-mobile-md) {
+                flex: 1 0 100%;
+            }
+        }
+    }
+}
+
+.suiteDesign {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @include breakpointDown($bp-tablet-sm) {
+        flex-flow: column nowrap;
+    }
+
+    .suites__list--wrapper {
+        @include breakpointUp($bp-tablet-lg) {
+            padding-left: 25px;
+        }    
+        @include breakpointDown($bp-tablet-lg) {
+            @include contentPaddingTop();
+        }    
+    }
+
+    &__image {
+        flex: 1 0 48%;
+        // height: 920px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            flex: unset;
+            height: 565px;
+            width: 100%;
+        }
+
+        @include breakpointDown($bp-mobile-md) {
+            height: 265px;
+        }
+    }
+}
+
+.suiteFinishes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    // @include contentPaddingBottom();
+
+    @include breakpointDown($bp-tablet-sm) {
+        flex-flow: column nowrap;            
+    }
+
+
+    .suitesFinishes__list--wrapper {
+        flex: 1;
+        // @include contentPaddingBottom();
+        @include swiperPaginationMargin();
+
+        @include breakpointUp($bp-tablet-md) {
+            flex: unset;
+            width: 400px;    
+        }
+        
+        @include breakpointDown($bp-tablet-sm) {
+            max-width: unset;
+        }
+
+        ul {
+            @include contentMarginBottom();
+    
+        }
+
+        .contentWrapper {
+            @include breakpointUp($bp-tablet-md) {
+                padding: unset;
+            }
+        }
+
+    }
+    
+
+    &__gallery {
+        width: 773px;
+        height: 500px;
+        @include swiperPaginationMargin();
+
+        @include breakpointDown($bp-tablet-md) {
+            width: 60%;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            height: 340px;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            width: 100%;
+        }
+
+        @include breakpointDown($bp-mobile-sm) {
+            height: 185px;
+        }
+
+        &--item {
+            width: 773px;
+            height: 500px;
+
+            @include breakpointDown($bp-tablet-sm) {
+                width: 526px;
+                height: 340px;
+            }
+
+            @include breakpointDown($bp-mobile-sm) {
+                width: 286px;
+                height: 185px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+.container[data-page="propertyV2"] {
+    .suites__swiper {
+        .swiper {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    
+    .suiteDesign {
+        column-gap: 25px;
+
+        &__image {
+            img {
+                border-radius: 0 0 25px 0;
+            }
+        }
+    }
+}

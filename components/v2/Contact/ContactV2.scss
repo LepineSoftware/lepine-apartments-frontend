@@ -1,0 +1,489 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.contactV2 {
+    background: #F3F3F1;
+    position: relative;
+
+    &__arrow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: top left;
+    }
+
+    
+    .contact__row {
+        background: #8C857B;
+    }
+
+     h2 {
+        margin-bottom: 10px;
+        }
+
+    .contentWrapper {
+        position: relative;
+
+        .contactV2__mobile--bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: none;
+
+            @include breakpointDown($bp-tablet-lg) {
+                display: block;
+            }
+        }
+    }
+
+    &__copy {
+        background: $c-white;
+        color: #53575A;
+        border-radius: 10px;
+        // box-shadow: 25px 25px 25px #00000020;
+        width: 1000px;
+        max-width: 80%;
+        padding: 50px;
+
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: $box-shadow;
+
+        order: 3;
+
+        animation: fadeIn 0.5s ease-in-out;
+
+        
+        &[data-visible="true"] {
+            display: flex !important;
+        }
+        
+        &[data-visible="false"] {
+            display: none !important;
+        }
+
+        &--meeting {
+            // background: $c-white;
+            color: #53575A;
+            border-radius: 10px;
+            width: 1000px;
+            max-width: 80%;
+            height: 690px;
+            padding: 0;
+
+            animation: fadeIn 0.5s ease-in-out;
+
+            &[data-visible="true"] {
+                display: block !important;
+            }
+
+            &[data-visible="false"] {
+                display: none !important;
+            }
+    
+            @include breakpointDown($bp-desktop-lg) {
+                width: 900px;
+                max-width: unset;
+            }
+    
+            @include breakpointDown($bp-tablet-lg) {
+                width: 100%;
+            }
+
+            .meetings-iframe-container {
+                border-radius: 10px !important;
+            }
+
+            iframe {
+                width: 100% !important;
+                height: 690px !important;
+                border-radius: 10px !important;
+                // box-shadow: 25px 25px 25px #00000020;
+
+            }
+        }
+
+        @include breakpointDown($bp-desktop-lg) {
+            width: 900px;
+        }
+
+        @include breakpointDown($bp-tablet-lg) {
+            width: 100%;
+            max-width: unset;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            padding: 25px;
+        }
+
+        div {
+            width: 100%;
+        }
+
+        &[data-type="form"] {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: unset;
+            flex: unset;
+            z-index: 2;
+            min-height: 300px;
+            
+            @include hubspotFormV2();
+ 
+            @include breakpointDown($bp-tablet-lg) {
+                max-height: unset;
+                width: 100%;
+            }
+
+            h3 {
+                margin: 0;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    &__row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 2;
+
+        &[data-row="main"] {
+            position: relative;
+            z-index: 2;
+            min-height: 700px;
+
+            @include breakpointDown($bp-desktop-lg) {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            @include breakpointDown($bp-tablet-lg) {
+                min-height: unset;
+            }
+        }
+
+        &[data-row="info"] {
+            @include breakpointDown($bp-tablet-lg) {
+                z-index: 2;
+                position: relative;
+            }
+        }
+            
+        @include breakpointDown($bp-tablet-lg) {
+            flex-flow: column nowrap;
+        }
+    }
+
+
+    &__col {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        color: $c-white;
+
+        h3 {
+            margin: 0;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 26px;
+        }
+  
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider__container {
+            display: grid;
+            grid-template-columns: auto 52px;
+            row-gap: 10px;
+            column-gap: 10px;
+            width: 175px;
+            p { color: #000; margin: 0; text-align: left }
+        }
+  
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+  
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+  
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+  
+        .slider.round {
+            border-radius: 34px;
+        }
+  
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+
+        }
+
+        &[data-col="cta"] {
+            padding: 75px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            row-gap: 25px;
+            flex: 1;
+            z-index: 3;
+            min-height: 1230px;
+
+            @include breakpointDown($bp-tablet-lg) {
+                padding: 30px;
+                order: 3;
+                row-gap: 10px;
+                min-height: unset;
+            }
+        }
+
+        &[data-col="info"] {
+            padding: 60px;
+            height: 33.3vh;
+            color: $c-white;
+
+            h3, p, a {
+                color: $c-white;
+            }
+        }
+
+        &[data-col="img"] {
+            flex: 1 0 48%;
+            width: 25%;
+            height: 650px;
+            z-index: 2;
+            // max-width: 25%;
+            
+            // @include breakpointDown($bp-desktop-lg) {
+            //     width: calc((95% - 700px) / 2);
+            //     height: 50%;
+            // }
+
+            @include breakpointDown($bp-tablet-lg) {
+                height: 40vh;
+                max-width: 500px;
+            }
+        }
+
+        &--img {
+            flex: 1 0 23%;
+            max-width: 25%;
+
+            @include breakpointDown($bp-desktop-sm) {
+                display: none;
+            }
+
+            &1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                @include breakpointDown($bp-tablet-lg) {
+                    display: none;
+                    position: unset;
+                }
+
+                img {
+                    border-radius: 0 0 25px 0;
+                }
+            }
+
+            &2 {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+
+                @include breakpointDown($bp-tablet-lg) {
+                    display: none;
+                    position: unset;
+                }
+
+                img {
+                    border-radius: 25px 0 0 0;
+                }
+            }
+        }
+
+    }
+
+    &__info {
+        color: $c-white;
+
+        &--header {
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+            font-family: 'Jost', sans-serif;
+        }
+    }
+}
+
+.propertyContact {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    &__submitted {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__form {
+        @include breakpointUp($bp-tablet-lg) {
+            max-width: 562px;
+        }
+
+        @include hubspotForm();
+    }
+
+
+    &__image {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex: 1 0 48%;
+        min-height: 837px;
+
+        @include breakpointDown($bp-tablet-lg) {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            user-select: none;
+        }
+     }
+
+     &__header {
+        margin: 0;
+     }
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex: 1 0 48%;
+        row-gap: 25px;
+        padding: 60px 100px;
+
+        @include breakpointDown($bp-tablet-lg) {
+            padding: 45px 35px;
+        }
+
+        &--wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            row-gap: 25px;
+            max-width: 562px;
+
+    
+        }
+    }
+
+    &__subtitle {
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-family: 'Jost', sans-serif;
+    }
+}
+
+.cornerFloatImage {
+    flex: 1 0 23%;
+    width: 600px;
+    height: 90%;
+    max-width: 25%;
+    position: absolute;
+    
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &[data-position="left"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            border-radius: 0 0 75px 0;
+        }
+    }
+
+    &[data-position="right"] {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        img {
+            border-radius: 75px 0 0 0;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "What amenities are included in my apartment rental in the building?",
+        "answer": "Residents at Saint Émilion enjoy a full suite of amenities, including a fully-equipped fitness center, yoga studio, sauna, games lounge, courtyard, communal garden, outdoor shuffleboard, and more. Additional conveniences include underground parking, secure storage options and beautiful [outdoor spaces](https://lepineapartments.com/newsroom/beyond-concrete-jungles) for relaxation."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking is available for an extra cost per month."
+      },
+      {
+        "question": "How do I schedule a tour of the apartments?",
+        "answer": "To schedule a tour of our apartments in Kanata, simply contact us by contact form, phone or email. Our team will happily show you around the property and help you find your new rental apartment in Kanata."
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "What is the application process like to rent an apartment?",
+        "answer": "The application process is simple! Simply give us a call and we can either walk you through it or send you a lease application form for your apartment rental in Kanata."
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, please [contact our leasing office](#contactform)."
+      },
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "To schedule a tour of our Kanata apartment rentals, simply fill out our contact form, give us a call or send us an email."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": [
+      {
+        "question": "What makes Kanata a great place to live?",
+        "answer": "Kanata is a thriving and well-planned community that offers the perfect balance of city convenience and suburban charm. With great schools, excellent healthcare facilities, beautiful parks, and a vibrant social scene, it’s an ideal location for families, professionals, and empty nesters alike."
+      },
+      {
+        "question": "What is near Saint Émilion?",
+        "answer": "Saint Émilion is ideally located close to shopping centers, restaurants, recreational facilities, and essential services. You’re just minutes away from Kanata Centrum, Tanger Outlets, and top-rated schools. Plus, nature lovers will enjoy easy access to hiking trails, golf courses, and the South March Highlands."
+      },
+      {
+        "question": "Is Kanata a good place to raise a family?",
+        "answer": "Absolutely! Kanata is home to excellent schools, safe neighborhoods, and an abundance of parks and recreational facilities. From community events to youth sports leagues, there are plenty of opportunities for families to stay engaged and active."
+      },
+      {
+        "question": "Is Kanata easily accessible?",
+        "answer": "Yes, Kanata is well-connected to downtown Ottawa via Highway 417, and OC Transpo provides convenient bus routes for easy commuting. Whether you drive, bike, or take public transit, you’ll find getting around Kanata simple and efficient."
+      },
+      {
+        "question": "What is there to do in Kanata?",
+        "answer": "There’s always something happening in Kanata! Enjoy a concert or Ottawa Senators hockey game at the Canadian Tire Centre, explore the area’s parks and trails, spend the day shopping, or dine at one of the many delicious restaurants. Kanata also hosts community events, farmers' markets, and festivals throughout the year, ensuring there’s always something exciting to look forward to."
+      }
+    ]
+  }
+]

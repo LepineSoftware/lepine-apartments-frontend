@@ -1,0 +1,276 @@
+.infoCard {
+    display: flex;
+    flex-flow: column nowrap;
+
+    max-width: 348px;
+    width: 100%;
+    background: $c-white;
+    border-bottom: $border-gold;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    @include breakpointDown($bp-tablet-md) {
+        max-width: 300px;
+    }
+
+    h1, h2, p, img {
+        user-select: none;
+    }
+
+    &__media {
+        height: 270px;
+        position: relative;
+
+        &--video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+    
+            cursor: pointer;
+    
+            img {
+                height: 50px !important;
+                width: 50px !important;
+                object-fit: contain !important;
+                object-position: center;
+                transition: opacity 0.1s ease-in;
+            }
+    
+        }
+
+        @include mobileCardImageHeight();
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        padding: 25px;
+        height: 300px;
+
+        @include breakpointDown($bp-mobile-lg) {
+            padding: 25px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__date {
+        text-transform: uppercase;
+        @include datetimeTypography();
+        font-family: $f-futura;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+
+    &__author {
+        @include cardTypography();
+    }
+
+    &__copy {
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: pre-line;
+        @include cardTypography();
+        // opacity: 0;
+
+    }
+
+    &__link {
+        text-decoration: underline;
+        margin-top: auto;
+
+    }
+
+    &__properties {
+        display: none;
+        flex-flow: column nowrap;
+        margin-top: 25px;
+        row-gap: 10px;
+
+        @include breakpointDown($bp-mobile-lg) {
+            display: flex;
+        }
+    }
+
+    &__property {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
+
+        p {
+            font-family: 'Futura LT Medium', sans-serif;
+        }
+
+        &--link {
+            font-size: 14px;
+        }
+    }
+
+    &[data-card="testimonial"] {
+        border-bottom: none;
+        width: 391px;
+        height: auto;
+
+        .infoCard__title {
+            margin-bottom: 10px;
+        }
+
+        .infoCard__date {
+            margin-bottom: 10px;
+        }
+
+        .infoCard__media {
+            display: none;
+            height: 196px;
+
+            @include mobileCardImageHeight();
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            @include breakpointDown($bp-tablet-md) {
+                display: block;
+            }
+        }
+
+        .infoCard__content {
+            height: 368px;
+
+            @include breakpointDown($bp-mobile-md) {
+                height: 300px;
+            }
+        }
+    }
+
+    &[data-card="testimonialV2"] {
+        border-bottom: none;
+        width: 491px;
+        height: auto;
+        max-width: calc(100% - 10px) !important;
+
+        @include breakpointDown($bp-mobile-md) {
+            width: 348px !important;
+            max-width: unset !important;
+        }
+
+        .infoCard__title {
+            margin-bottom: 10px;
+        }
+
+        .infoCard__date {
+            margin-bottom: 10px;
+        }
+
+        .infoCard__media {
+            display: none;
+            height: 225px;
+
+            @include mobileCardImageHeight();
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            @include breakpointDown($bp-tablet-md) {
+                display: block;
+            }
+        }
+
+        .infoCard__content {
+            height: 368px;
+
+            @include breakpointDown($bp-mobile-md) {
+                height: 300px;
+            }
+        }
+    }
+
+    &[data-card="community"] {
+        border-bottom: none;
+        width: 391px;
+        height: auto;
+
+        @include breakpointDown($bp-mobile-lg) {
+            width: 250px;
+        }
+
+        .infoCard__content {
+            height: min-content;
+        }
+    }
+
+    &[data-card="newsroom"] {
+        width: 100%;
+        max-width: 450px;
+
+        @include breakpointUp($bp-mobile-lg) {
+            grid-column: span 1;
+            border-bottom: none;
+            box-shadow: none;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            width: 300px;
+        }
+
+        .infoCard__media {
+            width: 100%;
+            height: 300px;
+
+            @include breakpointDown($bp-tablet-md) {
+                height: 200px;
+            }
+        }
+
+        .infoCard__content {
+            height: 150px;
+            width: 100%;
+            padding: 10px;
+
+            @include breakpointDown($bp-mobile-lg) {
+               padding: 15px 25px;
+            }
+        }
+    }
+}

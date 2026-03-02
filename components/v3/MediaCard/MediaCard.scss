@@ -1,0 +1,575 @@
+.mediaCard {
+    border-radius: 5px;
+
+    h3 {
+        margin: 0;
+        // color: $c-white;
+        font-size: 18px !important;
+        line-height: 22px !important;
+        user-select: none;
+
+        @include breakpointDown($bp-tablet-sm) {
+            font-size: 16px !important;
+            line-height: 20px !important;
+        }
+    }
+
+    p, span {
+        user-select: none;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+    &__readMore {
+        // font-family: "Crimson Italic";
+        margin-top: auto;
+        margin-left: auto;
+    }
+
+    &__popup {
+        @include iframeContainer();
+
+        &--close {
+            @include iframeClose();
+        }
+    }
+}
+
+.mediaCard[data-type="modelSuites"] {
+    height: 500px;
+    row-gap: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    @include breakpointDown($bp-tablet-lg) {
+        width: 300px;
+    }
+
+    .mediaCard__bg {
+        background-position: center;
+        background-size: cover;
+        height: 250px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: $box-shadow;
+    }
+
+    .mediaCard__vr {
+        h3 { color: $c-white; }
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+
+        height: 50px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: $box-shadow;
+    }
+
+    .mediaCard__content {
+        height: 200px;
+        padding: 10px 25px;
+
+        row-gap: 10px;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: $c-white;
+        border-radius: 5px;
+        box-shadow: $box-shadow;
+
+        p {
+            color: #000;
+        }
+    }
+}
+
+.mediaCard[data-type="testimonials"] {
+    height: 400px;
+    width: 500px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
+    @include breakpointDown(800px) {
+        height: 500px;
+        width: 80vw;
+    }
+
+    @include breakpointDown(500px) {
+        row-gap: 10px;
+        height: 350px;
+    }
+
+
+    .mediaCard__image {
+        grid-column: 1 / 12;
+        grid-row: 1 / 9;
+        border-radius: 5px;
+        box-shadow: $box-shadow;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpointDown(800px) {
+            grid-row: 1 / 9;
+        }
+
+        @include breakpointDown(500px) {
+            grid-column: 1 / 13;
+            grid-row: 1 / 6;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
+
+    .mediaCard__icon {
+        height: 50px;
+        width: 50px;
+        padding-left: 2.5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: $c-lepineBrown;
+        opacity: 0.8;
+
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+        backdrop-filter: blur(10px);
+        transition: transform 0.25s ease-in-out;
+
+        &:active {
+            transform: translateY(2px);
+            transition: transform 0.25s ease-in-out;
+        }
+
+        img {
+            height: 25px;
+            width: 25px;
+            object-position: center;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+    }
+
+    .mediaCard__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 5px;
+
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: $box-shadow;
+        grid-column: 2 / 13;
+        grid-row: 7 / 13;
+        border-radius: 5px;
+        padding: 25px;
+
+        @include breakpointDown(800px) {
+            grid-row: 8 / 13;
+        }
+
+        @include breakpointDown(500px) {
+            grid-column: 1 / 13;
+            grid-row: 6 / 13;
+        }
+
+        // @include breakpointDown($bp-tablet-lg) {
+        //     padding: 10px;
+        // }
+    }
+}
+
+.mediaCard[data-type="propertyFeature"] {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    row-gap: 10px;
+    
+    height: 525px;
+    flex: 1 0 23%;
+    max-width: calc(25% - 25px);
+
+    @include breakpointDown($bp-tablet-md) {
+        height: 475px;
+        flex: 1 0 30%;
+        max-width: calc(33% - 25px);
+    }
+
+    @include breakpointDown($bp-tablet-sm) {
+        max-width: unset;
+        flex: unset;
+        width: 300px;
+    }
+
+
+    h3 {
+        color: $c-white !important;
+    }
+
+    .mediaCard__bg {
+        background-position: center;
+        background-size: cover;
+        height: 350px;
+        width: 100%;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: $box-shadow;
+            
+        @include breakpointDown($bp-tablet-md) {
+            height: 300px;
+        }
+    }
+
+    .mediaCard__icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 2;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        box-shadow: $box-shadow;
+        background: #5E514D;
+
+        .mediaCard__transparentBG {
+            border-radius: 50%;
+        }
+
+        svg {
+            height: 20px;
+            width: 20px;
+            z-index: 3;
+    
+            path {
+                fill: $c-white;
+                stroke: $c-white;
+            }
+        }
+    }
+
+    .mediaCard__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 10px;
+
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        flex: 1;
+        border-radius: 5px;
+
+        color: $c-white;
+        background: #5E514D;
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: $box-shadow;
+
+        h3, p {
+            z-index: 3;
+        }
+    }
+}
+
+.mediaCard[data-type="newsroom"] {
+    width: 100%;
+    height: 400px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 15px;
+    column-gap: 15px;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    overflow: hidden;
+
+
+    h4 {
+        color: $c-lepineDarkGrey1 !important;
+    }
+
+    .mediaCard__icon {
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 15px;
+
+        img {
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    .mediaCard__categories {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 5px;
+        column-gap: 5px;
+
+        @include breakpointDown($bp-tablet-sm) {
+            display: none;
+        }
+
+        &--item {
+            background: $c-lepineDarkGrey2;
+            color: $c-white;
+            padding: 0 10px;
+            border-radius: 5px;
+
+            p { font-size: 10px; }
+        }
+    }
+
+    .mediaCard__link {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .mediaCard__image {
+        height: 250px;
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            user-select: none;
+        }
+    }
+
+    .mediaCard__content {
+        width: 100%;
+        height: 200px;
+        padding: 0 15px 15px 15px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 5px;
+        user-select: none;
+        color: $c-lepineDarkGrey1;
+    }
+
+    .mediaCard__date {
+        color: $c-lepineDarkGrey2 !important;
+    }
+
+    .mediaCard__author {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 10px;
+        margin-top: auto;
+
+        &--block {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+
+            img {
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .mediaCard__caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 4;
+        opacity: 0;
+        padding: 25px;
+        box-sizing: border-box;
+        border-radius: 5px;
+
+        transition: all 0.1s ease-in-out;
+        word-wrap: break-word;
+
+        @include breakpointUp($bp-tablet-sm) {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            display: none;
+        }
+    }
+
+    .mediaCard__date {
+        color: $c-lepineDarkGrey1 !important;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+}
+
+.mediaCard[data-type="instagram"] {
+    position: relative;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    width: 280px;
+    height: 350px;
+
+    &:first-of-type {
+        margin-left: 25px;
+    }
+
+    &:last-of-type {
+        margin-right: 25px;
+    }
+
+    &:hover {
+        .mediaCard__image {
+            img {
+                @include breakpointUp($bp-tablet-sm) {
+                    transform: scale(1.5);
+                    transition: all 10s ease-in-out;    
+                }
+            }
+        }
+
+        .mediaCard__caption {
+            opacity: 1;
+            transition: all 0.1s ease-in-out;    
+        }
+    }
+
+    .mediaCard__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 15px;
+
+        img {
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    .mediaCard__link {
+        position: relative;
+        width: 280px;
+        height: 350px; 
+    }
+
+    .mediaCard__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+
+        transition: all 0.1s ease-in-out;
+        border-radius: 5px;
+
+
+        img {
+            width: 280px;
+            height: 350px; 
+            object-fit: cover;
+            object-position: center;
+            user-select: none;
+        }
+    }
+
+    .mediaCard__caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 280px;
+        max-height: 350px;
+        z-index: 4;
+        opacity: 0;
+        padding: 25px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+        word-wrap: break-word;
+        color: $c-white;
+
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: space-between;
+
+        @include breakpointUp($bp-tablet-sm) {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            display: none;
+        }
+    }
+}

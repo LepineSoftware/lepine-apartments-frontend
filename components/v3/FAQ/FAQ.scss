@@ -1,0 +1,213 @@
+.faqV3 {
+    position: relative;
+    min-height: calc(100vh - 105px);
+    
+    &__header {
+        text-align: center;
+        color: $c-white;
+        z-index: 2;
+    }
+
+    &__bg {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.1;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+        row-gap: 10px;
+        width: 100%;
+        border-radius: 5px;
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+
+
+        z-index: 2;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 25px;
+    }
+
+    &__btn {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        column-gap: 25px;
+        align-items: center;
+        background: $c-lepineBrownLight;
+        color: $c-white;
+        flex: 1 1 23%;
+        padding: 10px;
+        transition: 0.2s background;
+        border-radius: 5px;
+        height: 75px;
+        box-shadow: $box-shadow;
+        text-align: center;
+
+        cursor: pointer;
+
+        &.active {
+            transition: 0.2s background;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 15px;
+        }
+
+        &--icon {
+            height: 25px;
+            width: 25px;
+            border: 2.5px solid $c-white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 60%;
+                width: 60%;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            &.active {
+                background: $c-white;
+            }
+        }
+
+        h3 {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+            color: $c-white !important;
+
+        }
+
+        &--container {
+            display: flex;
+            flex-flow: row nowrap;
+            column-gap: 10px;
+            row-gap: 10px;
+            width: 100%;
+
+            @include breakpointDown($bp-tablet-md) {
+                flex-flow: column nowrap;
+            }
+        }
+    }
+
+    &__category {
+        width: 100%;
+
+        &--container {
+            display: flex;
+            width: 100%;
+        }
+
+        display: none;
+        flex-flow: column nowrap;
+        row-gap: 10px;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__item {
+        position: relative;
+        box-shadow: $box-shadow;
+
+        display: flex;
+        flex-flow: column nowrap;
+        column-gap: 10px;
+
+        border-radius: 5px;
+
+
+        &.active {
+            .faqV3__question {
+                background: #E1E1E1;
+                border-radius: 5px 5px 0 0;
+            }
+
+            .faqV3__answer {
+                display: block;
+                position: unset;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__question {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 25px;
+        background: $c-white;
+        border-radius: 5px;
+
+        h3 {
+            margin: 0;
+            color: #5e514d;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 15px;
+        }
+
+        &--icon {
+            height: 25px;
+            width: 25px;
+            border: 2.5px solid #5e514d;
+            font-size: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+
+        }
+    }
+
+    &__answer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+
+        display: none;
+        padding: 25px;
+        background: $c-white;
+
+        border-radius: 0 0 5px 5px;
+
+        a {
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        @include breakpointDown($bp-tablet-sm) {
+            padding: 15px;
+        }
+    }
+}

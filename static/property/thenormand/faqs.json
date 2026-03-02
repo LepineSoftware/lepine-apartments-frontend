@@ -1,0 +1,86 @@
+[
+  {
+    "category": "building",
+    "items": [
+      {
+        "question": "What amenities are included in my apartment rental in the building?",
+        "answer": "The Normand features a comprehensive array of amenities—from a fully-equipped fitness centre and yoga studio to a sauna, games lounge, communal garden, and outdoor shuffleboard. Residents also enjoy underground parking, secure storage, and beautifully landscaped spaces for relaxation."
+      },
+      {
+        "question": "Is the building smoke free?",
+        "answer": "Yes, all of our buildings are entirely smoke free."
+      },
+      {
+        "question": "Are pets allowed?",
+        "answer": "Yes, pets are welcome at Lépine Apartments! We welcome your furry friends, but residents must declare any pets on their application form and follow our pet policy. [Contact our leasing team](#contactform) for more details on our pet policy."
+      },
+      {
+        "question": "Is parking available?",
+        "answer": "Yes, indoor heated parking is available for an extra cost per month."
+      },
+      {
+        "question": "How do I schedule a tour of the apartments?",
+        "answer": "To schedule a tour of our apartments in Kanata, simply contact us by contact form, phone or email. Our team will happily show you around the property and help you find your new rental apartment in Kanata."
+      }
+    ]
+  },
+  {
+    "category": "suites",
+    "items": [
+      {
+        "question": "Do you offer furnished apartments?",
+        "answer": "We currently do not offer furnished suites."
+      },
+      {
+        "question": "Do the apartments come with private outdoor space?",
+        "answer": "Select suites come with a private outdoor terrace or balcony."
+      },
+      {
+        "question": "Are utilities included in the apartment rental?",
+        "answer": "Utilities are an extra monthly cost and are metered separately for your convenience."
+      },
+      {
+        "question": "Are the apartments air conditioned?",
+        "answer": "Yes, all suites offer individual climate-controlled heat pumps."
+      }
+    ]
+  },
+  {
+    "category": "application",
+    "items": [
+      {
+        "question": "What is the application process like to rent an apartment?",
+        "answer": "The application process is simple! Simply give us a call and we can either walk you through it or send you a lease application form for your apartment rental in Kanata."
+      },
+      {
+        "question": "What is the lease term?",
+        "answer": "The minimum lease term for our apartment rentals is 12 months but many of our residents sign multi-year leases. For more details or customized lease options, please [contact our leasing office](#contactform)."
+      },
+      {
+        "question": "How do I schedule a tour of the apartment?",
+        "answer": "To schedule a tour of our Kanata apartment rentals, simply fill out our contact form, give us a call or send us an email."
+      }
+    ]
+  },
+  {
+    "category": "location",
+    "items": [
+      {
+        "question": "What is near The Normand?",
+        "answer": "The Normand is ideally situated in a vibrant and well-connected part of Kanata. Just minutes away, you’ll find the Kanata Centrum Shopping Centre and Tanger Outlets, offering a wide range of retail stores, dining options, and entertainment. Essential services such as grocery stores, medical clinics, pharmacies, and banks are all conveniently nearby. Fitness enthusiasts will appreciate the close proximity to gyms, yoga studios, and walking trails. Whether you need to run errands or unwind after a long day, everything you need is just around the corner."
+      },
+      {
+        "question": "Is Kanata easily accessible?",
+        "answer": "Yes, Kanata is well-connected and commuter-friendly. With quick access to Highway 417, getting to downtown Ottawa or other parts of the city is seamless by car. Public transit is also convenient, with several major OC Transpo routes serving the area, including express options during peak hours. For those working in Ottawa’s tech hub or the city centre, living in Kanata offers the perfect balance of accessibility and tranquility."
+      },
+      {
+        "question": "Is Kanata a good place to raise a family?",
+        "answer": "Absolutely. Kanata is widely regarded as one of Ottawa’s most family-friendly communities. It’s home to some of the city's top-rated public and private schools, making it an excellent place for children to grow and thrive. The area features numerous parks, playgrounds, libraries, and community centres that offer recreational programming for all ages. Safe streets, active neighbourhood associations, and a strong sense of community make Kanata a welcoming environment for families."
+      },
+      {
+        "question": "What is there to do in Kanata?",
+        "answer": "Kanata offers a wide range of activities for residents of all interests. You can catch an NHL game or live concert at the Canadian Tire Centre. For outdoor lovers, there are scenic walking and biking trails, golf courses, and beautiful green spaces. Foodies can explore a growing number of restaurants, coffee shops, and craft breweries. You’ll also find a rich arts and culture scene with galleries, community events, and performances. Whether you're looking for a weekend adventure or a relaxing afternoon, Kanata has something to offer everyone."
+      }
+    ]
+  }
+]

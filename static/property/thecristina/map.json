@@ -1,0 +1,641 @@
+[
+  {
+    "id": 67,
+    "category": "restaurants",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 44.89814248,
+        "lng": -76.00625687,
+        "url": "location-restaurants-01.jpg",
+        "title": "The Station",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 11,
+        "driveTime": 1
+      },
+      {
+        "id": 2,
+        "lat": 44.90033449,
+        "lng": -76.02142624,
+        "url": "location-restaurants-02.jpg",
+        "title": "Shawarma On The Falls",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 2
+      },
+      {
+        "id": 3,
+        "lat": 44.90063488,
+        "lng": -76.02149394,
+        "url": "location-restaurants-03.jpg",
+        "title": "C'est Tout Bakery & Bistro",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 2
+      },
+      {
+        "id": 4,
+        "lat": 44.90154679,
+        "lng": -76.02011672,
+        "url": "location-restaurants-04.jpg",
+        "title": "Bowie's",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 8,
+        "driveTime": 1
+      },
+      {
+        "id": 5,
+        "lat": 44.9015754,
+        "lng": -76.01986695,
+        "url": "location-restaurants-05.jpg",
+        "title": "The Post Office Cocktail Bar",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 8,
+        "driveTime": 1
+      },
+      {
+        "id": 6,
+        "lat": 44.8987407,
+        "lng": -76.02119958,
+        "url": "location-restaurants-06.jpg",
+        "title": "The Lockmaster's Taphouse",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 7,
+        "driveTime": 2
+      },
+      {
+        "id": 7,
+        "lat": 44.9003803,
+        "lng": -76.02094177,
+        "url": "location-restaurants-07.jpg",
+        "title": "Boomtown Fusion Eatery",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 1
+      },
+      {
+        "id": 8,
+        "lat": 44.90256694,
+        "lng": -76.02205217,
+        "url": "location-restaurants-08.jpg",
+        "title": "Tim Hortons",
+        "bikeTime": 5,
+        "category": "restaurants",
+        "walkTime": 12,
+        "driveTime": 2
+      },
+      {
+        "id": 9,
+        "lat": 44.89956775,
+        "lng": -76.01912492,
+        "url": "location-restaurants-09.jpg",
+        "title": "Sagar Indian Cuisine Smiths Falls",
+        "bikeTime": 2,
+        "category": "restaurants",
+        "walkTime": 6,
+        "driveTime": 1
+      },
+      {
+        "id": 10,
+        "lat": 44.89898246,
+        "lng": -76.02000281,
+        "url": "location-restaurants-10.jpg",
+        "title": "Matty O'Shea's Pub",
+        "bikeTime": 2,
+        "category": "restaurants",
+        "walkTime": 6,
+        "driveTime": 1
+      },
+      {
+        "id": 11,
+        "lat": 44.90146241,
+        "lng": -76.02103178,
+        "url": "location-restaurants-11.jpg",
+        "title": "The Vault Eatery & Pub",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 2
+      },
+      {
+        "id": 12,
+        "lat": 44.89973003,
+        "lng": -76.02174243,
+        "url": "location-restaurants-12.jpg",
+        "title": "My Place Restaurant",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 2
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 66,
+    "category": "shopping",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 44.88253617,
+        "lng": -76.01525934,
+        "url": "location-shopping-01.jpg",
+        "title": "Food basics",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 11,
+        "driveTime": 1
+      },
+      {
+        "id": 2,
+        "lat": 44.89247157,
+        "lng": -76.0268008,
+        "url": "location-shopping-02.jpg",
+        "title": "Independent Grocer",
+        "bikeTime": 8,
+        "category": "shopping",
+        "walkTime": 23,
+        "driveTime": 4
+      },
+      {
+        "id": 3,
+        "lat": 44.89984533,
+        "lng": -76.02153462,
+        "url": "location-shopping-03.jpg",
+        "title": "Rexall",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 8,
+        "driveTime": 2
+      },
+      {
+        "id": 4,
+        "lat": 44.892224,
+        "lng": -76.03286023,
+        "url": "location-shopping-04.jpg",
+        "title": "Walmart",
+        "bikeTime": 9,
+        "category": "shopping",
+        "walkTime": 27,
+        "driveTime": 5
+      },
+      {
+        "id": 5,
+        "lat": 44.88838531,
+        "lng": -76.01896115,
+        "url": "location-shopping-05.jpg",
+        "title": "M&M Food Market",
+        "bikeTime": 8,
+        "category": "shopping",
+        "walkTime": 23,
+        "driveTime": 4
+      },
+      {
+        "id": 6,
+        "lat": 44.89166121,
+        "lng": -76.02886287,
+        "url": "location-shopping-06.jpg",
+        "title": "Canadian Tire",
+        "bikeTime": 9,
+        "category": "shopping",
+        "walkTime": 24,
+        "driveTime": 4
+      },
+      {
+        "id": 7,
+        "lat": 44.89060951,
+        "lng": -76.02973754,
+        "url": "location-shopping-07.jpg",
+        "title": "LCBO",
+        "bikeTime": 9,
+        "category": "shopping",
+        "walkTime": 27,
+        "driveTime": 5
+      },
+      {
+        "id": 8,
+        "lat": 44.90114243,
+        "lng": -76.02053144,
+        "url": "location-shopping-08.jpg",
+        "title": "Modern Thymes Natural Foods",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 9,
+        "driveTime": 1
+      },
+      {
+        "id": 9,
+        "lat": 44.8984299,
+        "lng": -76.01881306,
+        "url": "location-shopping-09.jpg",
+        "title": "Giant Tiger",
+        "bikeTime": 2,
+        "category": "shopping",
+        "walkTime": 5,
+        "driveTime": 1
+      },
+      {
+        "id": 10,
+        "lat": 44.90126294,
+        "lng": -76.02060918,
+        "url": "location-shopping-10.jpg",
+        "title": "The Craft Witch",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 9,
+        "driveTime": 1
+      },
+      {
+        "id": 11,
+        "lat": 44.90152778,
+        "lng": -76.02067928,
+        "url": "location-shopping-11.jpg",
+        "title": "Special Greetings Card & Gift Shop",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 9,
+        "driveTime": 2
+      },
+      {
+        "id": 12,
+        "lat": 44.90150865,
+        "lng": -76.02206113,
+        "url": "location-shopping-12.jpg",
+        "title": "Shoppers Drug Mart",
+        "bikeTime": 4,
+        "category": "shopping",
+        "walkTime": 10,
+        "driveTime": 2
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 62,
+    "category": "lifestyle",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 44.8825136,
+        "lng": -76.01556447,
+        "url": "location-lifestyle-01.jpg",
+        "title": "Degrees Brewing Company",
+        "bikeTime": 9,
+        "category": "lifestyle",
+        "walkTime": 33,
+        "driveTime": 5
+      },
+      {
+        "id": 2,
+        "lat": 44.85845916,
+        "lng": -76.03265237,
+        "url": "location-lifestyle-02.jpg",
+        "title": "Smiths Falls Golf & Country Club",
+        "bikeTime": 20,
+        "category": "lifestyle",
+        "walkTime": 1,
+        "driveTime": 8
+      },
+      {
+        "id": 3,
+        "lat": 44.88270314,
+        "lng": -76.01803131,
+        "url": "location-lifestyle-03.jpg",
+        "title": "Precision Hair Design",
+        "bikeTime": 10,
+        "category": "lifestyle",
+        "walkTime": 30,
+        "driveTime": 4
+      },
+      {
+        "id": 4,
+        "lat": 44.8902167,
+        "lng": -76.00559941,
+        "url": "location-lifestyle-04.jpg",
+        "title": "Curling & Squash Club",
+        "bikeTime": 4,
+        "category": "lifestyle",
+        "walkTime": 17,
+        "driveTime": 2
+      },
+      {
+        "id": 5,
+        "lat": 44.91251823,
+        "lng": -76.02386531,
+        "url": "location-lifestyle-05.jpg",
+        "title": "Via Rail Station",
+        "bikeTime": 9,
+        "category": "lifestyle",
+        "walkTime": 26,
+        "driveTime": 3
+      },
+      {
+        "id": 6,
+        "lat": 44.90321966,
+        "lng": -76.02130538,
+        "url": "location-lifestyle-06.jpg",
+        "title": "Smiths falls Public Library",
+        "bikeTime": 4,
+        "category": "lifestyle",
+        "walkTime": 12,
+        "driveTime": 2
+      },
+      {
+        "id": 7,
+        "lat": 44.88245929,
+        "lng": -76.01551193,
+        "url": "location-lifestyle-07.jpg",
+        "title": "Dentistry at Smiths Falls",
+        "bikeTime": 9,
+        "category": "lifestyle",
+        "walkTime": 33,
+        "driveTime": 5
+      },
+      {
+        "id": 8,
+        "lat": 44.89084348,
+        "lng": -76.00504308,
+        "url": "location-lifestyle-08.jpg",
+        "title": "Smiths Falls Heritage House",
+        "bikeTime": 4,
+        "category": "lifestyle",
+        "walkTime": 16,
+        "driveTime": 2
+      },
+      {
+        "id": 9,
+        "lat": 44.89714367,
+        "lng": -76.02076609,
+        "url": "location-lifestyle-09.jpg",
+        "title": "Smiths Falls Combined Lockstation Lock 29a",
+        "bikeTime": 4,
+        "category": "lifestyle",
+        "walkTime": 10,
+        "driveTime": 2
+      },
+      {
+        "id": 10,
+        "lat": 44.90590297,
+        "lng": -76.02722652,
+        "url": "location-lifestyle-10.jpg",
+        "title": "Smiths Falls Memorial Community Centre",
+        "bikeTime": 7,
+        "category": "lifestyle",
+        "walkTime": 20,
+        "driveTime": 3
+      },
+      {
+        "id": 11,
+        "lat": 44.89922786,
+        "lng": -76.02127009,
+        "url": "location-lifestyle-11.jpg",
+        "title": "Strands Salon Spa",
+        "bikeTime": 3,
+        "category": "lifestyle",
+        "walkTime": 8,
+        "driveTime": 2
+      },
+      {
+        "id": 12,
+        "lat": 44.90148869,
+        "lng": -76.02069847,
+        "url": "location-lifestyle-12.jpg",
+        "title": "The Blue Door Spa",
+        "bikeTime": 3,
+        "category": "lifestyle",
+        "walkTime": 9,
+        "driveTime": 1
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 65,
+    "category": "transit",
+    "mapItems": null,
+    "items": []
+  },
+  {
+    "id": 64,
+    "category": "parksandtrails",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 44.89085101,
+        "lng": -76.00856213,
+        "url": "location-parks-01.jpg",
+        "title": "Lower Reach Park",
+        "bikeTime": 4,
+        "category": "parksandtrails",
+        "walkTime": 18,
+        "driveTime": 3
+      },
+      {
+        "id": 2,
+        "lat": 44.88912361,
+        "lng": -76.00549904,
+        "url": "location-parks-02.jpg",
+        "title": "Gleeson Park",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 19,
+        "driveTime": 3
+      },
+      {
+        "id": 3,
+        "lat": 44.89659806,
+        "lng": -76.01899068,
+        "url": "location-parks-03.jpg",
+        "title": "Smiths Falls Heritage Trail",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 14,
+        "driveTime": 3
+      },
+      {
+        "id": 4,
+        "lat": 44.8959967,
+        "lng": -76.02421505,
+        "url": "location-parks-04.jpg",
+        "title": "Victoria Park Marina & Visitor Centre",
+        "bikeTime": 6,
+        "category": "parksandtrails",
+        "walkTime": 15,
+        "driveTime": 3
+      },
+      {
+        "id": 5,
+        "lat": 44.89648121,
+        "lng": -76.02649224,
+        "url": "location-parks-05.jpg",
+        "title": "Lock Island",
+        "bikeTime": 6,
+        "category": "parksandtrails",
+        "walkTime": 18,
+        "driveTime": 4
+      },
+      {
+        "id": 6,
+        "lat": 44.89742991,
+        "lng": -76.02096458,
+        "url": "location-parks-06.jpg",
+        "title": "Veterans' Memorial Park",
+        "bikeTime": 4,
+        "category": "parksandtrails",
+        "walkTime": 10,
+        "driveTime": 2
+      },
+      {
+        "id": 7,
+        "lat": 44.89705641,
+        "lng": -76.02519022,
+        "url": "location-parks-07.jpg",
+        "title": "Turtle Island",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 15,
+        "driveTime": 3
+      },
+      {
+        "id": 8,
+        "lat": 44.89727669,
+        "lng": -76.02297951,
+        "url": "location-parks-08.jpg",
+        "title": "Centennial Park",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 13,
+        "driveTime": 3
+      },
+      {
+        "id": 9,
+        "lat": 44.90157055,
+        "lng": -76.01175783,
+        "url": "location-parks-09.jpg",
+        "title": "Sussex Little League Diamond",
+        "bikeTime": 2,
+        "category": "parksandtrails",
+        "walkTime": 7,
+        "driveTime": 1
+      },
+      {
+        "id": 10,
+        "lat": 44.90606065,
+        "lng": -76.02512251,
+        "url": "location-parks-10.jpg",
+        "title": "Gerry Lowe Memorial Park",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 16,
+        "driveTime": 2
+      },
+      {
+        "id": 11,
+        "lat": 44.89010258,
+        "lng": -76.0305502,
+        "url": "location-parks-11.jpg",
+        "title": "Cataraqui Trail",
+        "bikeTime": 9,
+        "category": "parksandtrails",
+        "walkTime": 27,
+        "driveTime": 5
+      },
+      {
+        "id": 12,
+        "lat": 44.88427452,
+        "lng": -75.93073619,
+        "url": "location-parks-12.jpg",
+        "title": "Rideau Canal, Lock 24 - Kilmarnock",
+        "bikeTime": 28,
+        "category": "parksandtrails",
+        "walkTime": 1,
+        "driveTime": 9
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 63,
+    "category": "education",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 44.90910871,
+        "lng": -76.02594918,
+        "url": "location-education-01.jpg",
+        "title": "Rideau Child Care Centre",
+        "bikeTime": 7,
+        "walkTime": 23,
+        "driveTime": 4
+      },
+      {
+        "id": 2,
+        "lat": 44.90391159,
+        "lng": -76.0216085,
+        "url": "location-education-02.jpg",
+        "title": "Tiny Monkeys Child Care",
+        "bikeTime": 4,
+        "walkTime": 12,
+        "driveTime": 1
+      },
+      {
+        "id": 3,
+        "lat": 44.88673237,
+        "lng": -76.02094887,
+        "url": "location-education-03.jpg",
+        "title": "St. Francis de Sales Catholic School",
+        "bikeTime": 12,
+        "walkTime": 29,
+        "driveTime": 4
+      },
+      {
+        "id": 4,
+        "lat": 44.89330713,
+        "lng": -76.01878194,
+        "url": "location-education-04.jpg",
+        "title": "St. James Catholic Education Centre",
+        "bikeTime": 7,
+        "walkTime": 19,
+        "driveTime": 4
+      },
+      {
+        "id": 5,
+        "lat": 44.9007094,
+        "lng": -76.01737785,
+        "url": "location-education-05.jpg",
+        "title": "Nursery Rhyme Daycare",
+        "bikeTime": 2,
+        "walkTime": 5,
+        "driveTime": 1
+      },
+      {
+        "id": 6,
+        "lat": 44.88680739,
+        "lng": -76.01627206,
+        "url": "location-education-06.jpg",
+        "title": "Chimo Elementary School",
+        "bikeTime": 11,
+        "walkTime": 30,
+        "driveTime": 4
+      },
+      {
+        "id": 7,
+        "lat": 44.89888107,
+        "lng": -76.01147518,
+        "url": "location-education-07.jpg",
+        "title": "Duncan J. Schoular Public School",
+        "bikeTime": 2,
+        "walkTime": 5,
+        "driveTime": 1
+      }
+    ],
+    "items": []
+  }
+]

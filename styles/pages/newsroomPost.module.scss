@@ -1,0 +1,45 @@
+// styles/pages/blogPost.module.scss
+
+// 1. Configuration
+@import "../generic/variables";
+@import "../generic/mixins";
+
+// 2. Scoped Styles
+.newsroomPostWrapper {
+    :global {
+        // --- Generics & Base ---
+        @import "../generic/base";
+        @import "../generic/globals";
+        @import "../generic/fonts";
+        @import "../generic/animations";
+        @import "../generic/swiper";
+
+        // --- Page Sections ---
+        @import "../sections/footer";
+        @import "../sections/newsroom"; // Critical: Likely contains .newsroomPopup styles
+
+        // --- Global Components ---
+        @import "../components/container";
+        @import "../components/btn";
+        @import "../components/popup"; // Critical: Base popup styles
+        @import "../components/imageBlock";
+        @import "../components/imageCard";
+        @import "../components/infoCard";
+
+        // --- V2 Components ---
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/NeighbourhoodCard/NeighbourhoodCard";
+        @import "../../components/v2/V2misc";
+
+        // --- V3 Components ---
+        // Note: Use of MediaCard or NewsroomSection is rare inside the post itself 
+        // unless you have "Related Posts" using those components. 
+        // Including them avoids breakage if they are added later.
+        @import "../../components/v3/MediaCard/MediaCard";
+
+        // --- Overrides ---
+        @import "../2025";
+    }
+}

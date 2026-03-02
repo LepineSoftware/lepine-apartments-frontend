@@ -1,0 +1,68 @@
+{
+  "propertiesSection": {
+    "header": "Find Your Lifestyle Match",
+    "copy": "Don't just choose a building; choose your daily experience. From the tech hubs of Kanata to the heritage charm of the Rideau, there is a Lépine standard tailored to you.",
+    "properties": [
+      {
+        "id": "kanata-lakes",
+        "header": "Kanata Lakes: The Tech & Transit Hub",
+        "sub": "Best for: High-Growth Professionals",
+        "lifestyleHook": "Zero-commute luxury for the Silicon Valley North workforce.",
+        "localBestOf": [
+          "Walkable to: The South March Highlands Innovation District.",
+          "Weekend Perk: Premier shopping at Tanger Outlets.",
+          "The Lifestyle: Urban energy meets world-class trail networks."
+        ],
+        "copy": "<strong>Carré Saint Louis</strong> offers the urban amenities you love without the density of downtown. Minutes from Canada's largest tech park.",
+        "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/04484d9fe87d9e94ec2ed5972962ed27.jpg",
+        "btnText": "Visit Carré Saint Louis",
+        "btnHref": "/property/carresaintlouis"
+      },
+      {
+        "id": "renfrew",
+        "header": "Renfrew: The Valley’s Premier Retreat",
+        "sub": "Best for: Nature Seekers & Rightsizers",
+        "lifestyleHook": "Bungalow-sized luxury with the Ottawa Valley as your backyard.",
+        "localBestOf": [
+          "Local Treasure: Scenic walks at the swinging bridge.",
+          "Hidden Gem: Fresh local produce at the Renfrew Farmers' Market.",
+          "The Lifestyle: Quiet, community-focused living with zero maintenance."
+        ],
+        "copy": "<strong>Lépine Lodge</strong> offers the serenity of the Ottawa Valley. Enjoy bungalow-sized layouts with high-end finishes.",
+        "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/13cfa28dd32372cf988b3ec1c5b26b71.jpg",
+        "btnText": "Visit Lépine Lodge",
+        "btnHref": "/property/lepinelodge"
+      },
+      {
+        "id": "carleton-place",
+        "header": "Carleton Place: Riverfront Sophistication",
+        "sub": "Best for: Small-Town Heritage Lovers",
+        "lifestyleHook": "Steps from the Mississippi River and downtown heritage charm.",
+        "localBestOf": [
+          "Coffee Stop: Boutique cafes on Bridge Street.",
+          "Evening Plan: Sunset paddles on the Mississippi River.",
+          "The Lifestyle: Boutique living in Ontario’s fastest-growing town."
+        ],
+        "copy": "<strong>Johannes Gardens</strong> offers a serene riverfront lifestyle just steps from Carleton Place’s vibrant heritage downtown.",
+        "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/e619e1761b07576473bb5e52d2faafb0.jpg",
+        "btnText": "Visit Johannes Gardens",
+        "btnHref": "/property/johannesgardens"
+      },
+      {
+        "id": "smiths-falls",
+        "header": "Smiths Falls: Gateway to the Rideau",
+        "sub": "Best for: Boaters & History Buffs",
+        "lifestyleHook": "Luxury at the heart of a UNESCO World Heritage site.",
+        "localBestOf": [
+          "Must-See: The historic Rideau Canal locks system.",
+          "Local Brew: Artisan pints at 4 Degrees Brewing Company.",
+          "The Lifestyle: All-inclusive resort living in a historic canal town."
+        ],
+        "copy": "<strong>The Cristina</strong> features bungalow-sized suites and resort-style amenities at the heart of Smiths Falls.",
+        "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/ba3991d85fafa544cd4d7f29950be1e1.jpg",
+        "btnText": "Visit The Cristina",
+        "btnHref": "/property/thecristina"
+      }
+    ]
+  }
+}

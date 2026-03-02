@@ -1,0 +1,136 @@
+.btn {
+    @include btnDefault();
+    transition: background 0.2s;
+    cursor: pointer;
+    user-select: none;
+
+    .underline {
+        font-family: "Futura LT Medium", sans-serif;
+        font-size: 16px;
+    }
+    
+    &__reset {
+        height: 100%;
+        width: 100%;
+        
+        span {
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: underline;
+            color: $c-white;
+        }
+    }
+
+    &Red {
+        background: #dc3545;
+        border: 2px solid #dc3545;
+
+        &:hover {
+            background: #dc3545;
+            color: $c-white;
+            border: 2px solid darken(#dc3545, 10%);
+            cursor: pointer;
+            background: darken(#dc3545, 10%);
+        }
+    }
+
+    &White {
+        background: transparent;
+        border: 2px solid #fff;
+        color: $c-white;
+
+        &:hover {
+            background: transparent;
+            cursor: pointer;
+            color: $c-white;
+        }
+    }
+
+    &Green {
+        background: #28a745;
+        border: 2px solid #28a745;
+
+        &[data-disabled="true"] {
+            cursor: not-allowed;
+            border: 2px solid lighten(#28a745, 25%);
+            background: lighten(#28a745, 25%);
+            &:hover {
+                cursor: not-allowed;
+                background: lighten(#28a745, 25%);
+                border: 2px solid lighten(#28a745, 25%);
+            }
+        }
+
+        &:hover {
+            background: #28a745;
+            color: $c-white;
+            border: 2px solid darken(#28a745, 10%);
+            cursor: pointer;
+            background: darken(#28a745, 10%);
+        }
+    }
+
+    &Blue {
+        background: #007bff;
+        border: 2px solid #007bff;
+
+        &.active {
+            background: #007bff;
+            color: $c-white;
+            border: 2px solid darken(#007bff, 10%);
+            cursor: pointer;
+            background: darken(#007bff, 10%);
+        }
+
+        &:hover {
+            background: #007bff;
+            color: $c-white;
+            border: 2px solid darken(#007bff, 10%);
+            cursor: pointer;
+            background: darken(#007bff, 10%);
+        }
+
+        &[data-disabled="true"] {
+            cursor: not-allowed;
+            border: 2px solid lighten(#007bff, 25%);
+            background: lighten(#007bff, 25%);
+            &:hover {
+                cursor: not-allowed;
+                background: lighten(#007bff, 25%);
+                border: 2px solid lighten(#007bff, 25%);
+            }
+        }
+    }
+
+    &Orange {
+        background: #ffc107;
+        border: 2px solid #ffc107;
+
+        &:hover {
+            background: #ffc107;
+            color: $c-white;
+            border: 2px solid darken(#ffc107, 10%);
+            cursor: pointer;
+            background: darken(#ffc107, 10%);
+        }
+    }
+}
+
+.container[data-page="herosRidge"] {
+    .footer {
+        background: $c-herosRidgeRed;
+    }
+    
+    .btn {
+        background: $c-herosRidgeGold;
+        border: 1px solid $c-herosRidgeGold;
+    
+        font-weight: 600;
+        text-transform: unset !important;
+    
+        &:hover {
+            background: transparent;
+            color: $c-herosRidgeGold;
+        }
+    }
+}

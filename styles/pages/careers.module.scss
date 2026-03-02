@@ -1,0 +1,49 @@
+// styles/pages/careers.module.scss
+
+// 1. Configuration
+@import "../generic/variables";
+@import "../generic/mixins";
+
+// 2. Scoped Styles
+.careersWrapper {
+    :global {
+        // --- Generics & Base ---
+        @import "../generic/base";
+        @import "../generic/globals";
+        @import "../generic/fonts";
+        @import "../generic/animations";
+        @import "../generic/swiper";
+
+        // --- Page Sections ---
+        @import "../sections/footer";
+        @import "../sections/newsroom"; // Core newsroom layout styles
+        @import "../../sections/Newsroom/Newsroom.scss"; // Core newsroom layout styles
+        @import "../../components/v3/NewsroomSection/NewsroomSection";
+
+        // --- Global Components ---
+        @import "../components/container";
+        @import "../components/btn";
+        @import "../components/popup";
+        @import "../components/hero";
+        @import "../components/imageBlock";
+        @import "../components/imageCard";
+        @import "../components/infoCard";
+        @import "../components/blogCard"; // Often used within newsroom grids
+        @import "../components/suites"; // Common dependency
+        @import "../components/themes"; // CRITICAL: Handles .themeHeader, .themeBG used in Instagram/Newsroom
+
+        // --- V2 Components ---
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/V2misc";
+        @import "../../components/v3/MediaCard/MediaCard.scss";
+        @import "../../components/v3/InstagramFeed/InstagramFeed.scss";
+        @import "../../components/v2/TranslucentButton/TranslucentButton.scss";
+
+        // --- V3 Components ---
+
+        // --- Overrides ---
+        @import "../2025";
+    }
+}

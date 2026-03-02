@@ -1,0 +1,696 @@
+[
+  {
+    "id": 23,
+    "category": "restaurants",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 45.27438851,
+        "lng": -75.74819176,
+        "url": "location-restaurants-01.jpg",
+        "title": "Starbucks",
+        "bikeTime": 5,
+        "category": "restaurants",
+        "walkTime": 13,
+        "driveTime": 5
+      },
+      {
+        "id": 2,
+        "lat": 45.27408179,
+        "lng": -75.74796578,
+        "url": "location-restaurants-02.jpg",
+        "title": "Barley Mow",
+        "bikeTime": 5,
+        "category": "restaurants",
+        "walkTime": 12,
+        "driveTime": 3
+      },
+      {
+        "id": 3,
+        "lat": 45.27300718,
+        "lng": -75.74734223,
+        "url": "location-restaurants-03.jpg",
+        "title": "Boston Pizza",
+        "bikeTime": 5,
+        "category": "restaurants",
+        "walkTime": 11,
+        "driveTime": 3
+      },
+      {
+        "id": 4,
+        "lat": 45.268807,
+        "lng": -75.74498271,
+        "url": "location-restaurants-04.jpg",
+        "title": "Fiazza Fresh Fired",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 10,
+        "driveTime": 4
+      },
+      {
+        "id": 5,
+        "lat": 45.26989803,
+        "lng": -75.74347243,
+        "url": "location-restaurants-05.jpg",
+        "title": "Sushi Shop",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 8,
+        "driveTime": 3
+      },
+      {
+        "id": 6,
+        "lat": 45.26927018,
+        "lng": -75.73879384,
+        "url": "location-restaurants-06.jpg",
+        "title": "Presotea",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 3
+      },
+      {
+        "id": 7,
+        "lat": 45.26904289,
+        "lng": -75.73941522,
+        "url": "location-restaurants-07.jpg",
+        "title": "Phở Thi Fusion",
+        "bikeTime": 4,
+        "category": "restaurants",
+        "walkTime": 9,
+        "driveTime": 3
+      },
+      {
+        "id": 8,
+        "lat": 45.27742556,
+        "lng": -75.74862299,
+        "url": "location-restaurants-08.jpg",
+        "title": "Mad Radish",
+        "bikeTime": 6,
+        "category": "restaurants",
+        "walkTime": 17,
+        "driveTime": 4
+      },
+      {
+        "id": 9,
+        "lat": 45.27682212,
+        "lng": -75.74968101,
+        "url": "location-restaurants-09.jpg",
+        "title": "Chocolats Favoris",
+        "bikeTime": 6,
+        "category": "restaurants",
+        "walkTime": 17,
+        "driveTime": 4
+      },
+      {
+        "id": 10,
+        "lat": 45.27528415,
+        "lng": -75.73698578,
+        "url": "location-restaurants-10.jpg",
+        "title": "The Baker",
+        "bikeTime": 3,
+        "category": "restaurants",
+        "walkTime": 7,
+        "driveTime": 2
+      },
+      {
+        "id": 11,
+        "lat": 45.26489666,
+        "lng": -75.7774013,
+        "url": "location-restaurants-11.jpg",
+        "title": "Cafe Cristal",
+        "bikeTime": 14,
+        "category": "restaurants",
+        "walkTime": 1,
+        "driveTime": 7
+      },
+      {
+        "id": 12,
+        "lat": 45.27642428,
+        "lng": -75.74928887,
+        "url": "location-restaurants-12.jpg",
+        "title": "Browns Socialhouse Barrhaven",
+        "bikeTime": 6,
+        "category": "restaurants",
+        "walkTime": 16,
+        "driveTime": 4
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 25,
+    "category": "shopping",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 45.26984378,
+        "lng": -75.7392141,
+        "url": "location-shopping-01.jpg",
+        "title": "Sport Check",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 8,
+        "driveTime": 3
+      },
+      {
+        "id": 2,
+        "lat": 45.26998869,
+        "lng": -75.73948764,
+        "url": "location-shopping-02.jpg",
+        "title": "Indigo",
+        "bikeTime": 3,
+        "category": "shopping",
+        "walkTime": 7,
+        "driveTime": 3
+      },
+      {
+        "id": 3,
+        "lat": 45.26899923,
+        "lng": -75.74189932,
+        "url": "location-shopping-03.jpg",
+        "title": "LCBO",
+        "bikeTime": 4,
+        "category": "shopping",
+        "walkTime": 9,
+        "driveTime": 3
+      },
+      {
+        "id": 4,
+        "lat": 45.26812258,
+        "lng": -75.74335127,
+        "url": "location-shopping-04.jpg",
+        "title": "Loblaws",
+        "bikeTime": 5,
+        "category": "shopping",
+        "walkTime": 11,
+        "driveTime": 4
+      },
+      {
+        "id": 5,
+        "lat": 45.26755828,
+        "lng": -75.74962172,
+        "url": "location-shopping-05.jpg",
+        "title": "Best Buy",
+        "bikeTime": 6,
+        "category": "shopping",
+        "walkTime": 14,
+        "driveTime": 4
+      },
+      {
+        "id": 6,
+        "lat": 45.26720369,
+        "lng": -75.75082237,
+        "url": "location-shopping-06.jpg",
+        "title": "Home Depot",
+        "bikeTime": 6,
+        "category": "shopping",
+        "walkTime": 14,
+        "driveTime": 4
+      },
+      {
+        "id": 7,
+        "lat": 45.26820491,
+        "lng": -75.75118514,
+        "url": "location-shopping-07.jpg",
+        "title": "Shoppers Drug Mart",
+        "bikeTime": 6,
+        "category": "shopping",
+        "walkTime": 15,
+        "driveTime": 4
+      },
+      {
+        "id": 8,
+        "lat": 45.27222988,
+        "lng": -75.74567322,
+        "url": "location-shopping-08.jpg",
+        "title": "Canadian Tire",
+        "bikeTime": 4,
+        "category": "shopping",
+        "walkTime": 8,
+        "driveTime": 3
+      },
+      {
+        "id": 9,
+        "lat": 45.26794152,
+        "lng": -75.74408334,
+        "url": "location-shopping-09.jpg",
+        "title": "HomeSense",
+        "bikeTime": 4,
+        "category": "shopping",
+        "walkTime": 11,
+        "driveTime": 4
+      },
+      {
+        "id": 10,
+        "lat": 45.27410408,
+        "lng": -75.74715184,
+        "url": "location-shopping-10.jpg",
+        "title": "Farm Boy",
+        "bikeTime": 5,
+        "category": "shopping",
+        "walkTime": 11,
+        "driveTime": 4
+      },
+      {
+        "id": 11,
+        "lat": 45.27112653,
+        "lng": -75.78344425,
+        "url": "location-shopping-11.jpg",
+        "title": "Marshalls",
+        "bikeTime": 17,
+        "category": "shopping",
+        "walkTime": 1,
+        "driveTime": 9
+      },
+      {
+        "id": 12,
+        "lat": 45.27021769,
+        "lng": -75.74567537,
+        "url": "location-shopping-12.jpg",
+        "title": "Hallmark Davis Agency",
+        "bikeTime": 4,
+        "category": "shopping",
+        "walkTime": 7,
+        "driveTime": 4
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 22,
+    "category": "lifestyle",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 45.27737168,
+        "lng": -75.74856424,
+        "url": "location-lifestyle-01.jpg",
+        "title": "Yoga town",
+        "bikeTime": 6,
+        "category": "lifestyle",
+        "walkTime": 17,
+        "driveTime": 4
+      },
+      {
+        "id": 2,
+        "lat": 45.26897788,
+        "lng": -75.74019427,
+        "url": "location-lifestyle-02.jpg",
+        "title": "Cineplex Theatres",
+        "bikeTime": 4,
+        "category": "lifestyle",
+        "walkTime": 9,
+        "driveTime": 3
+      },
+      {
+        "id": 3,
+        "lat": 45.26825418,
+        "lng": -75.7470086,
+        "url": "location-lifestyle-03.jpg",
+        "title": "Barrhaven Dental Care",
+        "bikeTime": 5,
+        "category": "lifestyle",
+        "walkTime": 12,
+        "driveTime": 4
+      },
+      {
+        "id": 4,
+        "lat": 45.28259265,
+        "lng": -75.76221132,
+        "url": "location-lifestyle-04.jpg",
+        "title": "Barrhaven Tennis Club",
+        "bikeTime": 12,
+        "category": "lifestyle",
+        "walkTime": 1,
+        "driveTime": 6
+      },
+      {
+        "id": 5,
+        "lat": 45.25318948,
+        "lng": -75.72247171,
+        "url": "location-lifestyle-05.jpg",
+        "title": "Stonebridge Golf Club",
+        "bikeTime": 13,
+        "category": "lifestyle",
+        "walkTime": 1,
+        "driveTime": 6
+      },
+      {
+        "id": 6,
+        "lat": 45.27981518,
+        "lng": -75.76173696,
+        "url": "location-lifestyle-06.jpg",
+        "title": "Ottawa Public Library - Ruth E. Dickinson",
+        "bikeTime": 7,
+        "category": "lifestyle",
+        "walkTime": 32,
+        "driveTime": 6
+      },
+      {
+        "id": 7,
+        "lat": "45.27180402803121, -75.740867130417",
+        "lng": "",
+        "url": "location-lifestyle-07.jpg",
+        "title": "Regal Nails, Salon & Spa (Barrhaven)",
+        "bikeTime": 3,
+        "category": "lifestyle",
+        "walkTime": 4,
+        "driveTime": 3
+      },
+      {
+        "id": 8,
+        "lat": 45.27378652,
+        "lng": -75.74667291,
+        "url": "location-lifestyle-08.jpg",
+        "title": "ICONS salon",
+        "bikeTime": 5,
+        "category": "lifestyle",
+        "walkTime": 11,
+        "driveTime": 4
+      },
+      {
+        "id": 9,
+        "lat": 45.26839552,
+        "lng": -75.74112254,
+        "url": "location-lifestyle-09.jpg",
+        "title": "exhālō spa",
+        "bikeTime": 4,
+        "category": "lifestyle",
+        "walkTime": 10,
+        "driveTime": 3
+      },
+      {
+        "id": 10,
+        "lat": 45.27484536,
+        "lng": -75.75856422,
+        "url": "location-lifestyle-10.jpg",
+        "title": "Hair by Jess",
+        "bikeTime": 9,
+        "category": "lifestyle",
+        "walkTime": 27,
+        "driveTime": 6
+      },
+      {
+        "id": 11,
+        "lat": 45.27717147,
+        "lng": -75.74845901,
+        "url": "location-lifestyle-11.jpg",
+        "title": "Orange Theory",
+        "bikeTime": 9,
+        "category": "lifestyle",
+        "walkTime": 31,
+        "driveTime": 5
+      },
+      {
+        "id": 12,
+        "lat": 45.27756196,
+        "lng": -75.74866979,
+        "url": "location-lifestyle-12.jpg",
+        "title": "Holistic Wellness Physiotherapy",
+        "bikeTime": 6,
+        "category": "lifestyle",
+        "walkTime": 17,
+        "driveTime": 4
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 24,
+    "category": "transit",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 45.27189925,
+        "lng": -75.73793438,
+        "url": "location-transit-01.jpg",
+        "title": "Maketplace station",
+        "bikeTime": 2,
+        "category": "transit",
+        "walkTime": 5,
+        "driveTime": 1
+      },
+      {
+        "id": 2,
+        "lat": 45.27055689,
+        "lng": -75.74142391,
+        "url": "location-transit-02.jpg",
+        "title": "Marketplace riocan",
+        "bikeTime": 2,
+        "category": "transit",
+        "walkTime": 4,
+        "driveTime": 1
+      },
+      {
+        "id": 3,
+        "lat": 45.27371388,
+        "lng": -75.74500724,
+        "url": "location-transit-03.jpg",
+        "title": "Strandheard park and ride",
+        "bikeTime": 3,
+        "category": "transit",
+        "walkTime": 11,
+        "driveTime": 1
+      },
+      {
+        "id": 4,
+        "lat": 45.29927708,
+        "lng": -75.7365031,
+        "url": "location-transit-04.jpg",
+        "title": "VIA Rail Station",
+        "bikeTime": 15,
+        "category": "transit",
+        "walkTime": 1,
+        "driveTime": 9
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 21,
+    "category": "parksandtrails",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 45.26402855,
+        "lng": -75.72472118,
+        "url": "location-parks-01.jpg",
+        "title": "Stonebridge trail",
+        "bikeTime": 11,
+        "category": "parksandtrails",
+        "walkTime": 38,
+        "driveTime": 5
+      },
+      {
+        "id": 2,
+        "lat": 45.25738953,
+        "lng": -75.7354157,
+        "url": "location-parks-02.jpg",
+        "title": "Half moon bay district park",
+        "bikeTime": 8,
+        "category": "parksandtrails",
+        "walkTime": 30,
+        "driveTime": 5
+      },
+      {
+        "id": 3,
+        "lat": 45.26566523,
+        "lng": -75.72722297,
+        "url": "location-parks-03.jpg",
+        "title": "Barcham Park",
+        "bikeTime": 7,
+        "category": "parksandtrails",
+        "walkTime": 23,
+        "driveTime": 5
+      },
+      {
+        "id": 4,
+        "lat": 45.27189633,
+        "lng": -75.72205566,
+        "url": "location-parks-04.jpg",
+        "title": "Water Dragon Park",
+        "bikeTime": 7,
+        "category": "parksandtrails",
+        "walkTime": 23,
+        "driveTime": 4
+      },
+      {
+        "id": 5,
+        "lat": 45.27499378,
+        "lng": -75.74251409,
+        "url": "location-parks-05.jpg",
+        "title": "Rodeo Park",
+        "bikeTime": 4,
+        "category": "parksandtrails",
+        "walkTime": 11,
+        "driveTime": 2
+      },
+      {
+        "id": 6,
+        "lat": 45.28253578,
+        "lng": -75.7413646,
+        "url": "location-parks-06.jpg",
+        "title": "Ken Ross Park",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 16,
+        "driveTime": 3
+      },
+      {
+        "id": 7,
+        "lat": 45.26785223,
+        "lng": -75.75983169,
+        "url": "location-parks-07.jpg",
+        "title": "Houlahan Park",
+        "bikeTime": 8,
+        "category": "parksandtrails",
+        "walkTime": 23,
+        "driveTime": 5
+      },
+      {
+        "id": 8,
+        "lat": 45.26783103,
+        "lng": -75.72994362,
+        "url": "location-parks-08.jpg",
+        "title": "Foot guards Park",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 17,
+        "driveTime": 3
+      },
+      {
+        "id": 9,
+        "lat": 45.27068943,
+        "lng": -75.73344266,
+        "url": "location-parks-09.jpg",
+        "title": "Mancini Park",
+        "bikeTime": 4,
+        "category": "parksandtrails",
+        "walkTime": 12,
+        "driveTime": 3
+      },
+      {
+        "id": 10,
+        "lat": 45.27725658,
+        "lng": -75.73873676,
+        "url": "location-parks-10.jpg",
+        "title": "Calaveras Park",
+        "bikeTime": 3,
+        "category": "parksandtrails",
+        "walkTime": 11,
+        "driveTime": 2
+      },
+      {
+        "id": 11,
+        "lat": 45.27279833,
+        "lng": -75.72816319,
+        "url": "location-parks-11.jpg",
+        "title": "Panda Park",
+        "bikeTime": 5,
+        "category": "parksandtrails",
+        "walkTime": 16,
+        "driveTime": 3
+      },
+      {
+        "id": 12,
+        "lat": 45.27834138,
+        "lng": -75.7616309,
+        "url": "location-parks-12.jpg",
+        "title": "Burnett Park",
+        "bikeTime": 10,
+        "category": "parksandtrails",
+        "walkTime": 31,
+        "driveTime": 6
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": 32,
+    "category": "education",
+    "mapItems": [
+      {
+        "id": 1,
+        "lat": 45.27329308,
+        "lng": -75.75874512,
+        "url": "location-education-01.jpg",
+        "title": "Guide and Grow Preschool Program",
+        "bikeTime": 8,
+        "walkTime": 26,
+        "driveTime": 6
+      },
+      {
+        "id": 2,
+        "lat": 45.2713268,
+        "lng": -75.75725749,
+        "url": "location-education-02.jpg",
+        "title": "Guide and Grow Toddlers Program",
+        "bikeTime": 8,
+        "walkTime": 23,
+        "driveTime": 5
+      },
+      {
+        "id": 3,
+        "lat": 45.26331813,
+        "lng": -75.74122557,
+        "url": "location-education-03.jpg",
+        "title": "St. Joseph Catholic High School",
+        "bikeTime": 8,
+        "walkTime": 21,
+        "driveTime": 6
+      },
+      {
+        "id": 4,
+        "lat": 45.27428619,
+        "lng": -75.73942557,
+        "url": "location-education-04.jpg",
+        "title": "City View Centre",
+        "bikeTime": 3,
+        "walkTime": 7,
+        "driveTime": 4
+      },
+      {
+        "id": 5,
+        "lat": 45.27320671,
+        "lng": -75.73699647,
+        "url": "location-education-05.jpg",
+        "title": "École secondaire catholique Pierre-Savard",
+        "bikeTime": 3,
+        "walkTime": 7,
+        "driveTime": 2
+      },
+      {
+        "id": 6,
+        "lat": 45.28570347,
+        "lng": -75.73937843,
+        "url": "location-education-06.jpg",
+        "title": "St. Mother Teresa High School",
+        "bikeTime": 7,
+        "walkTime": 28,
+        "driveTime": 5
+      },
+      {
+        "id": 7,
+        "lat": 45.27051218,
+        "lng": -75.73133357,
+        "url": "location-education-07.jpg",
+        "title": "Catholic Elementary Jean-Robert-Gauthier",
+        "bikeTime": 7,
+        "walkTime": 17,
+        "driveTime": 4
+      },
+      {
+        "id": 8,
+        "lat": 45.2691401,
+        "lng": -75.73116195,
+        "url": "location-education-08.jpg",
+        "title": "Chapman Mills Public School",
+        "bikeTime": 5,
+        "walkTime": 18,
+        "driveTime": 4
+      }
+    ],
+    "items": []
+  }
+]

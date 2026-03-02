@@ -1,0 +1,599 @@
+h1 {
+    // font-family: 'Futura LT Medium', sans-serif;
+    font-size: 47px;
+    line-height: 65px;   
+    margin-bottom: 35px; 
+
+    @include breakpointDown($bp-mobile-lg) {
+        font-size: 35px;
+        line-height: 45px;    
+    }
+
+    @include breakpointDown($bp-mobile-md) {
+        font-size: 28px;
+        line-height: 45px;    
+    }
+}
+
+
+h2 {
+    // font-family: 'Futura LT Medium', sans-serif;
+    font-size: 47px;
+    line-height: 65px;
+    margin-bottom: 60px;
+
+    @include breakpointDown($bp-tablet-lg) {
+        margin-bottom: 25px;
+    }
+
+    @include breakpointDown($bp-tablet-md) {
+        margin-bottom: 15px;
+    }
+
+    @include breakpointDown($bp-mobile-lg) {
+        font-size: 35px;
+        line-height: 35px;    
+    }
+
+    @include breakpointDown($bp-mobile-md) {
+        font-size: 28px;
+        line-height: 30px;    
+    }
+}
+
+h3 {
+    // font-family: 'Futura LT Medium', sans-serif;
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 25px;
+
+    @include breakpointDown($bp-mobile-lg) {
+        font-size: 18px;
+        line-height: 20px;    
+    }
+}
+
+p, a, span, li {
+    @include bodyCopyTypography();
+}
+
+input, select, option, label, textarea {
+    font-family: 'Jost', sans-serif;
+    color: inherit;
+    @include formTypography();
+}
+
+textarea {
+    padding: 20px !important;
+}
+
+a, button {
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+}
+
+// button {
+//     font-family: 'Futura LT Medium', sans-serif;
+// }
+
+img {
+    user-select: none;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+li {
+    list-style-position: outside;
+    padding-right: 25px;
+    // font-family: 'Jost', sans-serif;
+    color: inherit;
+
+    // @include formTypography();
+}
+
+select {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    &[data-page="homeV2"],
+    &[data-page="careers"],
+    &[data-page="newsroom"],
+    &[data-page="comingsoon"],
+    &[data-theme="cslcommercial"] {
+        h1, h2, h3, h4, h5, h6 {
+            color: $c-lepineBrown;
+        }
+    }
+}
+
+@keyframes redirectFade {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.listingPopup__info--group {
+    font-family: 'Jost', sans-serif;
+}
+
+.socialDashboard__logo h2, .socialDashboard__item--date {
+    font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 700;   
+}
+
+.redirect__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #f2f2f2;
+
+    .redirect__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 25px;
+    
+        animation: redirectFade 0.5s ease-in-out;
+    }
+
+    // h3 {
+    //     font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    //     font-weight: 600;
+    //     font-size: 25px;
+    //     line-height: 30px;
+    //     font-style: normal;
+
+    //     @include breakpointDown($bp-tablet-lg) {
+    //         font-size: 20px;
+    //         line-height: 35px;
+    //     }
+
+    //     @include breakpointDown($bp-mobile-lg) {
+    //         font-size: 18px;
+    //         line-height: 24px;
+    //     }
+    // }
+
+    // img {
+    //     height: 55px;
+    //     width: auto;
+
+    //     @include breakpointDown($bp-tablet-sm) {
+    //         height: 36px;
+    //     }
+    // }
+}
+
+.slider__container p {
+    font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.navV3__item,
+.navV3__phone,
+.navV3__portal, 
+.nav__item,
+.nav__phone,
+.nav__portal,
+.navSecondary__item {
+    font-family: 'Jost SemiBold', 'Jost', sans-serif;
+
+    a, span {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        @include navTypography();
+    }
+}
+
+.container[data-page="careers"],
+.container[data-page="homeV2"],
+.container[data-page="newsroom"],
+.container[data-page="propertyV2"],
+.container[data-page="comingsoon"],
+.container[data-page="leasing"] {
+    h1 {
+            font-family: 'Jost Medium', 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 75px;
+            line-height: 90px;
+            letter-spacing: 5px;
+            font-style: normal;
+
+            @include breakpointDown(1400px) {
+                font-size: 60px;
+                line-height: 70px;    
+            }
+
+            @include breakpointDown(1100px) {
+                font-size: 45px;
+                line-height: 55px;    
+            }
+
+            @include breakpointDown($bp-mobile-md) {
+                font-size: 35px;
+                line-height: 42px;    
+            }
+    }
+}
+
+.container[data-page="careers"],
+.container[data-page="homeV2"],
+.container[data-page="newsroom"],
+.container[data-page="propertyV2"],
+.container[data-page="comingsoon"],
+.container[data-page="leasing"],
+.container[data-page="newsroompost"] {
+    h2 {
+        font-family: 'Jost Regular', 'Jost', sans-serif;
+        font-weight: 400;
+        margin: 0;
+        font-size: 50px;
+        line-height: 60px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-style: normal;
+
+        @include breakpointDown($bp-tablet-lg) {
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 30px;
+            line-height: 34px;
+        }
+
+        @include breakpointDown($bp-mobile-sm) {
+            // font-size: 30px;
+            // line-height: 34px;
+            letter-spacing: 2px;
+        }
+    }
+
+    h3 {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 30px;
+        font-style: normal;
+
+        @include breakpointDown($bp-tablet-lg) {
+            font-size: 20px;
+            line-height: 35px;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    .listingCard, .featuredListingsCardV3 {
+        h4 {
+            font-family: 'Jost SemiBold', 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+        }
+    
+        p {
+            font-family: 'Jost', sans-serif;
+            font-size: 14px;
+        }
+    
+        span {
+            font-family: 'Jost SemiBold', 'Jost', sans-serif;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    }
+    
+    .featuredListings__link, .featuredListingsV3__link {
+        &--header {
+            font-family: 'Jost SemiBold', 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+        
+        .featuredListings__link--footer, .featuredListingsV3__link--footer {
+            font-family: 'Jost SemiBold', 'Jost', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    .stressTest__subtitle {
+        text-transform: unset;
+        letter-spacing: unset;
+    }
+
+    .neighbourhoodCard__name {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-style: normal;
+        font-weight: 700;        
+    }
+
+    // .infoCard__title  {
+    //     font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    //     font-style: normal;
+    //     font-weight: 700;
+    //     color: #53575A;
+    // }
+
+    // .infoCard__date {
+    //     font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    //     font-style: normal;
+    //     font-weight: 700; 
+    //     color: #53575A;
+       
+
+    //     font-size: 16px;
+    //     letter-spacing: unset;
+    // }
+
+    .btn {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-style: normal;
+        font-weight: 700;   
+    }
+
+    .registerNowBtn, .contactV2__banner {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-style: normal;
+        font-weight: 700;   
+
+        position: relative;
+    }
+
+    .contact__info--header {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-style: normal;
+        font-weight: 700;   
+  
+    }
+
+    .footer {
+        background: #A9A39C;
+    }
+
+    .footer__socials--container p {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    .latestNews__header {
+        text-transform: uppercase;
+    }
+
+    .faq__header, .suites__list h2, .propertyListingsV2__header, .latestNews__header   {
+        margin-bottom: 25px;
+    }
+}
+
+.container[data-page="newsroom"] {
+    h1 {
+        font-family: 'Jost Regular', 'Jost', sans-serif;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 70px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-style: normal;
+
+        @include breakpointDown($bp-tablet-lg) {
+            font-size: 45px;
+            line-height: 55px;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 35px;
+            line-height: 42px;
+        }
+
+        @include breakpointDown($bp-mobile-sm) {
+            font-size: 30px;
+            line-height: 34px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+// Home page 'Your Stage for Life's Play' font styling'
+.container[data-page="careers"],
+.container[data-page="homeV2"] {
+    h1 {
+        font-family: "good-karma-smooth-regular", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 145px;
+        line-height: 190px;
+        letter-spacing: unset;
+
+        @include breakpointDown(1400px) {
+            font-size: 100px;
+            line-height: 120px;    
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 80px;
+            line-height: 90px;    
+        }
+
+        @include breakpointDown($bp-mobile-md) {
+            font-size: 45px;
+            line-height: 55px;
+        }
+    }
+}
+
+.container[data-page="propertyV2"] {
+    h3 {
+        color: #53575A;
+    }
+
+    .socialLinksBar {
+        @include breakpointDown($bp-mobile-md) {
+            display: none;
+        }
+    }
+    
+    .imageCard__footer span {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+
+        @include breakpointDown($bp-tablet-md) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .propertyMap__btn p,
+    .propertyMap__card p,
+    .propertyMapV3__btn p,
+    .propertyMapV3__card p {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif !important;
+        font-style: normal;
+        font-weight: 700;       
+    }
+
+    .faq__question h3,
+    .faq__btn--copy {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif !important;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    .contactV2__copy[data-type="form"] input[type="submit"] {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif !important;
+        font-style: normal;
+        font-weight: 700;
+    }
+}
+
+.listingPopup__info--content h3, 
+.listingPopup__pdf, 
+.listingPopup__toggle, 
+.listingPopup__save, 
+.listingPopup__info--content .btn {
+    font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 700;   
+}
+
+.listingPopup__info--contact p {
+    font-family: 'Jost SemiBold', 'Jost', sans-serif !important;
+    font-style: normal;
+    font-weight: 700;   
+}
+
+.container[data-page="herosRidge"] {
+    h1, h2, h3, h4,
+    .infoCard__date,
+    .herosRidgePlaylist__selector--title,
+    .neighbourhoodCard__name,
+    .btn {
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: 600;
+        text-transform: unset !important;
+        letter-spacing: 0px !important;
+    }
+
+    p, li, span {
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: 500;
+    }
+
+    #hero h2 {
+        text-transform: unset;
+    }
+
+    h1, h2, h3 {
+        color: #000;
+    }
+
+    #footer {
+        .btn {
+            @include btnDefault();
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;            
+        }
+    }
+}
+
+.jostBold {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+}
+.jostSemiBold {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.hs-button {
+    font-family: 'Jost SemiBold', 'Jost', sans-serif !important;
+    font-style: normal;
+    font-weight: 700;   
+}
+
+.newsroomPopup {
+    h1, h2, h3, h4, h5, h6, p, li, li::marker, ul, ol, a {
+        font-family: 'Jost', sans-serif;
+        align-self: flex-start;
+    }
+    &__footer {
+        font-family: 'Jost', sans-serif !important;
+    }
+}
+
+// .newsroomPopup__date,
+.newsroomPopup__footer,
+.mediaCard__date {
+    font-family: 'Jost SemiBold', sans-serif;
+    font-weight: 600;
+}
+
+.copyToClipboard {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: 5px;
+    padding: 5px !important;
+    max-width: 200px;
+    cursor: pointer;
+    p {font-size: 10px; line-height: 12px;}
+}

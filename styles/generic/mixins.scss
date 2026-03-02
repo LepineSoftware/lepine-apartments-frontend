@@ -1,0 +1,699 @@
+@mixin breakpointDown($screen) {
+    @media (max-width: $screen) {
+        @content;
+    }
+ }
+
+@mixin breakpointUp($screen) {
+    @media (min-width: $screen) {
+        @content;
+    }
+ }
+
+@mixin navPadding() {
+    padding: 0 115px;
+
+    @include breakpointDown($bp-desktop-sm) {
+        padding: 0 50px;
+    }
+
+    @include breakpointDown($bp-tablet-sm) {
+        padding: 0 15px;
+    }
+
+    @include breakpointDown($bp-mobile-md) {
+        padding: 0 10px;
+    }
+}
+
+@mixin contentMarginBottom() {
+    margin-bottom: 35px;
+
+    @include breakpointDown($bp-mobile-md) {
+        margin-bottom: 15px;
+    }
+}
+
+@mixin contentPaddingTop() {
+    @include breakpointDown($bp-mobile-lg) {
+        padding-top: 35px;
+    }
+}
+
+@mixin contentPaddingBottom() {
+    @include breakpointDown($bp-mobile-lg) {
+        padding-bottom: 35px;
+    }
+}
+
+@mixin swiperPaginationMargin() {
+    margin-bottom: 50px;
+}
+
+@mixin btnDefault() {
+    background: $c-lepineBrown;
+    color: $c-white;
+    transition: 0.25s background;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    // font-family: 'Futura LT Medium', sans-serif;
+    border: 2px solid $c-lepineBrown;
+    text-align: center;
+    font-family: 'Jost SemiBold', 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 700;   
+
+    &:focus-visible {
+        outline: none;
+    }
+    
+    &:hover {
+        background: transparent;
+        color: $c-lepineBrown;
+        transition: 0.25s background;
+    }
+
+    @include breakpointDown($bp-mobile-md) {
+        padding: 10px;
+    }
+}
+
+@mixin navTypography() {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1.6px;
+}
+
+@mixin heroTypography() {
+    h1 {
+        font-size: 75px !important;
+        line-height: 85px !important;
+    }
+    
+    p {
+        font-size: 20px;
+        line-height: 32px;
+
+        @include breakpointDown($bp-mobile-md) {
+            font-size: 18px;
+            line-height: 32px;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+
+@mixin listingCardTypography() {
+    h4 {
+        font-family: 'Futura LT Medium', sans-serif;
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    span {
+        font-family: 'Futura LT Medium', sans-serif;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+}
+
+@mixin cardTypography() {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin datetimeTypography() {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: $c-lepineDarkGrey1;
+    font-family: $f-futura;
+    text-transform: uppercase;
+}
+
+@mixin propertyGuideTypography() {
+    h2 {
+        font-size: 46px;
+        line-height: 58px;
+
+        @include breakpointDown($bp-tablet-lg) {
+            font-size: 30px;
+            line-height: 45px;
+        }
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+    h3 {
+        @include breakpointDown($bp-tablet-lg) {
+            font-size: 25px;
+            line-height: 34px;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+}
+
+@mixin formTypography() {
+    font-size: 16px;
+    line-height: 30px;
+
+    @include breakpointDown($bp-mobile-lg) {
+        font-size: 14px;
+        line-height: 20px;    
+    }
+}
+
+@mixin bodyCopyTypography() {
+    // font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    // color: inherit;
+
+    @include breakpointDown($bp-mobile-lg) {
+        font-size: 14px;
+        line-height: 24px;    
+    }
+}
+
+@mixin mobileCardImageHeight() {
+    @include breakpointDown($bp-mobile-md) {
+        height: 200px;
+    }
+}
+
+@mixin swiperTransparentSlides() {
+    .swiper-slide {
+        opacity: 0.6 !important;
+    }
+
+    .swiper-slide-active {
+        opacity: 1 !important;
+    }
+}
+
+
+@mixin resetInfoWindow() {
+    .gm-style .gm-style-iw,
+    .gm-style .gm-style-iw-c, 
+    .gm-style .gm-style-iw-d,
+    .gm-style-iw gm-style-iw-c { 
+        padding: 0 !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        border-radius: 0;
+    }
+
+    .gm-style-iw-ch {
+        padding-top: 0 !important;
+    }
+
+    .gm-style-iw-d {
+        overflow: hidden !important;
+    }
+}
+
+@mixin infoWindowRemoveClose() {
+    button {
+        display: none !important;
+    }
+}
+
+@mixin infoWindowArrow($colour) {
+    .gm-style .gm-style-iw-tc::after {
+        background: $colour;
+        filter: none;
+        -webkit-filter: none;
+    }
+}
+
+@mixin setFont($font) {
+    font-family: $font, sans-serif;
+}
+
+@mixin iframeContainer() {
+    width: 1400px;
+    height: 800px;
+
+    max-height: 85vh;
+    max-width: 90vw;
+
+    position: relative;
+
+    iframe {
+        height: 100%;
+        width: 100%;
+    }
+
+    video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@mixin iframeClose() {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        height: 25px;
+        width: 25px;
+}
+
+@mixin hubspotFormDefaults() {
+    form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 15px;
+        column-gap: 15px;
+        @include formTypography();
+
+        @include breakpointDown($bp-tablet-sm) {
+            flex-flow: column nowrap;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        input[type="checkbox"] {
+            height: 15px;
+            width: 15px;
+            border-radius: 0;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            text-align: start
+        }
+    }
+}
+
+@mixin hubspotForm() {
+    @include hubspotFormDefaults();
+    
+    .hs-form-field {
+        flex: 1 0 40%;
+        display: flex;
+        flex-flow: column nowrap;
+        // height: 100px;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            height: 75px;
+            width: 100%;
+            border-radius: 5px;
+            background: #B2ACAA20;
+            color: #53575A;
+            padding: 0 20px;
+            border: none;
+            font-family: 'Jost', sans-serif;
+            @include formTypography();
+
+            &::placeholder {
+                color: #53575A;
+                font-family: 'Jost', sans-serif;
+                @include formTypography();
+            }
+        }
+
+    }
+
+    .hs_zip,
+    .hs-fieldtype-date {
+        flex: 1 0 100%;
+        width: 100%;
+    }
+
+    .hs-fieldtype-checkbox {
+        height: unset;
+        flex: 1 0 40%;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    }
+
+    .hs-error-msg {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .hs-error-msgs {
+        li {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    .hs-submit {
+        flex: 1 0 100%;
+        width: 100%;
+        transition: background 0.2s;
+        margin-top: 25px;
+    }
+
+    .hs-message {
+        flex: 1 0 100%;
+        width: 100%;
+    }
+
+    .hs-fieldtype-textarea.hs-input {
+        resize: none;
+        width: 100%;
+        height: 70px;
+        border-radius: 5px;
+        background: hsla(15,5%,68%,.125);
+        border: none;
+        color: #53575a;
+    }
+
+    .hs-form-checkbox {
+        flex: 1 0 48%;
+    }
+
+    input[type="submit"] {
+        @include btnDefault();
+        transition: background 0.2s;
+    }
+}
+
+@mixin hubspotFormV2() {
+    @include hubspotFormDefaults();
+
+        .legal-consent-container {
+            display: flex !important;
+            flex-flow: column nowrap !important;
+            justify-content: center !important;
+            align-items: center !important;
+            column-gap: 10px !important;
+            row-gap: 10px !important;
+            text-align: start !important;
+        }
+
+        .hs-form-booleancheckbox {
+            padding-right: 0 !important;
+        }
+
+    
+    .hs-form-field {
+        display: flex;
+        flex-flow: column nowrap;
+        // height: 75px;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 40%;
+            height: initial;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            height: 50px;
+            width: 100%;
+            border-radius: 5px;
+            background: #B2ACAA20;
+            color: #53575A;
+            padding: 0 20px;
+            border: none;
+            font-family: 'Jost', sans-serif;
+            @include formTypography();
+
+            &::placeholder {
+                color: #53575A;
+                font-family: 'Jost', sans-serif;
+                @include formTypography();
+            }
+        }
+
+        textarea[name="message"] {
+            height: 100px;
+        }
+    }
+
+    .hs_firstname, .hs_lastname {
+        flex: 1 0 40%;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    }
+
+    .hs_email, .hs_phone, .hs_zip {
+        flex: 1 0 40%;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    }
+
+    .hs_desired_suite_type {
+        flex: 1 0 100% !important;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: start;
+    }
+
+    .hs_move_in_timeline  {
+        flex: 1 0 40%;
+        align-items: flex-start;
+        text-align: start;
+
+        .input {
+            width: 100%;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    }
+
+    .hs_message {
+        text-align: start;
+    }
+
+    .hs-fieldtype-date {
+        flex: 1 0 40%;
+        align-items: flex-start;
+        text-align: start;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+
+        .input {
+            width: 100%;
+        }
+    }
+
+    .hs-fieldtype-checkbox {
+        height: unset;
+        flex: 1 0 40%;
+
+        .input ul {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    }
+
+    .hs-error-msg {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .hs-error-msgs {
+        li {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    .hs-submit {
+        flex: 1 0 100%;
+        width: 100%;
+        transition: background 0.2s;
+    }
+
+    .hs-message {
+        flex: 1 0 100%;
+        width: 100%;
+    }
+
+    .hs-fieldtype-textarea.hs-input {
+        resize: none;
+        width: 100%;
+        border-radius: 5px;
+        background: hsla(15,5%,68%,.125);
+        border: none;
+        color: #53575a;
+    }
+
+    .hs_property_interested_in {
+        flex: 1 0 40%;
+        text-align: start;
+        
+
+        // margin-top: 50px;
+    }
+
+    .hs-form-checkbox {
+        flex: 1 1 300px;
+    }
+
+    input[type="submit"] {
+        @include btnDefault();
+        transition: background 0.2s;
+    }
+}
+
+@mixin hubspotPopupForm() {
+    @include hubspotFormDefaults();
+    
+    .hs-form-field {
+        flex: 1 0 40%;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        // height: 75px;
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            height: 75px;
+            width: 100%;
+            border-radius: 5px;
+            background: #B2ACAA20;
+            color: #53575A;
+            padding: 0 20px;
+            border: none;
+            font-family: 'Jost', sans-serif;
+            @include formTypography();
+
+            &::placeholder {
+                color: #53575A;
+                font-family: 'Jost', sans-serif;
+                @include formTypography();
+            }
+        }
+    }
+
+    .hs_zip,
+    .hs-fieldtype-date {
+        flex: 1 0 100%;
+        width: 100%;
+    }
+
+    .hs-fieldtype-checkbox {
+        height: unset;
+        flex: 1 0 40%;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex: 1 0 100%;
+            width: 100%;
+        }
+    }
+
+    .hs-error-msg {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .hs-error-msgs {
+        li {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    .hs-submit, .hs_submit {
+        flex: 1 0 100%;
+        width: 100%;
+        transition: background 0.2s;
+
+        input {
+            cursor: pointer;
+        }
+    }
+
+    .hs-fieldtype-textarea.hs-input {
+        resize: none;
+        width: 100%;
+        height: 70px;
+        border-radius: 5px;
+        background: hsla(15,5%,68%,.125);
+        border: none;
+        color: #53575a;
+        padding: 0 20px;
+        @include formTypography();
+    }
+
+    .hs-form-field select {
+        width: 100%;
+        height: 70px;
+        border-radius: 5px;
+        background: hsla(15,5%,68%,.125);
+        border: none;
+        color: #53575a;
+        padding: 0 20px;
+    }
+
+    .hs_property_interested_in {
+        flex: 1 0 40%;
+        // margin-top: 50px;
+    }
+
+    .hs-form-checkbox {
+        flex: 1 0 48%;
+    }
+
+    input[type="submit"] {
+        @include btnDefault();
+        transition: background 0.2s;
+    }
+}

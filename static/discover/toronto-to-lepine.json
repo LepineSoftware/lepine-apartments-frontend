@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Relocating from Toronto to Ottawa | Lépine Apartments",
+    "description": "Trade the 401 gridlock for the scenic Ottawa Valley. Escape the congestion of Brampton, Mississauga, and Toronto for luxury, resort-style rental apartments in Ottawa, Kanata, Renfrew, and Smiths Falls."
+  },
+  "hero": {
+    "header": "Trade the GTA Grind for National Capital Relaxation",
+    "sub": "Relocating from Toronto to Ottawa",
+    "copy": "Stop spending your life stuck on the GO Train or the 401. Upgrade to resort-style luxury, lower maintenance costs, and a lifestyle that reclaims your time.",
+    "btnText": "Explore Lépine",
+    "btnHref": "#properties",
+    "bgImage": "https://lepine-storage.nyc3.digitaloceanspaces.com/27b92b220ee37e2f44262201bff973f5.jpg"
+  },
+  "intro": {
+    "id": "intro",
+    "header": "Why Leave the GTA for Lépine?",
+    "sub": "The Shift",
+    "copy": "You’ve survived the daily grind of the QEW and the 427 crush. You know the frustration of commuting in from Brampton, Barrie or Newmarket into the core. It’s time to stop defining your day by GO Train delays and Union Station crowds. <br/><br/> Moving to the Ottawa area offers relief from the endless sprawl of the Golden Horseshoe. Here, you can live in a world-class city with a fraction of the congestion. Whether you are a remote worker escaping a condo in Liberty Village, or a retiree cashing out of a detached home in Mississauga, Lépine Apartments offers a seamless transition to a calmer, more connected life.",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/729894ec8bd37db7f34ed0c4b3f43cee.jpg"
+  },
+  "locationAdvantage": {
+    "header": "Connectivity Without the Congestion",
+    "copy": "Lépine communities are strategically located to keep you connected to major North American and International hubs while removing you from the daily noise of the GTA.",
+    "hubs": [
+      {
+        "label": "Montreal, QC",
+        "time": "2 Hours",
+        "description": "A scenic, low-traffic drive for world-class dining, culture, and high-speed rail connections."
+      },
+      {
+        "label": "Ottawa Int'l Airport (YOW)",
+        "time": "25-45 Mins",
+        "description": "Your global gateway. Enjoy direct daily flights to Paris (Air France), London, and NYC, plus hourly shuttles to Toronto (1h) and Montreal (45m)."
+      },
+      {
+        "label": "Paris & the European Union",
+        "time": "Direct from YOW",
+        "description": "Skip the Pearson lines. Connect to over 1,000 international destinations via Air France's direct service to Paris-Charles de Gaulle."
+      },
+      {
+        "label": "Toronto, ON",
+        "time": "4-5 Hours",
+        "description": "A direct connection to Canada's economic heart for world-class entertainment, major league sports, and international transit hubs."
+      }
+    ]
+  },
+  "lifestyle": {
+    "id": "lifestyle",
+    "header": "Escape the Concrete Jungle",
+    "sub": "Carefree Living",
+    "copy": "In the GTA, homeownership often means spending your weekends fighting traffic to get to the cottage or maintaining a property in a sprawling suburb like Brampton or Newmarket. At Lépine, we believe your home should be a sanctuary, not a burden. <br/><br/> Swap the DVP traffic reports for a round of golf or a paddle on the Rideau River. Our 'lighter living' philosophy means you are free from property taxes, snow removal, and the 'always-on' rush of Toronto life.",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/c81abb7c415934d18199e938728b3125.jpg"
+  },
+  "comparison": {
+    "header": "Reclaiming Your Lifestyle",
+    "copy": "Compare the daily experience of high-density GTA living with the 'resort-style' standards of a Lépine community.",
+    "points": [
+      {
+        "currentLocation": "❌ 90+ Minute Commutes (DVP/401)",
+        "lepine": "✅ Minutes to Recreation & Nature"
+      },
+      {
+        "currentLocation": "❌ High Property Taxes & Condo Fees",
+        "lepine": "✅ Predictable, All-Inclusive Living"
+      },
+      {
+        "currentLocation": "❌ Limited Private Green Space",
+        "lepine": "✅ Immediate Access to Valley Trails"
+      },
+      {
+        "currentLocation": "❌ High Cost of Leisure",
+        "lepine": "✅ On-site Fitness & Pools Included"
+      }
+    ]
+  },
+  "transition": {
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/8aded4283622088e92eb4658856351c1.jpg",
+    "steps": [
+      "<strong>Digital Tours:</strong> Explore your future home from your living room in Vaughan, Mississauga or beyond with digital tours from our leasing agents",
+      "<strong>Flexible Lease Windows:</strong> Ask our leasing team about terms that suit your relocation timeline from the GTA.",
+      "<strong>Rightsizing Advice:</strong> Experts in helping you transition from a large family home in the suburbs to a luxury suite."
+    ]
+  },
+  "contact": {
+    "header": "Ready to Leave the Rush Behind?",
+    "copy": "Our leasing specialists are experts in helping Greater Toronto Area residents relocate to the National Capital Region.",
+    "bgImage": "https://lepine-storage.nyc3.digitaloceanspaces.com/772116d69a903653ba4e564af189f57c.jpg"
+  }
+}

@@ -1,0 +1,194 @@
+
+@mixin assignTheme($primary, $secondary, $tertiary, $quarternary) {
+    .themeHeader { color: $primary; }
+    .rt a { color: $primary; }
+    .themeHeaderSecondary { color: $secondary; }
+    .themeHeaderRt { h1, h2, h3, h4 { color: $primary; } }
+    .themeNavItem { 
+        color: $primary;
+
+        &:hover {
+            span, a {
+                border-bottom: 2.5px solid $primary;   
+            } 
+        }
+        
+        &.active {
+            span, a {
+                border-bottom: 2.5px solid $primary;   
+            } 
+        }
+
+        &__hover {
+            &:hover {
+                color: $primary;
+
+                span, a {
+                    border-bottom: 2.5px solid $primary !important;   
+                } 
+            }
+        } 
+    }
+    .slider__container {
+        input:checked + .slider {
+            background-color: lighten($primary, 10%);
+        }
+  
+        input:focus + .slider {
+            box-shadow: 0 0 1px lighten($primary, 10%);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+            background-color: lighten($primary, 10%);
+        }
+    }
+    .themeBtn, .hs-button, .hs-submit .actions .hs-button { background: $tertiary; color: $c-white; border: 2px solid $tertiary; transform: background 0.2s; &:hover { background: darken($tertiary, 5%); color: $c-white; transform: background 0.2s; }}
+    .themeBGLight { background: $secondary; }
+    .themeBGLightHover { background: $secondary; transform: all 0.25s; &:hover { background: $c-white; p {color: $secondary !important;} transform: all 0.25s; } }
+    .infoCard__property--icon { path { fill: $primary }}
+    .swiper__prev, .swiper__next {&:hover { background: $secondary; path { fill: $c-white; }} path { fill: $secondary }}
+    .propertyMap__btn, .propertyMapV3__btn { &--icon { background: $secondary; path { fill: $c-white }}}
+    .propertyMap__btn.active, .propertyMapV3__btn.active { .propertyMap__btn--icon, .propertyMapV3__btn--icon { background: $c-white; path { fill: $secondary }}}
+    .themeFill { path { fill: $primary }}
+    .themeBorder { border-color: $primary; color: $primary }
+    .themeETA { border-color: $secondary; path { fill: $secondary; }}
+    .themeSVGLight { path { fill: $secondary; } line { stroke: $secondary; }}
+    .themeSVGDark { path { fill: $primary; } line { stroke: $primary; }}
+    .themeSVG__circle { circle { fill: $secondary; }}
+    .themeSVG__circle--white { path { fill: $secondary; }}
+    .faq__btn:hover { background: lighten($primary, 2.5%); }
+    .themeCardFooter { background: $primary; transform: background 0.2s; &:hover { background: darken($primary, 5%); transform: background 0.2s; }}
+    .themeListItem { &::marker { color: $primary; }}
+    .propertyFeaturesV2Card { border-bottom-color: $primary; }
+    .themeSwiper, .propertyFeaturesV2__swiper, .testimonialsV2, .testimonialsV3, .newsroomV3, .propertyFeaturesV3, .modelSuites { .swiper-pagination-bullet-active { background: $primary !important; }}
+    .testimonials { .swiper-pagination-bullet-active { background: $c-white !important; }}
+    .instagramFeed, .suiteDesignAndFeatures__swiper { .swiper-pagination-bullet-active { background: $primary !important; } }
+    .imageCopyBlock__container[data-type="brochure"] { background: $primary; }
+    .translucentButton  { svg path { fill: $primary; } &:hover { svg path { fill: $c-white; } } }
+    .stressTest__list--icon  { svg path { stroke: $primary; } }
+    .propertyFeaturesV2Card__icon  { svg path { fill: $primary; stroke: $primary; } }
+    .favouriteBtn {
+        border: 2px solid $secondary;
+
+        svg path {
+            fill: transparent;
+            stroke: $secondary;
+            transition: fill 0.2s ease-in-out;
+        }
+
+        &.active {
+            svg path {
+                fill: $secondary;
+                stroke: $secondary;
+                transition: fill 0.2s ease-in-out;
+            }
+        }
+    }
+    .featuredListings__link, .featuredListingsV3__link {
+        background: $secondary;
+
+        &--footer {
+            background: $primary;
+        }
+    }
+  
+    @include infoWindowArrow($secondary);
+    
+    .themeBGDark { 
+        background: $primary !important; 
+        transform: background 0.1s;    
+        &__hover {
+            background: $primary;
+            transform: background 0.1s;    
+            &:hover { background: darken($primary, 5%); transform: background 0.1s; }
+        }
+    }
+
+    .themePropertyNav {
+        background: $primary !important;
+        transform: background 0.2s;    
+
+        @include breakpointDown(1366px) {
+            background: $c-white !important;
+        }
+
+        .navV3__item {
+            a:hover, &.active a {
+                border-top: 2.5px solid transparent !important;
+                border-bottom: 2.5px solid $c-white !important;
+            }
+        }
+    }
+
+    .themeCardBorder { 
+        border-color: $primary;
+        transform: border-color 0.2s;
+        &:hover {
+            .listingsCard__footer {
+                background: $primary;
+            }
+            border-color: darken($primary, 5%);
+            transform: border-color 0.2s;
+        }
+    }
+
+    .themeLeasingStep {
+        &:nth-of-type(1) { background: $secondary; }
+        &:nth-of-type(2) { background: $quarternary; }
+        &:nth-of-type(3) { background: $primary; }
+    }
+
+    .gm-style-iw-tc {
+        @include infoWindowArrow($secondary);
+    }
+
+    .neighbourhoodCard {
+        background: $primary !important;
+    }
+}
+
+.container, .listingPopup, .currentCommunities__marker, .infoCard__property, .themeWrapper {
+    &[data-theme="thenormand"] {@include assignTheme(#006580, #1c87a1, #eab429, #0e7691)}
+    &[data-theme="saintemilion"] {@include assignTheme(#5e514d, #8c857b, #c6a992, #756b64)}
+    &[data-theme="howardgrant"] {@include assignTheme(#53575a, #8c857b, #c6a992, #706e6b)}
+
+
+    // &[data-theme="johannesgardens"] {@include assignTheme(#828f38, #1c87a1, #006580, #0e7691)}
+    &[data-theme="johannesgardens"] {@include assignTheme(#415468, #415468, #5b7692, #415468)}
+
+
+    &[data-theme="lepinelodge"] {@include assignTheme(#044704, #798f7a, #5e514d ,#3f6b3f)}
+    &[data-theme="johannescourt"] {@include assignTheme(#1c87a1, #006580, #828f38, #0e7691)}
+
+    &[data-theme="thecristina"] {@include assignTheme(#5a4942, #8b857a, #a84b1a, #756b64);}
+    &[data-theme="40mcgill"] {@include assignTheme(#5a4942, #8b857a, #a84b1a, #756b64);}
+    &[data-theme="carresaintlouis"] {@include assignTheme(#0b4566, #0f5d8a, #0f5d8a, #11689a);}
+}
+
+.communitiesSwiper__community:hover, .communitiesSwiper__card:hover, .neighbourhoodCard:hover {
+    &[data-theme="thenormand"] { transition: background 0.5s ease-in-out; background: #1c87a1; .neighbourhoodCard__content { border: 2px solid #1C87A1; } p { color: $c-white !important;} }
+    &[data-theme="saintemilion"] { transition: background 0.5s ease-in-out; background: #8C857B; .neighbourhoodCard__content { border: 2px solid #8C857B; } p { color: $c-white !important;} }
+    &[data-theme="howardgrant"] { transition: background 0.5s ease-in-out; background: #53575A; .neighbourhoodCard__content { border: 2px solid #53575A; } p { color: $c-white !important;} }
+    &[data-theme="johannesgardens"] { transition: background 0.5s ease-in-out; background: #415468; .neighbourhoodCard__content { border: 2px solid #415468; } p { color: $c-white !important;} }
+    &[data-theme="lepinelodge"] { transition: background 0.5s ease-in-out; background: #044704; .neighbourhoodCard__content { border: 2px solid #044704; } p { color: $c-white !important;} }
+    &[data-theme="johannescourt"] { transition: background 0.5s ease-in-out; background: #415468; .neighbourhoodCard__content { border: 2px solid #415468; } p { color: $c-white !important;} }
+    // &[data-theme="johannesgardens"] { transition: background 0.5s ease-in-out; background: #1c87a1; .neighbourhoodCard__content { border: 2px solid #1c87a1; } p { color: $c-white !important;} }
+    &[data-theme="thecristina"] { transition: background 0.5s ease-in-out; background: #A84B1A; .neighbourhoodCard__content { border: 2px solid #A84B1A; } p { color: $c-white !important;} }
+    &[data-theme="40mcgill"] { transition: background 0.5s ease-in-out; background: #A84B1A; .neighbourhoodCard__content { border: 2px solid #A84B1A; } p { color: $c-white !important;} }
+    // &[data-theme="johannesgarden"] { transition: background 0.5s ease-in-out; background: #828F38; .neighbourhoodCard__content { border: 2px solid #828F38; } p { color: $c-white !important;} }
+    &[data-theme="lesjardinsfrancoise"] { transition: background 0.5s ease-in-out; background: #446C33; .neighbourhoodCard__content { border: 2px solid #446C33; } p { color: $c-white !important;} }
+    &[data-theme="carresaintlouis"] { transition: background 0.5s ease-in-out; background: #0b4566; .neighbourhoodCard__content { border: 2px solid #0b4566; } p { color: $c-white !important;} }
+    &[data-theme="renescourt"] { transition: background 0.5s ease-in-out; background: #8C857B; .neighbourhoodCard__content { border: 2px solid #8C857B; } p { color: $c-white !important;} }
+}
+
+.themeWrapper {
+    &[data-theme="thenormand"] {.imageCopyBlock__container { background: #1C87A1 }}
+    &[data-theme="lepinelodge"] {.imageCopyBlock__container { background: #798F7A }}
+    &[data-theme="saintemilion"] {.imageCopyBlock__container { background: #8C857B }}
+    &[data-theme="johannescourt"] {.imageCopyBlock__container { background: #006580 }}
+    &[data-theme="johannesgardens"] {.imageCopyBlock__container { background: #006580 }}
+    &[data-theme="thecristina"] {.imageCopyBlock__container { background: #8C857B }}
+    &[data-theme="40mcgill"] {.imageCopyBlock__container { background: #8C857B }}
+    &[data-theme="howardgrant"] {.imageCopyBlock__container { background: #53575A }}
+}

@@ -1,0 +1,66 @@
+.herosRidge {
+    background: $c-lepineDarkGrey2;
+
+    @include breakpointDown($bp-mobile-lg) {
+        display: none;
+    }
+
+    &__nominationForm {
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 0.5rem;
+        width: 100%;
+
+        hr {
+            margin: 2rem auto;
+            width: 4rem
+        }
+        
+        p {
+            text-align: start;
+        }
+
+        input {
+            padding: 0.5rem;
+            height: 3rem;
+            width: 100%;
+         }
+
+        textarea {
+            padding: 0.5rem !important;
+            height: 12rem;
+            width: 100%;
+            resize: none;
+            outline: none;
+         }
+    }
+
+
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;    
+        column-gap: 50px;
+        row-gap: 25px;
+
+        @include breakpointDown($bp-mobile-lg) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1 0 48%;
+    }
+
+    &__content {
+        flex: 1 0 48%;
+
+        h2 {
+            margin-bottom: 25px;
+        }
+    }
+}

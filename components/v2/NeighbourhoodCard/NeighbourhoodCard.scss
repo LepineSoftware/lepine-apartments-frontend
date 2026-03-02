@@ -1,0 +1,646 @@
+.neighbourhoodCards {
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 50px;
+        row-gap: 50px;
+    }
+
+    &__content {
+        &[data-content="copy"] {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            column-gap: 10px;
+            row-gap: 10px;
+            margin-bottom: 25px;
+            width: 100%;
+
+            // @include breakpointDown($bp-tablet-lg) {
+            //     flex-flow: column nowrap;
+            // } 
+        }
+
+        &--col {
+            flex: 1 0 48%;
+
+            h2 {
+                margin-bottom: 0;
+                // max-width: 65%;
+
+                // @include breakpointDown($bp-tablet-lg) {
+                //     max-width: unset;
+                // } 
+            }
+
+            &[data-col="copy"] {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: flex-end;
+                column-gap: 100px;
+                row-gap: 10px;
+                width: 100%;
+
+                p {
+                    text-align: start;
+                    user-select: none;
+
+                }
+            }
+        }
+    }
+
+    &__cards {
+        display: grid;
+        margin: auto;
+        column-gap: 30px;
+        row-gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 350px 350px;
+        width: 100%;
+    }
+}
+
+.neighbourhoodCard {
+    background: $c-white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 275px;
+    height: 275px;
+    position: relative;
+    z-index: 5;
+    border-radius: 5px;
+
+    @include breakpointDown($bp-tablet-lg) {
+        width: 275px;
+    } 
+
+    @include breakpointDown($bp-mobile-lg) {
+        width: 225px;
+        height: 225px;
+    } 
+
+    &__name {
+        text-transform: uppercase;
+        color: $c-lepineDarkGrey1;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 2px;
+        user-select: none;
+        margin: 0 auto;
+
+
+        @include breakpointDown($bp-tablet-lg) {
+            font-size: 14px;
+            line-height: 20px;
+        } 
+    }
+
+    &__city {
+        color: $c-lepineDarkGrey1;
+        margin: 0 auto;
+        font-size: 16px;
+        user-select: none; 
+    }
+
+    &__propertyImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.1s ease-in;
+        z-index: 2;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        color: $c-white;
+        margin: 0;
+        font-weight: 700;
+        text-align: center;
+        opacity: 0;
+        user-select: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-size: 40px !important;
+            line-height: 45px;
+            letter-spacing: 3px;
+            margin: 0;
+
+            @include breakpointDown($bp-tablet-lg) {
+                font-size: 30px !important;
+                line-height: 35px;
+                letter-spacing: 2px;
+            } 
+        }
+
+            height: 75%;
+            width: 75%;
+            object-fit: contain;
+            object-position: center;
+    }
+
+    &__image {
+        overflow: hidden;
+        width: 100%;
+        height: 210px;
+        position: relative;
+        border-radius: 5px 5px 0 0;
+
+        @include breakpointDown($bp-tablet-lg) {
+            height: 210px;
+        } 
+
+        @include breakpointDown($bp-mobile-lg) {
+            height: 157.5px;
+        } 
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.25s ease-in;
+        border: 2px solid $c-lepineDarkGrey1;
+        box-sizing: border-box;
+        border-radius: 0 0 5px 5px;
+
+        @include breakpointDown($bp-tablet-lg) {
+            height: 90px;
+        } 
+
+        @include breakpointDown($bp-mobile-lg) {
+            height: 67.5px;
+        } 
+    }
+
+    &:hover {
+        .neighbourhoodCard__propertyImage {
+            transform: scale(1.1);
+            transition: 
+                transform 1s ease-in, 
+                opacity 0.5s ease-in;
+            opacity: 0.25;
+        }
+
+        .neighbourhoodCard__logo {
+            z-index: 3;
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+    }
+}
+
+.neighbourhoodSwiper {
+    max-width: 1640px;
+    width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+    padding: 10px 0; // Padding to prevent shadows from clipping
+
+    // --- MOBILE LAYOUT (Default) ---
+    // Single row height for mobile/tablet
+    height: 375px;
+
+    @include breakpointDown($bp-mobile-lg) {
+        height: 300px; // Adjusted for smaller card size
+    }
+
+    // --- DESKTOP LAYOUT (Grid) ---
+    &.gridRows2 {
+        @include breakpointUp(1024px) {
+            // Accommodates 2 cards + exactly 30px gap
+            height: 675px;
+        }
+    }
+
+    .swiper-slide {
+        width: 275px !important;
+        height: 100% !important; // Full height for single row mobile
+        display: flex;
+        justify-content: center;
+
+        @include breakpointUp(1024px) {
+            // Split height into two rows with a 30px gap on desktop
+            height: 300px !important;
+            margin-top: 0 !important;
+        }
+
+        @include breakpointDown($bp-mobile-lg) {
+            width: 225px !important;
+        }
+    }
+
+    // --- OVERLAY LOGIC ---
+    &__overlay {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 12%;
+        z-index: 4;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        opacity: 1; // Always visible on mobile for the looping offset
+
+        &.left {
+            left: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        &.right {
+            right: 0;
+            background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        // Desktop specific: Hide overlays at the start/end of the non-looping grid
+        @include breakpointUp(1024px) {
+            &.left.is-start {
+                opacity: 0;
+            }
+
+            &.right.is-end {
+                opacity: 0;
+            }
+        }
+    }
+
+    // --- CONTROLS / BUTTONS ---
+    &__controls {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+        margin-left: auto;
+        position: relative;
+        z-index: 10;
+
+        // Restore original circular button styling
+        .neighbourhoodSwiperPrev,
+        .neighbourhoodSwiperNext {
+            height: 50px !important;
+            width: 50px !important;
+            background: $c-white;
+            box-shadow: $box-shadow;
+            border-radius: 50%;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            &.swiper-button-disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+
+            img,
+            svg {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+// Ensure the hover zoom effect is contained within the card
+.neighbourhoodCard {
+    &__image {
+        overflow: hidden; // Prevents the scale(1.1) from flowing outside the card
+    }
+
+    // Zoom effect on image without affecting layout
+    &:hover {
+        .neighbourhoodCard__propertyImage {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Hover Zoom Containment
+.neighbourhoodCard {
+    &__image {
+        overflow: hidden; // Ensures transform:scale doesn't "flow" out of the card
+    }
+
+    &:hover {
+        .neighbourhoodCard__propertyImage {
+            transform: scale(1.1); // Smooth zoom effect
+        }
+    }
+}
+
+// Hover Zoom Containment
+.neighbourhoodCard {
+    &__image {
+        overflow: hidden; // Ensures transform:scale doesn't "flow" out of the card
+    }
+
+    &:hover {
+        .neighbourhoodCard__propertyImage {
+            transform: scale(1.1); // Smooth zoom effect
+        }
+    }
+}
+
+.container[data-page="homeV2"] {
+    .neighbourhoodSwiper {
+        max-width: 1730px;
+    }
+}
+
+.communitiesSwiper {    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+
+    row-gap: 25px;
+    column-gap: 25px;
+
+    .swiper {
+        .swiper-pagination-bullet, .swiper-pagination-bullet-active {
+            background: $c-white !important;
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+
+        row-gap: 10px;
+        column-gap: 25px;
+
+        width: 100%;
+
+        h4 {
+            color: $c-lepineDarkGrey1 !important;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-flow: column nowrap;
+        // justify-content: center;
+        // align-items: flex-start;
+
+        row-gap: 10px;
+        column-gap: 25px; 
+    }
+
+    &__copy {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+
+        row-gap: 10px;
+        column-gap: 25px;
+
+        h2, p {
+            color: $c-white !important;
+        }
+    }
+
+    &__bg {
+        background-image: url('https://lepine-storage.nyc3.digitaloceanspaces.com/335126254334716e9f2a3df531b2196e.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        row-gap: 25px;
+        column-gap: 25px;
+    }
+
+    &__item {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
+        row-gap: 25px;
+
+        height: 375px;
+        width: 275px;
+        padding: 15px;
+
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+
+        box-shadow: 5px 10px 10px rgba(32, 32, 32, 0.25);
+        border-radius: 5px;
+
+        h3, p {
+            margin: 0;
+        }
+    }
+
+    &__community {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        // align-items: center;
+
+
+        width: 100%;
+        height: 95px;
+        box-shadow: 5px 10px 10px rgba(32, 32, 32, 0.25);
+
+        background: $c-white;
+        padding: 10px;
+        border-radius: 5px;
+
+        &--col {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-position: center;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            &[data-type="image"] {
+                width: 75px;
+                height: 75px;
+                box-shadow: 2.5px 2.5px 2.5px rgba(32, 32, 32, 0.25);
+                border-radius: 5px;
+                overflow: hidden;
+
+            }
+
+            &[data-type="copy"] {
+                padding: 10px;
+                flex: 1;
+            }
+        }
+
+        &--cs {
+            font-style: italic;
+        }
+    }
+}
+
+.communitiesSwiper__card {
+    box-shadow: 5px 10px 10px rgba(32, 32, 32, 0.25);
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+
+    padding: 10px;
+    border-radius: 5px;
+
+    width: 350px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: 10px;
+
+    user-select: none;
+
+    @include breakpointDown($bp-mobile-lg) {
+        width: 275px;
+    }
+
+    &:hover {
+        h3, h4 {
+            color: $c-white !important;
+        }
+        
+        .communitiesSwiper__card--imageOverlay {
+            opacity: 1;
+            // background: red;
+            transition: all 0.25s ease-in-out;
+        }
+    }
+
+    &--image {
+        height: 250px;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+
+        position: relative;
+
+        @include breakpointDown($bp-mobile-lg) {
+            height: 200px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &Overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            opacity: 0;
+            backdrop-filter: blur(15px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: all 0.25s ease-in-out;
+
+            h3 {
+                font-size: 36px !important;
+                line-height: 40px !important;
+            }
+
+            h3, h4 {
+                text-align: center;
+                color: $c-white !important;
+                margin: 0;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+                padding: 25px;
+            }
+        }
+    }
+
+    &--content {
+        height: 90px;
+        width: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        // row-gap: 10px;
+        @include breakpointDown($bp-mobile-lg) {
+            height: 75px;
+        }
+
+
+        h3, h4 {
+            margin: 0;
+            color: $c-lepineDarkGrey1 !important;
+        }
+    }
+
+}

@@ -1,0 +1,1 @@
+module.exports.pageIdEquals = 'filters[pageId][$eq]=';

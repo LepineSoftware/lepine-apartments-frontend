@@ -1,0 +1,43 @@
+.instagramFeed {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+
+    &__container {
+        width: 100%;
+
+        .swiper-slide {
+            border-radius: 5px;
+            width: 280px;
+            height: 350px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 0;
+
+        &--wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+            row-gap: 25px;
+            column-gap: 25px; 
+        }
+
+        &--btn {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            background: #5E514D;
+    
+            padding: 2px;
+            border-radius: 50%;
+        }
+    }
+}

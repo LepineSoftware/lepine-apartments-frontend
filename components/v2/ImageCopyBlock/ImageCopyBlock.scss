@@ -1,0 +1,499 @@
+.imageCopyBlock {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
+    row-gap: 50px;
+    height: 100%;
+
+    @include breakpointDown($bp-tablet-md) {
+        flex-flow: column nowrap;
+        column-gap: 25px;
+        row-gap: 0;    
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+        @include breakpointDown($bp-tablet-md) {
+            display: none;
+        }
+        
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__container {
+        position: relative;
+
+        &[data-type="property"] {
+            background: #F3F3F1;
+            padding: 50px 0 50px 0;
+            display: flex;
+            flex-flow: column nowrap;
+
+            @include breakpointUp($bp-tablet-md) {
+                height: 632px;  
+            }
+
+            @include breakpointDown($bp-tablet-md) {
+                padding: 0 0 50px 0;
+            }
+        }
+
+        &[data-type="brochure"] {
+            @include breakpointDown(1800px) {
+                margin: 185px auto 0 auto;
+            }
+            @include breakpointDown(1024px) {
+                margin: 120px auto 0 auto;
+            }
+            .showcaseImage[data-screen="desktop"] {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 50px 0 50px 0;
+
+                @include breakpointDown($bp-tablet-md) {
+                    display: none;
+                }
+                
+                img {
+                    border-radius: 50px 0 0 50px !important;
+                }
+            }
+
+            .showcaseImage[data-screen="mobile"] {      
+                margin-top: 25px;          
+                img {
+                    // width: 100%;
+                    // border-radius: 0 !important;
+                    border-radius: 25px 0 0 25px !important;
+
+                }
+            }
+        }
+
+        &.showcaseContainer {
+            display: flex;
+            flex-flow: column nowrap;
+            column-gap: 50px;
+            row-gap: 50px;
+            min-height: 500px;
+
+            @include breakpointDown($bp-tablet-md) {
+                min-height: 480px;
+                column-gap: 25px;
+                row-gap: 25px;
+            }
+    
+            @include breakpointDown($bp-mobile-lg) {
+                min-height: 380px;
+            }
+        }
+
+        &.herosRidge {
+            flex-flow: column-reverse nowrap;
+
+            .imageCopyBlock__col[data-col="copy"] {
+                @include breakpointUp($bp-tablet-md) {
+                    padding: 50px 0;
+                }
+            }
+
+            @include breakpointDown($bp-tablet-md) {
+                padding-top: 25px;
+            }
+
+            .showcaseImage {
+                @include breakpointDown($bp-mobile-md) {
+                   display: none;
+                }
+            }
+        }
+    }
+
+    &__header {
+        text-transform: uppercase;
+        flex: 1 0 100%;
+        margin: 0;
+    }
+
+    &__subtitle {
+        // text-transform: uppercase;
+        flex: 1 1;
+        margin: 0;
+    }
+
+    &__btn {
+        margin-bottom: 25px;
+    }
+
+    &__logo {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 50px;
+
+        
+        img {
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+    
+            @include breakpointDown($bp-tablet-lg) {
+                max-width: 80%;
+                margin: auto;
+            }
+        }
+        .btn {
+            display: none;
+
+            @include breakpointDown($bp-tablet-md) {
+                display: block;
+            }
+
+            @include breakpointDown($bp-tablet-sm) {
+                display: none;
+            }
+        }
+    }
+
+    &.reverse {
+        flex-flow: row-reverse nowrap;
+
+        @include breakpointDown($bp-tablet-md) {
+            flex-flow: column-reverse nowrap;
+        }
+    }
+
+    &.mobileReverse {
+        @include breakpointDown($bp-tablet-md) {
+            flex-flow: column-reverse nowrap;
+        }
+    }
+
+    &__copy {
+        display: flex;
+        flex-flow: column nowrap;
+        column-gap: 25px;
+        row-gap: 25px;
+
+        &--wrapper {
+            &[data-type="copy"] {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                column-gap: 25px;
+                row-gap: 25px;
+
+                @include breakpointDown($bp-tablet-md) {
+                    flex: 1 1 48%;
+                }
+
+                @include breakpointDown($bp-tablet-sm) {
+                    flex: unset;
+                }
+           }
+
+            &[data-type="copyIcon"] {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                column-gap: 25px;
+                row-gap: 25px;
+
+                @include breakpointDown($bp-tablet-md) {
+                    flex: 1 1 48%;
+                }
+
+                @include breakpointDown($bp-tablet-sm) {
+                    flex: unset;
+                }
+
+                .imageCopyBlock__subtitle {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 10px;
+
+                    h3 {
+                        flex: 1 1;
+                        margin: 0;
+                    }
+                }
+
+                .imageCopyBlock__col--copyIconRow {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    column-gap: 25px;
+                    row-gap: 25px;
+    
+                    &--content {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        align-items: flex-start;
+                        column-gap: 25px;
+                        row-gap: 25px;
+    
+                        flex: 1 1;
+                    }
+                }
+           }
+        }
+
+            
+        .btn {
+            display: block;
+
+            @include breakpointDown($bp-tablet-md) {
+                display: none;
+            }
+
+            @include breakpointDown($bp-tablet-sm) {
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+
+    &__col {
+        z-index: 4;
+        
+        &[data-screen-commercial="desktop"] {
+            display: block;
+
+            @include breakpointDown($bp-tablet-sm) {
+                display: none;
+            }
+        }
+
+        &[data-screen-commercial="mobile"] {
+            display: none;
+
+            @include breakpointDown($bp-tablet-sm) {
+                display: block;
+            }
+        }
+
+        &--copyIcon {
+            width: 200px;
+            height: 160px;
+
+            &[data-screen="desktop"] {
+                display: block;
+
+                @include breakpointDown($bp-mobile-lg) {
+                    display: none;
+                }
+            }
+
+            &[data-screen="mobile"] {
+                display: none;
+                height: 120px;
+                width: 150px;
+
+                @include breakpointDown($bp-mobile-lg) {
+                    display: block;
+                }
+            }
+
+            @include breakpointDown($bp-desktop-sm) {
+                height: 120px;
+                width: 150px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-position: center;
+                object-fit: contain;
+            }
+        }
+
+        &[data-showcase="25"] {
+            .showcaseImage {
+                 width: calc(25% - 50px);
+            }
+         }
+
+        &[data-showcase="50"] {
+           .showcaseImage {
+                width: calc(50% - 50px);
+           }
+        }
+
+        &[data-height="75"] {
+           &.showcaseImage {
+                height: 75%;
+           }
+        }
+
+        &[data-col="image"] {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        &[data-col="copy"] {
+            display: flex;
+            flex-flow: row nowrap;
+            column-gap: 25px;
+            row-gap: 25px;
+
+            @include breakpointDown($bp-tablet-md) {
+                padding-top: 0 !important;
+            }
+        }
+
+        &[data-copyicon="true"] {
+            @include breakpointDown($bp-tablet-md) {
+                flex-flow: column nowrap;
+            }
+        }
+
+        &[data-copy="50"] {
+            width: calc(50% - 50px);
+
+            @include breakpointDown($bp-tablet-md) {
+                width: 100%;
+            }
+        }
+    
+        &[data-copy="75"] {
+            width: calc(75% - 50px);
+
+            @include breakpointDown($bp-tablet-md) {
+                width: 100%;
+            }
+        }
+    
+        &[data-height="80"] {
+            img { 
+                height: 80%;
+
+                @include breakpointDown($bp-desktop-sm) {
+                    height: 65%;
+                }
+            }
+        }
+        &[data-height="90"] {
+            img { 
+                height: 90%;
+
+                @include breakpointDown($bp-desktop-sm) {
+                    height: 65%;
+                }
+            }
+        }
+        &[data-height="100"] {
+                height: 100%;
+        }
+
+        &--wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            column-gap: 25px;
+            row-gap: 25px;
+            flex: 1;
+
+            @include breakpointDown($bp-tablet-sm) {
+                row-gap: 15px;
+            }
+
+            &[data-type="herosRidge"] {
+
+                @include breakpointDown($bp-tablet-md) {
+                    flex-flow: row nowrap; 
+                    flex: 1 0 48%;
+                }
+
+                @include breakpointDown($bp-tablet-sm) {
+                    flex-flow: column nowrap;
+                    flex: unset;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.comp1 {
+    display: flex;
+    flex-flow: row nowrap;
+    // justify-content: center;
+    // align-items: center;
+    row-gap: 25px;
+    column-gap: 50px;
+
+    @include breakpointDown($bp-tablet-md) {
+        flex-flow: column nowrap;
+    }
+
+
+    &__col {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 15px;
+        column-gap: 10px;
+
+        @include breakpointDown($bp-tablet-md) {
+            row-gap: 10px;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+        
+        &[data-type="copy"] {
+            flex: 1 0 36%;
+            
+        }
+
+        &[data-type="video"] {
+            flex: 1 1 48%;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            @include breakpointDown($bp-desktop-sm) {
+                flex: 1 1 38%;
+            }
+
+            video {
+                width: 101%;
+                height: auto;
+                object-fit: contain;
+                object-position: center;
+                border-radius: 10px;
+
+                @include breakpointDown($bp-tablet-md) {
+                    max-height: 400px;
+                }
+
+            }
+
+        }
+    }
+}

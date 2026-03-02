@@ -1,0 +1,57 @@
+// styles/pages/herosRidge.module.scss
+
+// 1. Configuration
+@import "../generic/variables";
+@import "../generic/mixins";
+
+// 2. Scoped Styles
+.herosRidgeWrapper {
+    :global {
+        // --- Generics & Base ---
+        @import "../generic/base";
+        @import "../generic/globals";
+        @import "../generic/fonts";
+        @import "../generic/animations";
+        @import "../generic/swiper";
+
+        // --- Page Specific Styles ---
+        @import "../sections/herosRidge";
+        @import "../sections/footer";
+
+        // --- Newsroom / Blog Support (NEW) ---
+        // These were missing and are required for the newsroom section to render correctly
+        @import "../sections/newsroom";
+        @import "../../sections/Newsroom/Newsroom";
+        @import "../../components/v3/NewsroomSection/NewsroomSection";
+        @import "../../components/v3/MediaCard/MediaCard";
+
+        // --- Global Components ---
+        @import "../components/container";
+        @import "../components/btn";
+        @import "../components/popup";
+        @import "../components/hero";
+        @import "../components/imageBlock";
+        @import "../components/imageCard";
+        @import "../components/infoCard";
+        @import "../components/blogCard";
+        @import "../components/suites";
+        @import "../components/themes";
+
+        // --- V2 Components ---
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/V2misc";
+        @import "../../components/v2/ImageCopyBlock/ImageCopyBlock";
+        @import "../../components/v2/CornerImage/CornerImage";
+        @import "../../components/v2/ShowcaseImage/ShowcaseImage";
+        @import "../../components/v2/VideoHero/VideoHero";
+        @import "../../components/v2/TranslucentButton/TranslucentButton";
+        @import "../../components/v2/GridList/GridList";
+        @import "../../components/v2/SideImageContent/SideImageContent";
+        @import "../../components/v2/NeighbourhoodCard/NeighbourhoodCard";
+
+        // --- Overrides ---
+        @import "../2025";
+    }
+}

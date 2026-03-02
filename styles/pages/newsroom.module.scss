@@ -1,0 +1,44 @@
+// styles/pages/newsroom.module.scss
+
+// 1. Configuration
+@import "../generic/variables";
+@import "../generic/mixins";
+
+// 2. Scoped Styles
+.newsroomWrapper {
+    :global {
+        // --- Generics & Base ---
+        @import "../generic/base";
+        @import "../generic/globals";
+        @import "../generic/fonts";
+        @import "../generic/animations";
+        @import "../generic/swiper";
+
+        // --- Page Sections ---
+        @import "../sections/footer";
+        @import "../sections/newsroom"; // Legacy newsroom styles
+
+        // --- Global Components ---
+        @import "../components/container";
+        @import "../components/btn";
+        @import "../components/popup"; // Handles contactFormPopup
+        @import "../components/imageBlock";
+        @import "../components/imageCard";
+        @import "../components/infoCard";
+        @import "../components/hero"; // Standard Hero component used here
+
+        // --- V2 Components ---
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/NeighbourhoodCard/NeighbourhoodCard";
+        @import "../../components/v2/V2misc";
+
+        // --- V3 Components ---
+        @import "../../components/v3/NewsroomSection/NewsroomSection"; // The grid layout
+        @import "../../components/v3/MediaCard/MediaCard"; // The individual cards
+
+        // --- Overrides ---
+        @import "../2025";
+    }
+}

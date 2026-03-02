@@ -1,0 +1,42 @@
+.blogCard {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 426px;
+    min-width: 318px;
+    width: 100%;
+    background: $c-white;
+    
+    h3, p, img {
+        margin: 0;
+        user-select: none;
+    }
+
+    &__media {
+        height: 312px;
+        border-radius: 5px;
+
+        @include mobileCardImageHeight();
+
+        img {
+            border-radius: 5px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        row-gap: 10px;
+        padding: 25px 15px;
+    }
+
+    &__date {
+        @include datetimeTypography();
+        text-transform: uppercase;
+        color: $c-lepineDarkGrey1;
+    }
+}

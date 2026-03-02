@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADAM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5+Charted&family=Orbitron:wght@400..900&family=VT323&display=swap" rel="stylesheet">    <style>
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            background: #303030;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "VT323", monospace;
+            font-weight: 400;
+            font-style: normal;
+
+            height: 100vh;
+            width: 100vw;
+
+            box-sizing: border-box;
+
+            color: #fff;
+        }
+
+        .screen {
+            max-width: 75vw;
+            width: 800px;
+            padding: 25px;
+            border-radius: 5px;
+            background: #353535;
+        }
+
+        h2 {
+            color: #4AF626;
+            font-size: 48px;
+
+            span {
+                animation: 0.5s fadeIn ease-in-out;
+            }
+        }
+
+        .terminal {
+            height: 48px;
+            width: 24px;
+            background: #4AF626;
+            animation: 0.75s fadeIn ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            } to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>ADAM stands for:</h1>
+
+        <div class="screen">
+            <h2 id="first"><span>.</span></h2>
+            <h2 id="second"><span>..</span></h2>
+            <h2 id="third"><span>...</span></h2>
+            <h2 id="fourth"><span>....</span></h2>
+            <div class="terminal"></div>
+        </div>
+    </div>
+</body>
+
+    <script>
+        const words = [
+            ['Autonomous', 'Automatic', 'Automated', 'Advanced', 'Archetypical', 'Artisinal', 'Analytical', 'App-based', 'Analytics', 'Awkward', 'Approachable'],
+            ['Delcious', 'Demonstrative', 'Data', 'Display', 'Digital', 'Destructive', 'Developer', 'Delivery', 'Dreaming', 'Decent', 'Dependable', 'Decorative'],
+            ['Assisting', 'Action', 'Assassin', 'Analyzing', 'Awareness', 'Awesomeness'],
+            ['Machine', 'Menace', 'Mentor', 'Manager', 'Mechanism', 'Machinery', 'Matchmaker', 'Movement', 'Master', 'Micro-transaction', 'Mama', 'Mage', 'Magician']
+        ];
+
+        const first = document.querySelector('#first');
+        const second = document.querySelector('#second');
+        const third = document.querySelector('#third');
+        const fourth = document.querySelector('#fourth');
+
+        const generateAcronym = (letterIndex, el) => {
+            const wordIndex = Math.floor(Math.random() * words[letterIndex].length);
+            const word = words[letterIndex][wordIndex];
+
+            el.textContent = '';
+            let span = el.appendChild(document.createElement("span"));
+            span.textContent = words[letterIndex][wordIndex];
+        }
+
+        const generateScreen = () => {
+            setTimeout(() => {
+                generateAcronym(0, first);
+            }, 200);
+
+            setTimeout(() => {
+                generateAcronym(1, second);
+            }, 300);
+
+            setTimeout(() => {
+                generateAcronym(2, third);
+            }, 400);
+
+            setTimeout(() => {
+                generateAcronym(3, fourth);
+            }, 500);
+        }
+
+
+        generateScreen();
+
+        setInterval(() => {
+            generateScreen();
+        }, 5000);
+
+    </script>
+</html>
