@@ -152,11 +152,12 @@ const Home = ({
           btnHref="/herosridge"
         />
 
-        {neighbourhoods && <BuildingMap neighbourhoods={neighbourhoods} />}
-
         {testimonials.length > 0 && (
           <TestimonialsV3 testimonials={testimonials} />
         )}
+
+        <BuildingMap neighbourhoods={neighbourhoods} />
+
         {posts.length > 0 && (
           <Newsroom header="Latest News" posts={posts} newsroom />
         )}

@@ -289,53 +289,126 @@
     }
 }
 
-.propertyMap__wrapper {
+propertyMap__wrapper {
     width: 100%;
-    height: 700px; // Ensure explicit height for map visibility
-    margin: 40px 0;
+    height: 700px;
     position: relative;
+    margin: 40px 0;
 }
 
 .propertyMap__container {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 4px;
     overflow: hidden;
 }
 
-// Enforce 300x250 dimensions for the MapCard
+/* Persistent Map Cards (300x250) */
 .mapCard {
     width: 300px !important;
     height: 250px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 
-    // Adjust internal content ratios to fit 250px height
     .neighbourhoodCard__image {
-        height: 175px !important; // Priority on image
+        height: 180px !important;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1a1a1a;
+
+        .neighbourhoodCard__propertyImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: opacity 0.4s ease, transform 0.6s ease;
+        }
+
+        .neighbourhoodCard__logo {
+            position: relative;
+            z-index: 2;
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+
+            p {
+                color: #fff;
+                font-family: 'Jost SemiBold', 'Jost', sans-serif !important; // Applied correct font
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-align: center;
+                font-size: 24px !important; // Scaled for 300x250 card
+                line-height: 28px;
+            }
+        }
     }
 
     .neighbourhoodCard__content {
-        height: 75px !important;
+        height: 70px !important;
         padding: 10px;
+        text-align: center;
+        border: 1px solid #e1e1e1;
+        border-top: none;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
+    /* Font Styles derived from original components */
     .neighbourhoodCard__name {
+        font-family: 'Jost SemiBold', 'Jost', sans-serif !important; // Applied
+        font-weight: 700;
+        text-transform: uppercase; //
         font-size: 16px;
+        letter-spacing: 1.5px;
+        margin-bottom: 2px;
+        color: #1a1a1a;
     }
 
     .neighbourhoodCard__city {
+        font-family: 'Jost', sans-serif !important; // Inherited Jost
         font-size: 14px;
+        opacity: 0.8;
+        color: #666;
+        margin: 0;
+    }
+
+    /* Hover State: Match original NeighbourhoodCard logic */
+    &:hover {
+        .neighbourhoodCard__propertyImage {
+            opacity: 0.25; // Dim to reveal logo
+            transform: scale(1.1);
+        }
+
+        .neighbourhoodCard__logo {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 }
 
-// Google Maps InfoWindow Overrides
+/* Google Maps InfoWindow UI Overrides */
 .gm-style-iw {
     max-width: none !important;
     padding: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
 
-    // Remove the default padding and close button for a flush card look
     .gm-style-iw-d {
         overflow: hidden !important;
         max-height: none !important;
@@ -345,8 +418,7 @@
         display: none !important;
     }
 
-    // Ensure the card looks consistent within the white bubble
     .gm-style-iw-tc {
-        display: none !important; // Optional: hides the bottom pointer
+        display: none !important;
     }
 }
