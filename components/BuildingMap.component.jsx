@@ -15,16 +15,28 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { googleMapsApiKey } from "../utils/googleMapsApiKey";
+import googleMapStyles from "../utils/googleMapStyles";
 import { ImageLoader } from "../utils/imageLoader";
 import { submitGAEvent } from "../utils/submitGAEvent";
 
 const LIBRARIES = ["geometry"];
 
+// Custom Cluster Styles
+const clusterOptions = {
+  styles: [
+    {
+      url: "/mapMarkerLepine.svg",
+      height: 60,
+      width: 60,
+      textColor: "#ffffff",
+      textSize: 16,
+      backgroundPosition: "center center",
+    },
+  ],
+};
+
 /**
  * MapCard Component
- * Uses the exact NeighbourhoodCard structure.
- * Sidebar version (isLink=false) only triggers map centering.
- * InfoWindow version (isLink=true) links to the property page.
  */
 const MapCard = ({ item, isActive, onClick, isLink = false }) => {
   const { name, city, image, href, theme, svg } = item;
@@ -81,6 +93,7 @@ const PropertyMap = ({ neighbourhoods }) => {
   const [activeMarker, setActiveMarker] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const mapRef = useRef(null);
+  const boundsRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
@@ -89,26 +102,44 @@ const PropertyMap = ({ neighbourhoods }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Calculate and store bounds for the recenter functionality
+  const getBounds = useCallback(() => {
+    if (neighbourhoods?.length > 0) {
+      const bounds = new window.google.maps.LatLngBounds();
+      neighbourhoods.forEach((item) => {
+        if (item.address?.coords) {
+          bounds.extend(
+            new window.google.maps.LatLng(
+              item.address.coords.lat,
+              item.address.coords.lng,
+            ),
+          );
+        }
+      });
+      return bounds;
+    }
+    return null;
+  }, [neighbourhoods]);
+
   const onLoad = useCallback(
     (mapInstance) => {
       mapRef.current = mapInstance;
-      if (neighbourhoods?.length > 0) {
-        const bounds = new window.google.maps.LatLngBounds();
-        neighbourhoods.forEach((item) => {
-          if (item.address?.coords) {
-            bounds.extend(
-              new window.google.maps.LatLng(
-                item.address.coords.lat,
-                item.address.coords.lng,
-              ),
-            );
-          }
-        });
+      const bounds = getBounds();
+      if (bounds) {
+        boundsRef.current = bounds;
         mapInstance.fitBounds(bounds);
       }
     },
-    [neighbourhoods],
+    [getBounds],
   );
+
+  const handleRecenter = () => {
+    if (mapRef.current && boundsRef.current) {
+      mapRef.current.fitBounds(boundsRef.current);
+      setActiveMarker(null);
+      submitGAEvent("map_recenter_clicked");
+    }
+  };
 
   const handleSelectBuilding = (item, id) => {
     setActiveMarker(id);
@@ -150,6 +181,14 @@ const PropertyMap = ({ neighbourhoods }) => {
       )}
 
       <main className="propertyMap__mapContainer">
+        <button
+          className="propertyMap__recenterBtn"
+          onClick={handleRecenter}
+          title="Recenter Map"
+        >
+          Recenter Map
+        </button>
+
         <GoogleMap
           mapContainerClassName="propertyMap__canvas"
           onLoad={onLoad}
@@ -158,21 +197,21 @@ const PropertyMap = ({ neighbourhoods }) => {
             clickableIcons: false,
             mapTypeControl: true,
             mapTypeControlOptions: {
-              position: window.google.maps.ControlPosition.LEFT_TOP,
+              position: window.google.maps.ControlPosition.RIGHT_TOP,
             },
             gestureHandling: "cooperative",
             zoomControl: true,
             zoomControlOptions: {
-              position: window.google.maps.ControlPosition.LEFT_TOP,
+              position: window.google.maps.ControlPosition.RIGHT_BOTTOM,
             },
             streetViewControl: true,
             streetViewControlOptions: {
-              position: window.google.maps.ControlPosition.LEFT_TOP,
+              position: window.google.maps.ControlPosition.RIGHT_BOTTOM,
             },
             fullscreenControl: false,
           }}
         >
-          <MarkerClustererF>
+          <MarkerClustererF options={clusterOptions}>
             {(clusterer) =>
               neighbourhoods?.map((item, i) => {
                 const {
