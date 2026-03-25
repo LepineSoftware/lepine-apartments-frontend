@@ -30,6 +30,7 @@ import ContactPopup2025 from "../components/v2/Contact/ContactPopup2025.componen
 
 import contact from "../static/global/contact.json";
 import OpenHousePopup from "../components/OpenHousePopup/OpenHousePopup";
+import BuildingMap from "../components/BuildingMap.component";
 
 const Home = ({
   testimonials,
@@ -150,6 +151,8 @@ const Home = ({
           btnCopy="Learn More About Hero's Ridge"
           btnHref="/herosridge"
         />
+
+        {neighbourhoods && <BuildingMap neighbourhoods={neighbourhoods} />}
 
         {testimonials.length > 0 && (
           <TestimonialsV3 testimonials={testimonials} />
