@@ -644,3 +644,44 @@
     }
 
 }
+
+/* Custom styles for the Map InfoWindow to match NeighbourhoodCard.scss */
+.gm-style-iw {
+    padding: 0 !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    border-radius: 5px;
+
+    button {
+        display: none !important;
+        /* Optional: hide default Google close button for cleaner look */
+    }
+}
+
+.gm-style-iw-d {
+    overflow: hidden !important;
+    /* Prevent scrollbars in the 200x200 window */
+}
+
+.mapInfoWindow {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    .neighbourhoodCard {
+        border: none !important;
+        /* Remove double border if necessary */
+
+        &__content {
+            border-top: none !important;
+        }
+
+        &__name {
+            letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 90%;
+        }
+    }
+}

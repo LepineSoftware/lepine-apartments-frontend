@@ -31,6 +31,9 @@ import ContactPopup2025 from "../components/v2/Contact/ContactPopup2025.componen
 import contact from "../static/global/contact.json";
 import OpenHousePopup from "../components/OpenHousePopup/OpenHousePopup";
 
+import LepineBuildingMap from "../components/LepineBuildingMap.component";
+import _classPrivateMethodInitSpec from "@babel/runtime/helpers/classPrivateMethodInitSpec";
+
 const Home = ({
   testimonials,
   posts,
@@ -135,6 +138,10 @@ const Home = ({
           btnCopy="Read More About Lépine"
           btnHref="/about"
         />
+
+        <section className="homeMapSection">
+          <LepineBuildingMap neighbourhoods={neighbourhoods} />
+        </section>
 
         {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
 
