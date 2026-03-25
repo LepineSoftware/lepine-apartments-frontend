@@ -483,7 +483,8 @@
         }
     }
 
-    .hs_desired_suite_type {
+    .hs_desired_suite_type,
+    .hs_temporary_apartment_interest {
         flex: 1 0 100% !important;
         justify-content: flex-start;
         align-items: flex-start;
