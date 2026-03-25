@@ -92,6 +92,8 @@ const Home = ({
           rentCopy="Rent Today"
         />
 
+        <BuildingMap neighbourhoods={neighbourhoods} />
+
         <VideoHero header={homeV2.hero.header} video={homeV2.hero.video} />
 
         <ImageCopyBlock
@@ -155,8 +157,6 @@ const Home = ({
         {testimonials.length > 0 && (
           <TestimonialsV3 testimonials={testimonials} />
         )}
-
-        <BuildingMap neighbourhoods={neighbourhoods} />
 
         {posts.length > 0 && (
           <Newsroom header="Latest News" posts={posts} newsroom />
