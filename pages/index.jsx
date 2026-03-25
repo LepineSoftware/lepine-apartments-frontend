@@ -91,9 +91,7 @@ const Home = ({
           contact={contact}
           rentCopy="Rent Today"
         />
-
-        <BuildingMap neighbourhoods={neighbourhoods} />
-
+        
         <VideoHero header={homeV2.hero.header} video={homeV2.hero.video} />
 
         <ImageCopyBlock
