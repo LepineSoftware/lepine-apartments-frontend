@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import {
   GoogleMap,
   useLoadScript,
@@ -7,60 +7,69 @@ import {
   MarkerClustererF,
 } from "@react-google-maps/api";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 
-// Project Utilities
+// Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
 import { googleMapsApiKey } from "../utils/googleMapsApiKey";
-import googleMapStyles from "../utils/googleMapStyles";
 import { ImageLoader } from "../utils/imageLoader";
 import { submitGAEvent } from "../utils/submitGAEvent";
 
-// Defined outside to prevent re-renders
 const LIBRARIES = ["geometry"];
 
 /**
  * MapCard Component
- * Renders the image-prioritized property card for the InfoWindow.
+ * Uses the exact NeighbourhoodCard structure.
+ * Sidebar version (isLink=false) only triggers map centering.
+ * InfoWindow version (isLink=true) links to the property page.
  */
-const MapCard = ({ name, city, image, href, theme, svg, i }) => {
-  return (
-    <Link
-      href={href}
-      className="neighbourhoodCard mapCard"
+const MapCard = ({ item, isActive, onClick, isLink = false }) => {
+  const { name, city, image, href, theme, svg } = item;
+
+  const content = (
+    <div
+      className={`neighbourhoodCard mapCard ${isActive ? "mapCard--active" : ""}`}
       data-theme={theme}
-      onClick={() => submitGAEvent("neighbourhood_card_clicked")}
+      onClick={() => {
+        if (onClick) onClick();
+        submitGAEvent(
+          isLink ? "map_infowindow_clicked" : "sidebar_card_clicked",
+        );
+      }}
     >
       <div className="neighbourhoodCard__image themeBGDark">
-        {/* Main Property Image */}
         {image &&
           ImageLoader(
             image,
             "neighbourhoodCard__propertyImage",
-            "",
-            300,
-            300,
+            name,
+            400,
+            400,
             0.1,
           )}
-
-        {/* SVG Logo - Visible on Hover via CSS */}
-        {svg ? (
-          ImageLoader(svg, "neighbourhoodCard__logo", "", 225, 225, 0.1)
-        ) : (
-          <div className="neighbourhoodCard__logo">
+        <div className="neighbourhoodCard__logo">
+          {svg ? (
+            ImageLoader(svg, "neighbourhoodCard__logoImg", "", 225, 225, 0.1)
+          ) : (
             <p>
               Coming
               <br />
               Soon
             </p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-
       <div className="neighbourhoodCard__content">
         <p className="neighbourhoodCard__name">{name}</p>
         {city && <p className="neighbourhoodCard__city">{city}</p>}
       </div>
-    </Link>
+    </div>
   );
+
+  return isLink ? <Link href={href}>{content}</Link> : content;
 };
 
 const PropertyMap = ({ neighbourhoods }) => {
@@ -70,31 +79,29 @@ const PropertyMap = ({ neighbourhoods }) => {
   });
 
   const [activeMarker, setActiveMarker] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const onLoad = useCallback(
     (mapInstance) => {
+      mapRef.current = mapInstance;
       if (neighbourhoods?.length > 0) {
         const bounds = new window.google.maps.LatLngBounds();
-        const BUFFER_DISTANCE = 50000; // 50km in meters
-
         neighbourhoods.forEach((item) => {
           if (item.address?.coords) {
-            const point = new window.google.maps.LatLng(
-              item.address.coords.lat,
-              item.address.coords.lng,
+            bounds.extend(
+              new window.google.maps.LatLng(
+                item.address.coords.lat,
+                item.address.coords.lng,
+              ),
             );
-
-            bounds.extend(point);
-
-            [0, 90, 180, 270].forEach((heading) => {
-              const paddedPoint =
-                window.google.maps.geometry.spherical.computeOffset(
-                  point,
-                  BUFFER_DISTANCE,
-                  heading,
-                );
-              bounds.extend(paddedPoint);
-            });
           }
         });
         mapInstance.fitBounds(bounds);
@@ -103,109 +110,129 @@ const PropertyMap = ({ neighbourhoods }) => {
     [neighbourhoods],
   );
 
+  const handleSelectBuilding = (item, id) => {
+    setActiveMarker(id);
+    if (mapRef.current && item.address?.coords) {
+      mapRef.current.panTo({
+        lat: item.address.coords.lat,
+        lng: item.address.coords.lng,
+      });
+      mapRef.current.setZoom(15);
+    }
+  };
+
   if (!isLoaded)
     return <div className="propertyMap__loading">Loading Map...</div>;
 
   return (
-    <div className="propertyMap__wrapper" id="newmap">
-      <GoogleMap
-        mapContainerClassName="propertyMap__container"
-        onLoad={onLoad}
-        onClick={() => setActiveMarker(null)}
-        options={{
-          styles: googleMapStyles,
-          clickableIcons: false,
-          mapTypeControl: false,
+    <div className="propertyMap__pageLayout">
+      {!isMobile && (
+        <aside className="propertyMap__sidebar">
+          <div className="propertyMap__sidebarHeader">
+            <h2>Our Communities</h2>
+          </div>
+          <div className="propertyMap__sidebarList">
+            {neighbourhoods?.map((item, i) => {
+              const markerId = `${item.theme}-${i}`;
+              return (
+                <div key={markerId} className="propertyMap__sidebarItem">
+                  <MapCard
+                    item={item}
+                    isActive={activeMarker === markerId}
+                    onClick={() => handleSelectBuilding(item, markerId)}
+                    isLink={false}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </aside>
+      )}
 
-          /**
-           * gestureHandling: "cooperative"
-           * Prevents the map from capturing the scroll wheel unless the user
-           * holds Ctrl/Cmd. This stops the "scroll trap" behavior.
-           */
-          gestureHandling: "cooperative",
-
-          // Interactive controls on the left as requested
-          zoomControl: true,
-          zoomControlOptions: {
-            position: window.google.maps.ControlPosition.LEFT_TOP,
-          },
-          streetViewControl: true,
-          streetViewControlOptions: {
-            position: window.google.maps.ControlPosition.LEFT_TOP,
-          },
-          fullscreenControl: true,
-          fullscreenControlOptions: {
-            position: window.google.maps.ControlPosition.LEFT_TOP,
-          },
-        }}
-      >
-        <MarkerClustererF
+      <main className="propertyMap__mapContainer">
+        <GoogleMap
+          mapContainerClassName="propertyMap__canvas"
+          onLoad={onLoad}
+          onClick={() => setActiveMarker(null)}
           options={{
-            styles: [
-              {
-                url: "/mapMarkerLepine.svg",
-                height: 60,
-                width: 60,
-                textColor: "#ffffff",
-                textSize: 16,
-              },
-            ],
+            clickableIcons: false,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+              position: window.google.maps.ControlPosition.LEFT_TOP,
+            },
+            gestureHandling: "cooperative",
+            zoomControl: true,
+            zoomControlOptions: {
+              position: window.google.maps.ControlPosition.LEFT_TOP,
+            },
+            streetViewControl: true,
+            streetViewControlOptions: {
+              position: window.google.maps.ControlPosition.LEFT_TOP,
+            },
+            fullscreenControl: false,
           }}
         >
-          {(clusterer) =>
-            neighbourhoods?.map((item, i) => {
-              const {
-                name,
-                address: { coords },
-                city,
-                theme,
-                href,
-                image,
-                svg,
-              } = item;
-
-              if (!coords?.lat || !coords?.lng) return null;
-
-              const markerId = `${theme}-${i}`;
-
-              return (
-                <React.Fragment key={markerId}>
-                  <MarkerF
-                    position={{ lat: coords.lat, lng: coords.lng }}
-                    clusterer={clusterer}
-                    onMouseOver={() => setActiveMarker(markerId)}
-                    icon={{
-                      url: "/mapMarkerLepine.svg",
-                      scaledSize: new window.google.maps.Size(50, 50),
-                      origin: new window.google.maps.Point(0, 0),
-                      anchor: new window.google.maps.Point(25, 25),
-                    }}
-                  />
-                  {activeMarker === markerId && (
-                    <InfoWindowF
+          <MarkerClustererF>
+            {(clusterer) =>
+              neighbourhoods?.map((item, i) => {
+                const {
+                  address: { coords },
+                  theme,
+                } = item;
+                if (!coords?.lat || !coords?.lng) return null;
+                const markerId = `${theme}-${i}`;
+                return (
+                  <React.Fragment key={markerId}>
+                    <MarkerF
                       position={{ lat: coords.lat, lng: coords.lng }}
-                      onCloseClick={() => setActiveMarker(null)}
-                      options={{
-                        pixelOffset: new window.google.maps.Size(0, -30),
+                      clusterer={clusterer}
+                      onClick={() => handleSelectBuilding(item, markerId)}
+                      icon={{
+                        url: "/mapMarkerLepine.svg",
+                        scaledSize: new window.google.maps.Size(50, 50),
+                        anchor: new window.google.maps.Point(25, 25),
                       }}
-                    >
-                      <MapCard
-                        name={name}
-                        city={city}
-                        image={image}
-                        href={href}
-                        theme={theme}
-                        svg={svg}
-                        i={i}
-                      />
-                    </InfoWindowF>
-                  )}
-                </React.Fragment>
-              );
-            })
-          }
-        </MarkerClustererF>
-      </GoogleMap>
+                    />
+                    {activeMarker === markerId && (
+                      <InfoWindowF
+                        position={{ lat: coords.lat, lng: coords.lng }}
+                        onCloseClick={() => setActiveMarker(null)}
+                        options={{
+                          pixelOffset: new window.google.maps.Size(0, -30),
+                        }}
+                      >
+                        <div className="propertyMap__infoWindow">
+                          <MapCard item={item} isLink={true} />
+                        </div>
+                      </InfoWindowF>
+                    )}
+                  </React.Fragment>
+                );
+              })
+            }
+          </MarkerClustererF>
+        </GoogleMap>
+      </main>
+
+      {isMobile && (
+        <div className="propertyMap__mobileSwiper">
+          <Swiper
+            spaceBetween={15}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            onSlideChange={(swiper) => {
+              const item = neighbourhoods[swiper.activeIndex];
+              handleSelectBuilding(item, `${item.theme}-${swiper.activeIndex}`);
+            }}
+          >
+            {neighbourhoods?.map((item, i) => (
+              <SwiperSlide key={`mobile-${i}`} style={{ width: "280px" }}>
+                <MapCard item={item} isLink={false} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
     </div>
   );
 };
