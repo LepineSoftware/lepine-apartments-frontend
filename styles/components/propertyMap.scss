@@ -289,9 +289,10 @@
     }
 }
 
-propertyMap__wrapper {
+.propertyMap__wrapper {
     width: 100%;
-    height: 700px;
+    height: 100dvh;
+    max-height: 1000px;
     position: relative;
     margin: 40px 0;
 }
