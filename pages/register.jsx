@@ -2,16 +2,15 @@ import styles from "../styles/pages/property2025.module.scss";
 
 import { appUrl } from "../utils/appUrl";
 import { apiUrl } from "../utils/apiUrl";
-import fetchPropertyPosts from "../utils/fetchPropertyPosts";
 
 import Head from "next/head";
 import Container from "../components/Container.component";
 
 import { populate } from "../utils/populate";
+import RegisterPopup from "../components/v2/Contact/RegisterPopup.component";
 
-import fetchInstagramRecentPosts from "../utils/fetchInstagramRecentPosts";
-import ContactFormPopup from "../components/v3/ContactFormPopup/ContactFormPopup.component";
-import ContactPopup2025 from "../components/v2/Contact/ContactPopup2025.component";
+import Image from "next/image";
+import Logo from "../assets/svg/lepine.svg";
 
 const Property = ({ property, contactInfo }) => {
   const { pageId, contact } = property;
@@ -23,18 +22,20 @@ const Property = ({ property, contactInfo }) => {
           <title>Open House Registration | Lépine Apartments</title>
         </Head>
 
-        <div className="bigimage" id="contactform" data-page="carresaintlouis">
-          <div className="bigimage__content">
-            <ContactPopup2025
-              htmlFormId="hs-form-1"
-              type="form"
-              pageId={pageId}
-              portalId={contact.portalId}
-              goalName="oh_registration_form_submitted"
-              formId={contact.formId}
-              phone={contactInfo.phone}
-            />
+        <div className="registrationForm">
+          <div className="registrationForm__logo">
+            <Image src={Logo} alt="Lépine" height="87" width="288" />
           </div>
+
+          <RegisterPopup
+            htmlFormId="hs-form-1"
+            type="form"
+            pageId="register"
+            portalId="22452018"
+            goalName="oh_registration_form_submitted"
+            formId="810cb9f4-0b2c-435b-86c0-e77cd625153d"
+            phone={contactInfo.phone}
+          />
         </div>
       </Container>
     </div>
@@ -56,8 +57,6 @@ export async function getStaticProps() {
   const indexRes = await fetch(indexUrl);
   const indexData = await indexRes.json();
 
-  const propertyPosts = await fetchPropertyPosts(id);
-
   const contactUrl = `${apiUrl}/contact?populate=deep`;
   const contactRes = await fetch(contactUrl);
   const contactData = await contactRes.json();
@@ -65,8 +64,6 @@ export async function getStaticProps() {
   const contactInfo = {
     info: contactData.data.attributes.info,
   };
-
-  const instagramPosts = await fetchInstagramRecentPosts(15);
 
   if (data.meta.pagination.total === 0) {
     return {
@@ -85,9 +82,7 @@ export async function getStaticProps() {
         property,
         city,
         contactInfo,
-        posts: propertyPosts,
         contactUs: indexData.data.attributes.contactUs,
-        instagramPosts: instagramPosts.data,
       },
       revalidate: 1,
     };

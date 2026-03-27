@@ -453,3 +453,31 @@
         }
     }
 }
+
+.registrationForm {
+    padding: 25px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 25px;
+    margin: auto;
+    max-width: 1200px;
+
+    iframe {
+        width: 100%;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        img {
+            height: 87px;
+            width: 288px;
+            object-position: center;
+            object-fit: contain;
+            margin: auto;
+        }
+    }
+}
