@@ -33,7 +33,7 @@ const Property = ({ property, contactInfo }) => {
             type="form"
             pageId="register"
             portalId="22452018"
-            goalName="oh_registration_form_submitted"
+            goalName="referafriend_form_submitted"
             formId="18a7cf97-c93b-466d-a99f-3f1841474eba"
             phone={contactInfo.phone}
           />
