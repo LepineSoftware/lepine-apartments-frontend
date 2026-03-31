@@ -455,13 +455,13 @@
 }
 
 .registrationForm {
-    padding: 25px;
+    padding: 50px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    gap: 25px;
+    gap: 50px;
     margin: auto;
-    max-width: 1200px;
+    max-width: 1000px;
 
     iframe {
         width: 100%;
@@ -469,8 +469,14 @@
 
     &__logo {
         display: flex;
+        flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
+        row-gap: 50px;
+        
+        h2 {
+            text-align: center;
+        }
     
         img {
             height: 87px;

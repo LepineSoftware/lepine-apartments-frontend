@@ -19,13 +19,13 @@ const Property = ({ property, contactInfo }) => {
     <div className={styles.property2025Wrapper}>
       <Container page="propertyV2" theme={pageId} brand="2025">
         <Head>
-          <title>Open House Registration | Lépine Apartments</title>
+          <title>Refer a Friend | Lépine Apartments</title>
         </Head>
 
         <div className="registrationForm">
           <div className="registrationForm__logo">
             <Image src={Logo} alt="Lépine" height="87" width="288" />
-            <h2>Open House Registration</h2>
+            <h2>Refer a Friend</h2>
           </div>
 
           <RegisterPopup
