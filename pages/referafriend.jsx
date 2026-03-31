@@ -12,8 +12,10 @@ import RegisterPopup from "../components/v2/Contact/RegisterPopup.component";
 import Image from "next/image";
 import Logo from "../assets/svg/lepine.svg";
 
-const Property = ({ property, contactInfo }) => {
+const Property = ({ property, contactInfo, termsAndConditions }) => {
   const { pageId, contact } = property;
+
+  console.log(termsAndConditions);
 
   return (
     <div className={styles.property2025Wrapper}>
@@ -26,6 +28,15 @@ const Property = ({ property, contactInfo }) => {
           <div className="registrationForm__logo">
             <Image src={Logo} alt="Lépine" height="87" width="288" />
             <h2>Refer a Friend</h2>
+            {termsAndConditions && (
+              <a
+                href={termsAndConditions}
+                target="_blank"
+                style={{ textDecoration: "underline" }}
+              >
+                Terms and Conditions
+              </a>
+            )}
           </div>
 
           <RegisterPopup
@@ -58,6 +69,10 @@ export async function getStaticProps() {
   const indexRes = await fetch(indexUrl);
   const indexData = await indexRes.json();
 
+  const TermsAndConditionsUrl = `${apiUrl}/home-page?${populate}`;
+  const TermsAndConditionsRes = await fetch(TermsAndConditionsUrl);
+  const TermsAndConditionsData = await TermsAndConditionsRes.json();
+
   const contactUrl = `${apiUrl}/contact?populate=deep`;
   const contactRes = await fetch(contactUrl);
   const contactData = await contactRes.json();
@@ -84,6 +99,9 @@ export async function getStaticProps() {
         city,
         contactInfo,
         contactUs: indexData.data.attributes.contactUs,
+        termsAndConditions:
+          TermsAndConditionsData.data.attributes.rentToSave.pdf.data.attributes
+            .url,
       },
       revalidate: 1,
     };
