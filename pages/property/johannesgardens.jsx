@@ -357,7 +357,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
         <div className="jgHero">
           <div className="jgHero__image">
             {ImageLoader(
-              "https://lepine-storage.nyc3.digitaloceanspaces.com/e619e1761b07576473bb5e52d2faafb0.jpg",
+              "https://lepine-storage.nyc3.digitaloceanspaces.com/3a4f7a317b49a8ce594da434d1583c67.jpg",
               "",
               "",
               1000,
