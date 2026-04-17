@@ -215,7 +215,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
       type: "image",
       header: "A History of Excellence",
       copy: "Rooted in a legacy dating back to Montreal’s founding, the Lépine family has always pursued opportunity and progress. As a family-owned apartment development and property management company, we have spent the past 70 years pioneering multi-family real estate, and opening new rental markets across Eastern Ontario.<br/><br/>Lépine has set a new standard for sophisticated rental living – blending quality craftsmanship, elegant design, and modern convenience. Our resort-style rental apartment communities in Ottawa, Carleton Place, Renfrew, and Smiths Falls are designed with sustainability and accessibility in mind, offering carefree living in the neighbourhoods you know and love.",
-      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/e619e1761b07576473bb5e52d2faafb0.jpg",
+      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/3a4f7a317b49a8ce594da434d1583c67.jpg",
     },
     {
       type: "image",
@@ -398,7 +398,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
                 data-aos-delay="100"
               >
                 {/* <div className="welcome__row--image">
-                {ImageLoader('https://lepine-storage.nyc3.digitaloceanspaces.com/e619e1761b07576473bb5e52d2faafb0.jpg', '', '', 400, 400, 0.1)}
+                {ImageLoader('https://lepine-storage.nyc3.digitaloceanspaces.com/3a4f7a317b49a8ce594da434d1583c67.jpg', '', '', 400, 400, 0.1)}
               </div> */}
 
                 <div className="welcome__row--copy">
@@ -426,7 +426,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
                 data-aos-delay="150"
               >
                 {/* <div className="welcome__row--image">
-                                    {ImageLoader('https://lepine-storage.nyc3.digitaloceanspaces.com/e619e1761b07576473bb5e52d2faafb0.jpg', '', '', 400, 400, 0.1)}
+                                    {ImageLoader('https://lepine-storage.nyc3.digitaloceanspaces.com/3a4f7a317b49a8ce594da434d1583c67.jpg', '', '', 400, 400, 0.1)}
                                 </div> */}
 
                 <div className="welcome__row--copy">
