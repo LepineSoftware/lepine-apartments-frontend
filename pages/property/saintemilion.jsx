@@ -8,6 +8,7 @@ import { apiUrl } from "../../utils/apiUrl";
 import fetchPropertyPosts from "../../utils/fetchPropertyPosts";
 
 import Head from "next/head";
+import Script from "next/script";
 import { baseUrl } from "../../utils/baseUrl";
 import Container from "../../components/Container.component";
 import NavSecondary from "../../sections/NavSecondary.component";
@@ -224,6 +225,11 @@ const Property = ({
             content={baseUrl(property.hero.content.image.data.attributes.url)}
           />
         </Head>
+
+        <Script
+          id="kanata-pixel"
+          strategy="afterInteractive"
+        >{`var pixel = document.createElement('img'); pixel.src = 'https://px.xfer123.com/1x1.png?ospid=21ef6e8ee3c341909565edfdc599f6e4&osrnd=' + Math.round(new Date().getTime()); pixel.setAttribute("height", "1"); pixel.setAttribute("width", "1"); pixel.setAttribute("style", "display:none"); pixel.setAttribute("referrerpolicy", "no-referrer-when-downgrade"); document.addEventListener('DOMContentLoaded', function() { document.body.appendChild(pixel); }, false);`}</Script>
 
         <NavV3
           links={links}
