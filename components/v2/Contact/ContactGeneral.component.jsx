@@ -29,7 +29,7 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
                 onInput={(e) => setFirstName(e.target.value)}
                 placeholder="First Name (required)"
                 type="text"
-                class="hs-input"
+                className="hs-input"
                 required
               />
             </div>
@@ -41,7 +41,7 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
                 onInput={(e) => setLastName(e.target.value)}
                 placeholder="Last Name (required)"
                 type="text"
-                class="hs-input"
+                className="hs-input"
                 required
               />
             </div>
@@ -53,7 +53,7 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
                 onInput={(e) => setEmail(e.target.value)}
                 placeholder="Email (required)"
                 type="email"
-                class="hs-input"
+                className="hs-input"
                 required
               />
             </div>
@@ -65,16 +65,16 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
                 onInput={(e) => setPhoneNumber(e.target.value)}
                 placeholder="Phone Number (required)"
                 type="tel"
-                class="hs-input"
+                className="hs-input"
                 required
               />
             </div>
           </div>
 
-          <div class="hs_message hs-message hs-fieldtype-textarea field hs-form-field">
-            <div class="input">
+          <div className="hs_message hs-message hs-fieldtype-textarea field hs-form-field">
+            <div className="input">
               <textarea
-                class="hs-input hs-fieldtype-textarea"
+                className="hs-input hs-fieldtype-textarea"
                 name="message"
                 placeholder="Message (optional)"
                 onInput={(e) => setMessage(e.target.value)}
@@ -84,12 +84,12 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
 
           <div>{formResponse ? <h4>{formResponse}</h4> : <h4>{` `}</h4>}</div>
 
-          <div class="hs_submit hs-submit">
-            <div class="actions">
+          <div className="hs_submit hs-submit">
+            <div className="actions">
               <input
                 onClick={(e) => handleFormSubmit(e)}
                 type="submit"
-                class="hs-button primary large"
+                className="hs-button primary large"
                 value="Contact Us"
               />
             </div>

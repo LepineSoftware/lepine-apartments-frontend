@@ -49,6 +49,28 @@ function MyApp({ Component, pageProps }) {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [router.pathname]);
 
+  useEffect(() => {
+    const kanataPages = ['/property/carresaintlouis'];
+    const carletonPages = ['/property/johannesgardens', '/comingsoon/johannesgarden'];
+
+    let ospid = null;
+    if (kanataPages.includes(router.pathname)) {
+      ospid = '21ef6e8ee3c341909565edfdc599f6e4';
+    } else if (carletonPages.includes(router.pathname)) {
+      ospid = '2747e70fe6314882bc1d48e71127dd89';
+    }
+
+    if (ospid) {
+      var pixel = document.createElement('img');
+      pixel.src = 'https://px.xfer123.com/1x1.png?ospid=' + ospid + '&osrnd=' + Math.round(new Date().getTime());
+      pixel.setAttribute('height', '1');
+      pixel.setAttribute('width', '1');
+      pixel.setAttribute('style', 'display:none');
+      pixel.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      document.body.appendChild(pixel);
+    }
+  }, [router.pathname]);
+
   const canonical = `https://www.lepineapartments.com${
     router.asPath.split("?")[0]
   }`;

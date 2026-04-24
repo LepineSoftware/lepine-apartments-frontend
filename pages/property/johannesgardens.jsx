@@ -129,7 +129,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
               disableScrolling = true;
             }
 
-            const scroll = document.getElementById(sections[current]).offsetTop;
+            const scroll = document.getElementById(sections[current])?.offsetTop;
 
             window.scrollTo({
               top: scroll,
@@ -520,7 +520,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           />
         </ContactFormPopup>
 
-        {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
+        {instagramPosts?.length > 0 && <InstagramFeed posts={instagramPosts} />}
 
         <Footer findMyApartment content={contactInfo} />
       </Container>
@@ -638,7 +638,7 @@ export async function getStaticProps(ctx) {
           siblingPropertyData[0]?.properties?.length > 0
             ? siblingPropertyData[0].properties
             : [],
-        instagramPosts: instagramPosts.data,
+        instagramPosts: instagramPosts.data? instagramPosts.data: null,
       },
       revalidate: 1,
     };
