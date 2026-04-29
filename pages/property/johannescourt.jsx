@@ -225,6 +225,7 @@ const Property = ({
           />
         </Head>
 
+
         <NavV3
           links={links}
           navSecondarySticky={navSecondarySticky}
@@ -341,7 +342,7 @@ const Property = ({
             lightbox
           />
         )}
-        {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
+        {instagramPosts?.length > 0 && <InstagramFeed posts={instagramPosts} />}
         {JohannesCourtFAQs.length > 0 && (
           <FAQ
             content={JohannesCourtFAQs}
@@ -545,7 +546,7 @@ export async function getStaticProps(ctx) {
           siblingPropertyData[0]?.properties?.length > 0
             ? siblingPropertyData[0].properties
             : [],
-        instagramPosts: instagramPosts.data,
+        instagramPosts: instagramPosts.data ? instagramPosts.data : null,
       },
       revalidate: 1,
     };

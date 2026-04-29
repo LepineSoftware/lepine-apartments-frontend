@@ -340,7 +340,7 @@ const Property = ({
             lightbox
           />
         )}
-        {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
+        {instagramPosts?.length > 0 && <InstagramFeed posts={instagramPosts} />}
         {SaintEmilionFAQs.length > 0 && (
           <FAQ
             content={SaintEmilionFAQs}
@@ -544,7 +544,7 @@ export async function getStaticProps(ctx) {
           siblingPropertyData[0]?.properties?.length > 0
             ? siblingPropertyData[0].properties
             : [],
-        instagramPosts: instagramPosts.data,
+        instagramPosts: instagramPosts.data ? instagramPosts.data : null,
       },
       revalidate: 1,
     };

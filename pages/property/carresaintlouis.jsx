@@ -238,7 +238,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           </div>
         </Link>
 
-        {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
+        {instagramPosts?.length > 0 && <InstagramFeed posts={instagramPosts} />}
 
         <Footer findMyApartment content={contactInfo} />
       </Container>
@@ -292,7 +292,7 @@ export async function getStaticProps() {
         contactInfo,
         posts: propertyPosts,
         contactUs: indexData.data.attributes.contactUs,
-        instagramPosts: instagramPosts.data,
+        instagramPosts: instagramPosts.data? instagramPosts.data : null,
       },
       revalidate: 1,
     };
