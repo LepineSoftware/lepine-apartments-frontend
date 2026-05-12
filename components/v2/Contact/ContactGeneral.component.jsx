@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import ContactUnsubscribe from "./ContactUnsubscribe.component";
+import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 
 const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
-  const [formSubmitStatus, setFormSubmitStatus] = useState(false);
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,15 +12,8 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
   const [formResponse, setFormResponse] = useState("");
 
   const renderForm = () => {
-    if (formSubmitStatus) {
-      return (
-        <h3 className="themeHeader">
-          Thank you! Your inquiry has been received.
-        </h3>
-      );
-    } else {
-      return (
-        <div className="contactV2__form">
+    return (
+      <div className="contactV2__form">
           <div className="hs_firstname hs-firstname hs-fieldtype-text field hs-form-field">
             <div className="input">
               <input
@@ -95,20 +86,9 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
             </div>
           </div>
 
-          {/* <ContactUnsubscribe /> */}
-        </div>
-      );
-    }
-  };
-
-  const setFormState = async () => {
-    const form = await JSON.parse(localStorage.getItem(`GeneralFormSubmitted`));
-
-    if (!form) {
-      localStorage.setItem("GeneralFormSubmitted", JSON.stringify(false));
-    } else {
-      setFormSubmitStatus(true);
-    }
+        {/* <ContactUnsubscribe /> */}
+      </div>
+    );
   };
 
   const handleFormSubmit = async (e) => {
@@ -147,15 +127,10 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
           });
 
           if (response.status !== 400) {
-            const data = await response.json();
-            await setFormResponse(data.message);
-
-            setTimeout(() => {
-              setFormSubmitted();
-            }, 1000);
-          } else {
             const gtag = window.gtag;
-            gtag && (await gtag("event", "general_contact_form_submitted"));
+            gtag && gtag("event", "general_contact_form_submitted");
+            redirectToThankYou({ form: "general_contact" });
+          } else {
             await setFormResponse(response.error);
           }
         }, 2500);
@@ -166,19 +141,6 @@ const ContactGeneral = ({ type, pageId, setContactPopupIsActive }) => {
       }
     }
   };
-
-  const setFormSubmitted = async () => {
-    await localStorage.setItem("GeneralFormSubmitted", JSON.stringify(true));
-    setFormSubmitStatus(true);
-
-    setTimeout(() => {
-      setContactPopupIsActive(false);
-    }, 2500);
-  };
-
-  useEffect(() => {
-    setFormState();
-  }, [pageId]);
 
   return (
     <section

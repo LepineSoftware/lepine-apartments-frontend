@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 
 const NominationForm = () => {
     const [form, setForm] = useState({
@@ -19,8 +20,8 @@ const NominationForm = () => {
         e.preventDefault();
 
         const formIsValid = validateForm(form);
-        
-        
+
+
         if (formIsValid) {
             try {
                 setFormResponse('Submitting your inquiry...');
@@ -37,7 +38,7 @@ const NominationForm = () => {
                         sponsorEmail: form.sponsorEmail,
                         sponsorPhoneNumber: form.sponsorPhoneNumber
                     };
-                    
+
                     const response = await fetch('/api/herosridge/contact', {
                         method: 'POST',
                         headers: {
@@ -45,26 +46,11 @@ const NominationForm = () => {
                         },
                         body: JSON.stringify(fields),
                     });
-        
+
                     if (response.status !== 400) {
-                        const data = await response.json();
-                        await setFormResponse(data.message);
-
-                        setTimeout(() => {
-                            setForm({
-                                vetName: "",
-                                vetMailingAddress: "",
-                                vetEmail: "",
-                                vetPhoneNumber: "",
-                                vetBio: "",
-                                sponsorName: "",
-                                sponsorMailingAddress: "",
-                                sponsorEmail: "",
-                                sponsorPhoneNumber: ""
-                            });
-
-                            setFormResponse('');
-                        }, 2500)
+                        const gtag = window.gtag;
+                        gtag && gtag('event', 'herosridge_form_submitted');
+                        redirectToThankYou({ form: 'herosridge_nomination' });
                     } else {
                         await setFormResponse(response.error);
                     }

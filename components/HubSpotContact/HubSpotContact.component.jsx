@@ -3,6 +3,7 @@ import Image from "next/image";
 import HubspotForm from "react-hubspot-form";
 import CloseIcon from "../../assets/svg/menuCloseLight.svg";
 import ChatIcon from "../../assets/svg/chatIcon.svg";
+import { redirectToThankYou } from "../../utils/redirectToThankYou";
 
 const HubSpotContact = ({
   portalId,
@@ -16,7 +17,6 @@ const HubSpotContact = ({
   const [popupActive, setPopupActive] = useState(false);
   const [staticMeetingView, setStaticMeetingView] = useState(false);
   const [popupMeetingView, setPopupMeetingView] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -28,27 +28,12 @@ const HubSpotContact = ({
     return () => body.classList.remove("noscroll");
   }, [popupActive]);
 
-  useEffect(() => {
-    const submitted = localStorage.getItem(`${formId}_submitted`);
-    if (submitted === "true") setFormSubmitted(true);
-  }, [formId]);
-
   const handleFormSubmit = () => {
-    localStorage.setItem(`${formId}_submitted`, "true");
-    setFormSubmitted(true);
     if (window.gtag && goalName) window.gtag("event", goalName);
+    redirectToThankYou({ form: goalName, formId });
   };
 
   const renderContent = (isMeeting) => {
-    if (formSubmitted) {
-      return (
-        <div className="hubspotContact__success">
-          <h3 className="themeHeader">Thank you for submitting!</h3>
-          <p>A Lépine leasing agent will be in touch shortly.</p>
-        </div>
-      );
-    }
-
     if (isMeeting && bookNowURL) {
       return (
         <div className="hubspotContact__meeting">
@@ -96,7 +81,7 @@ const HubSpotContact = ({
                 <h3 className="themeHeader">{phone}</h3>
               </a>
             )}
-            {bookNowURL && !formSubmitted && (
+            {bookNowURL && (
               <div className="hubspotContact__toggle">
                 <span className={!staticMeetingView ? "active" : ""}>
                   Contact Form
@@ -141,7 +126,7 @@ const HubSpotContact = ({
             </button>
 
             <div className="hubspotContact__headerSection">
-              {bookNowURL && !formSubmitted && (
+              {bookNowURL && (
                 <div className="hubspotContact__toggle">
                   <span className={!popupMeetingView ? "active" : ""}>
                     Contact Form
