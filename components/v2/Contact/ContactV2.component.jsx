@@ -1,11 +1,10 @@
 import { baseUrl } from "../../../utils/baseUrl";
 import { ImageLoader } from "../../../utils/imageLoader";
 // import HeroArrow from '../../../assets/svg/heroArrow.svg';
-import { useState } from "react";
-import { useEffect } from "react";
 import HubspotForm from "react-hubspot-form";
 import ContactInfoBar from "../../ContactInfoBar.component";
 import ContactUnsubscribe from "./ContactUnsubscribe.component";
+import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 
 const ContactV2 = ({
   content,
@@ -25,69 +24,37 @@ const ContactV2 = ({
   imageR,
 }) => {
   const renderForm = () => {
-    if (formSubmitStatus) {
-      return (
-        <h3 className="themeHeader">Thank you for submitting the form!</h3>
-      );
-    } else {
-      return (
-        <>
-          <HubspotForm
-            portalId={portalId}
-            formId={formId}
-            onReady={() => {
-              const script = document.createElement("script");
-              script.src =
-                "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
-              let jqueryScript = document.getElementsByTagName("script");
-              let src = Array.from(jqueryScript).filter(
-                (item) => item.src === script.src,
-              );
-              if (src.length === 0) {
-                document.body.appendChild(script);
-              }
-            }}
-            onSubmit={() => {
-              const gtag = window.gtag;
-              goalName && gtag("event", goalName);
-            }}
-            onFormSubmitted={() => setFormSubmitted()}
-            loading={<div>Loading...</div>}
-          />
+    return (
+      <>
+        <HubspotForm
+          portalId={portalId}
+          formId={formId}
+          onReady={() => {
+            const script = document.createElement("script");
+            script.src =
+              "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+            let jqueryScript = document.getElementsByTagName("script");
+            let src = Array.from(jqueryScript).filter(
+              (item) => item.src === script.src,
+            );
+            if (src.length === 0) {
+              document.body.appendChild(script);
+            }
+          }}
+          onSubmit={() => {
+            const gtag = window.gtag;
+            goalName && gtag && gtag("event", goalName);
+          }}
+          onFormSubmitted={() =>
+            redirectToThankYou({ form: goalName, property: pageId, formId })
+          }
+          loading={<div>Loading...</div>}
+        />
 
-          {/* <ContactUnsubscribe /> */}
-        </>
-      );
-    }
+        {/* <ContactUnsubscribe /> */}
+      </>
+    );
   };
-
-  const [formSubmitStatus, setFormSubmitStatus] = useState(false);
-
-  const setFormState = async () => {
-    const form = await JSON.parse(localStorage.getItem(`${formId}Submitted`));
-
-    if (!form) {
-      localStorage.setItem(`${formId}Submitted`, JSON.stringify(false));
-    } else {
-      setFormSubmitStatus(true);
-    }
-
-    const fbFormSubmitted =
-      window.location.search.split("?")[1] === "formSubmitted";
-
-    if (fbFormSubmitted) {
-      setFormSubmitted(true);
-    }
-  };
-
-  const setFormSubmitted = async (e) => {
-    await localStorage.setItem(`${formId}Submitted`, JSON.stringify(true));
-    setFormSubmitStatus(true);
-  };
-
-  useEffect(() => {
-    setFormState();
-  }, [pageId]);
 
   return (
     <section id="contact" className="contactV2">

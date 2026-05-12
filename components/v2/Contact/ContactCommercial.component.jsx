@@ -1,9 +1,9 @@
 import { ImageLoader } from "../../../utils/imageLoader";
 import HeroArrow from "../../../assets/svg/heroArrow.svg";
 import { useState } from "react";
-import { useEffect } from "react";
 import { appUrl } from "../../../utils/appUrl";
 import ContactUnsubscribe from "./ContactUnsubscribe.component";
+import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 
 const ContactCommercial = ({
   content,
@@ -22,8 +22,6 @@ const ContactCommercial = ({
   imageL,
   imageR,
 }) => {
-  const [formSubmitStatus, setFormSubmitStatus] = useState(false);
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,13 +31,8 @@ const ContactCommercial = ({
   const [formResponse, setFormResponse] = useState("");
 
   const renderForm = () => {
-    if (formSubmitStatus) {
-      return (
-        <h3 className="themeHeader">Thank you for submitting the form!</h3>
-      );
-    } else {
-      return (
-        <div className="contactV2__form">
+    return (
+      <div className="contactV2__form">
           <div className="hs_firstname hs-firstname hs-fieldtype-text field hs-form-field">
             <div className="input">
               <input
@@ -112,29 +105,9 @@ const ContactCommercial = ({
             </div>
           </div>
 
-          {/* <ContactUnsubscribe /> */}
-        </div>
-      );
-    }
-  };
-
-  const setFormState = async () => {
-    const form = await JSON.parse(
-      localStorage.getItem(`CSLCommercialSubmitted`),
+        {/* <ContactUnsubscribe /> */}
+      </div>
     );
-
-    if (!form) {
-      localStorage.setItem("CSLCommercialSubmitted", JSON.stringify(false));
-    } else {
-      setFormSubmitStatus(true);
-    }
-
-    const fbFormSubmitted =
-      window.location.search.split("?")[1] === "formSubmitted";
-
-    if (fbFormSubmitted) {
-      setFormSubmitted(true);
-    }
   };
 
   const handleFormSubmit = async (e) => {
@@ -173,15 +146,10 @@ const ContactCommercial = ({
           });
 
           if (response.status !== 400) {
-            const data = await response.json();
-            await setFormResponse(data.message);
-
-            setTimeout(() => {
-              setFormSubmitted();
-            }, 1000);
-          } else {
             const gtag = window.gtag;
-            gtag && (await gtag("event", "csl_commercial_form_submitted"));
+            gtag && gtag("event", "csl_commercial_form_submitted");
+            redirectToThankYou({ form: "csl_commercial" });
+          } else {
             await setFormResponse(response.error);
           }
         }, 2500);
@@ -192,15 +160,6 @@ const ContactCommercial = ({
       }
     }
   };
-
-  const setFormSubmitted = async () => {
-    await localStorage.setItem("CSLCommercialSubmitted", JSON.stringify(true));
-    setFormSubmitStatus(true);
-  };
-
-  useEffect(() => {
-    setFormState();
-  }, [pageId]);
 
   return (
     <section id="contactform" className="contactV2">

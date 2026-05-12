@@ -1,0 +1,68 @@
+// styles/pages/thankyou.module.scss
+
+// 1. Configuration
+@import "../generic/variables";
+@import "../generic/mixins";
+
+// 2. Scoped Styles
+.thankYouWrapper {
+    :global {
+        // --- Generics & Base ---
+        @import "../generic/base";
+        @import "../generic/globals";
+        @import "../generic/fonts";
+        @import "../generic/animations";
+
+        // --- Sections ---
+        @import "../sections/footer";
+
+        // --- Global Components ---
+        @import "../components/container";
+        @import "../components/btn";
+        @import "../components/popup";
+        @import "../components/themes";
+
+        // --- V2 Components ---
+        @import "../../components/v2/NavV3/NavV3";
+        @import "../../components/v2/NavV3/NavSecondaryV3";
+        @import "../../components/v2/Contact/ContactV2";
+        @import "../../components/v2/TranslucentButton/TranslucentButton";
+        @import "../../components/v2/V2misc";
+
+        // --- Overrides ---
+        @import "../2025";
+
+        // --- Page-specific ---
+        .thankYou {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            background-color: $c-white;
+
+            &__content {
+                max-width: 720px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 24px;
+
+                h1 {
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+
+                .btn {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}
