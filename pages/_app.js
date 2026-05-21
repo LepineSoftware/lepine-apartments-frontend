@@ -71,6 +71,37 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router.pathname]);
 
+  useEffect(() => {
+    const GLOBAL_OSPID = 'f79d2559e995407cb64040abe5e3d338';
+
+    let subid = null;
+    const path = router.pathname;
+    if (path === '/property/hubspot') {
+      subid = 'thenormand';
+    } else if (path.startsWith('/property/') || path.startsWith('/comingsoon/')) {
+      subid = path.split('/')[2];
+    } else if (path === '/herosridge') {
+      subid = 'herosridge';
+    }
+
+    let src =
+      'https://px.xfer123.com/1x1.png?ospid=' +
+      GLOBAL_OSPID +
+      '&osrnd=' +
+      Math.round(new Date().getTime());
+    if (subid) {
+      src += '&subid=' + subid;
+    }
+
+    var pixel = document.createElement('img');
+    pixel.src = src;
+    pixel.setAttribute('height', '1');
+    pixel.setAttribute('width', '1');
+    pixel.setAttribute('style', 'display:none');
+    pixel.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+    document.body.appendChild(pixel);
+  }, [router.pathname]);
+
   const canonical = `https://www.lepineapartments.com${
     router.asPath.split("?")[0]
   }`;
