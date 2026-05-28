@@ -1,6 +1,9 @@
 User-agent: Googlebot
 Disallow: /nogooglebot/
 
+User-agent: OAI-AdsBot
+Allow: /
+
 User-agent: *
 Allow: /
 
