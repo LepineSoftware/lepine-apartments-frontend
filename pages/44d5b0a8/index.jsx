@@ -414,27 +414,27 @@ const SocialDashboard = ({
 
           <div className="socialDashboard__posts" data-platform={platform}>
             {platform === "youtube" &&
-              youtube.recent.items.map((item, i) => (
+              (youtube?.recent?.items ?? []).map((item, i) => (
                 <YouTubeItem item={item} i={i} key={i} />
               ))}
             {platform === "instagram" &&
-              instagram.recent.data.map((item, i) => (
+              (instagram?.recent?.data ?? []).map((item, i) => (
                 <InstagramItem item={item} i={i} key={i} />
               ))}
             {platform === "facebook" &&
-              facebook.recent.data.map((item, i) => (
+              (facebook?.recent?.data ?? []).map((item, i) => (
                 <FacebookItem item={item} i={i} key={i} />
               ))}
             {platform === "linkedin" &&
-              linkedin.recent.elements.map((item, i) => (
+              (linkedin?.recent?.elements ?? []).map((item, i) => (
                 <LinkedInItem item={item} i={i} key={i} />
               ))}
             {platform === "newsroom" &&
-              newsroom.recent.map((item, i) => (
+              (newsroom?.recent ?? []).map((item, i) => (
                 <NewsroomItem item={item} i={i} key={i} />
               ))}
             {platform === "googlereview" &&
-              google.recent.map((item, i) => (
+              (google?.recent ?? []).map((item, i) => (
                 <GoogleReviewItem item={item} i={i} key={i} />
               ))}
           </div>
