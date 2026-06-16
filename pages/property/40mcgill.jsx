@@ -398,8 +398,8 @@ const Property = ({
               <ContactPopup2025
                 htmlFormId="hs-form-1"
                 type="form"
-                title="Contact 40 McGill in Smith Falls"
-                subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Smith Falls."
+                title="Contact 40 McGill in Smiths Falls"
+                subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Smiths Falls."
                 pageId={pageId}
                 portalId={contact.portalId}
                 goalName={listings.goalName}
@@ -421,8 +421,8 @@ const Property = ({
           <ContactPopup2025
             type="form"
             htmlFormId="hs-form-2"
-            title="Contact 40 McGill in Smith Falls"
-            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Smith Falls."
+            title="Contact 40 McGill in Smiths Falls"
+            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Smiths Falls."
             pageId={pageId}
             portalId={contact.portalId}
             goalName={listings.goalName}
