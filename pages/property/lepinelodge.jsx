@@ -336,7 +336,7 @@ const Property = ({
             lightbox
           />
         )}
-        {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
+        {instagramPosts?.length > 0 && <InstagramFeed posts={instagramPosts} />}
         {LepineLodgeFAQs.length > 0 && (
           <FAQ
             content={LepineLodgeFAQs}
@@ -394,6 +394,8 @@ const Property = ({
               <ContactPopup2025
                 htmlFormId="hs-form-1"
                 type="form"
+                title="Contact Lépine Lodge in Renfrew"
+                subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Renfrew."
                 pageId={pageId}
                 portalId={contact.portalId}
                 goalName={listings.goalName}
@@ -415,6 +417,8 @@ const Property = ({
           <ContactPopup2025
             type="form"
             htmlFormId="hs-form-2"
+            title="Contact Lépine Lodge in Renfrew"
+            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Renfrew."
             pageId={pageId}
             portalId={contact.portalId}
             goalName={listings.goalName}
@@ -540,7 +544,7 @@ export async function getStaticProps(ctx) {
           siblingPropertyData[0]?.properties?.length > 0
             ? siblingPropertyData[0].properties
             : [],
-        instagramPosts: instagramPosts.data,
+        instagramPosts: instagramPosts.data ? instagramPosts.data : null,
       },
       revalidate: 1,
     };

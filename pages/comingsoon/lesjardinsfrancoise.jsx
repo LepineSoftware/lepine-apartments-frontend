@@ -245,7 +245,11 @@ function ComingSoon({
         <PropertyListingsRegister
           portalId={registration.portalId}
           formId={registration.formId}
-          content={registration.content}
+          content={{
+            ...registration.content,
+            header: "Register Les Jardins Françoise Updates",
+            copy: "Join our priority list for exclusive updates and early leasing opportunities.",
+          }}
         />
         {sponsorships && (
           <AboutSection

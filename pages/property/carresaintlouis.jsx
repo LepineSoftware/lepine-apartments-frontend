@@ -197,6 +197,8 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
             <ContactPopup2025
               htmlFormId="hs-form-1"
               type="form"
+              title="Contact Carré Saint-Louis in Kanata"
+              subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Kanata."
               pageId={pageId}
               portalId={contact.portalId}
               goalName="carresaintlouis_property_form_submitted"
@@ -217,6 +219,8 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           <ContactPopup2025
             type="form"
             htmlFormId="hs-form-2"
+            title="Contact Carré Saint-Louis in Kanata"
+            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Kanata."
             pageId={pageId}
             portalId={contact.portalId}
             goalName="carresaintlouis_property_form_submitted"

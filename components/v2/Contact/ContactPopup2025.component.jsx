@@ -7,6 +7,8 @@ import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 const ContactPopup2025 = ({
   htmlFormId,
   type,
+  title,
+  subtitle,
   portalId,
   formId,
   pageId,
@@ -78,7 +80,12 @@ const ContactPopup2025 = ({
             data-aos="fade"
             style={{ padding: "25px", borderRadius: "0", rowGap: "20px" }}
           >
-            {type === "form" && <h2 className="themeHeader">Contact Us</h2>}
+            {type === "form" && (
+              <h2 className="themeHeader">{title || "Contact Us"}</h2>
+            )}
+            {type === "form" && subtitle && (
+              <h3 className="contactV2__subtitle">{subtitle}</h3>
+            )}
             {phone && (
               <a href={`tel:${phone}`}>
                 <h3

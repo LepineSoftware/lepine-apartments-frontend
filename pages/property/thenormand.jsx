@@ -399,6 +399,8 @@ const Property = ({
               <ContactPopup2025
                 htmlFormId="hs-form-1"
                 type="form"
+                title="Contact The Normand in Kanata"
+                subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Kanata."
                 pageId={pageId}
                 portalId={contact.portalId}
                 goalName={listings.goalName}
@@ -420,6 +422,8 @@ const Property = ({
           <ContactPopup2025
             type="form"
             htmlFormId="hs-form-2"
+            title="Contact The Normand in Kanata"
+            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Kanata."
             pageId={pageId}
             portalId={contact.portalId}
             goalName={listings.goalName}

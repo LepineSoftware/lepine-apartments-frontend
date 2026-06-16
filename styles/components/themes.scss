@@ -1,6 +1,7 @@
 
 @mixin assignTheme($primary, $secondary, $tertiary, $quarternary) {
     .themeHeader { color: $primary; }
+    .contactV2__subtitle { color: $primary; }
     .rt a { color: $primary; }
     .themeHeaderSecondary { color: $secondary; }
     .themeHeaderRt { h1, h2, h3, h4 { color: $primary; } }

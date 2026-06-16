@@ -340,7 +340,7 @@ const Property = ({
             lightbox
           />
         )}
-        {instagramPosts.length > 0 && <InstagramFeed posts={instagramPosts} />}
+        {instagramPosts?.length > 0 && <InstagramFeed posts={instagramPosts} />}
         {HowardGrantFAQs.length > 0 && (
           <FAQ
             content={HowardGrantFAQs}
@@ -398,6 +398,8 @@ const Property = ({
               <ContactPopup2025
                 htmlFormId="hs-form-1"
                 type="form"
+                title="Contact Howard Grant in Barrhaven"
+                subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Barrhaven."
                 pageId={pageId}
                 portalId={contact.portalId}
                 goalName={listings.goalName}
@@ -419,6 +421,8 @@ const Property = ({
           <ContactPopup2025
             type="form"
             htmlFormId="hs-form-2"
+            title="Contact Howard Grant in Barrhaven"
+            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Barrhaven."
             pageId={pageId}
             portalId={contact.portalId}
             goalName={listings.goalName}
@@ -544,7 +548,7 @@ export async function getStaticProps(ctx) {
           siblingPropertyData[0]?.properties?.length > 0
             ? siblingPropertyData[0].properties
             : [],
-        instagramPosts: instagramPosts.data,
+        instagramPosts: instagramPosts.data ? instagramPosts.data : null,
       },
       revalidate: 1,
     };
