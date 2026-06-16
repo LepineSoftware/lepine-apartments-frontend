@@ -491,6 +491,8 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
             <ContactPopup2025
               type="form"
               htmlFormId="hs-form-1"
+              title="Contact Johanne’s Gardens in Carleton Place"
+              subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Carleton Place."
               pageId={pageId}
               portalId={contact.portalId}
               goalName="johannesgardens_property_form_submitted"
@@ -511,6 +513,8 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           <ContactPopup2025
             type="form"
             htmlFormId="hs-form-2"
+            title="Contact Johanne’s Gardens in Carleton Place"
+            subtitle="Get in touch with our leasing team to learn more about luxury apartment living in Carleton Place."
             pageId={pageId}
             portalId={contact.portalId}
             goalName="johannesgardens_property_form_submitted"
