@@ -20,7 +20,7 @@ import { ImageLoader } from '../../../utils/imageLoader'
 import { submitGAEvent } from '../../../utils/submitGAEvent';
 
 import ContactFormPopup from '../../v3/ContactFormPopup/ContactFormPopup.component';
-import ContactGeneral from '../Contact/ContactGeneral.component';
+import ContactPopup2025 from '../Contact/ContactPopup2025.component';
 import tenantServices from '../../../static/global/tenantServices.json';
 
 const NavV3 = ({ v2, navSecondarySticky, property, logoDark, current, phoneNumber, pageId, phoneHref, contact, links, rentCopy }) => {
@@ -404,7 +404,16 @@ const NavV3 = ({ v2, navSecondarySticky, property, logoDark, current, phoneNumbe
                 contactPopupIsActive={contactPopupIsActive}
                 setContactPopupIsActive={setContactPopupIsActive}
             >
-                <ContactGeneral type="form" setContactPopupIsActive={setContactPopupIsActive} />
+                <ContactPopup2025
+                    htmlFormId="hs-form-1"
+                    type="form"
+                    pageId={pageId}
+                    portalId="22452018"
+                    goalName="general_contact_form_submitted"
+                    formId="ec38dcaf-e697-48b3-8228-92aa14b18797"
+                    phone={phone}
+                    setContactPopupIsActive={setContactPopupIsActive}
+                />
             </ContactFormPopup>
 
             <nav className={navV3Classes.join(' ')}>
