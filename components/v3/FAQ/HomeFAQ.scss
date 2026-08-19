@@ -1,0 +1,55 @@
+// Home FAQ: reuses the .faqV3 accordion visuals, but the home page has no
+// data-theme, so the theme-driven .themeBGDark background never resolves here.
+// Set the brand dark background explicitly and let the section size to content.
+.homeFAQ {
+    min-height: unset;
+    background: $c-lepineBrown;
+
+    // On the home page (data-page="homeV2") a global rule paints every heading
+    // $c-lepineBrown, which would hide the white section title against the brown
+    // background. Restore the FAQ header colour.
+    .faqV3__header {
+        color: $c-white !important;
+    }
+
+    .faqV3__item {
+        cursor: pointer;
+    }
+
+    // Draw the +/- marker with CSS bars so it stays optically centred in the
+    // box (font glyphs sit low because of their line-box metrics).
+    .faqV3__question--icon {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #5e514d;
+        }
+
+        // horizontal bar (always visible = the minus)
+        &::before {
+            width: 12px;
+            height: 2.5px;
+        }
+
+        // vertical bar (present only when collapsed = completes the plus)
+        &::after {
+            width: 2.5px;
+            height: 12px;
+        }
+    }
+
+    .faqV3__item.active .faqV3__question--icon::after {
+        display: none;
+    }
+
+    .faqV3__answer p {
+        margin: 0;
+        color: #5e514d;
+    }
+}

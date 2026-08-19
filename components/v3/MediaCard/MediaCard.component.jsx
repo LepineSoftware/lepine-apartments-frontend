@@ -123,7 +123,7 @@ const MediaCard = ({ media, type }) => {
             {categories?.length > 0 && (
               <div className="mediaCard__categories">
                 {categories.map((c, i) => (
-                  <div key={i} class="mediaCard__categories--item themeBGDark">
+                  <div key={i} className="mediaCard__categories--item themeBGDark">
                     <p>{c}</p>
                   </div>
                 ))}

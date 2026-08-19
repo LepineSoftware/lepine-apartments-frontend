@@ -25,7 +25,7 @@ const HerosRidgePlaylist = ({ playlist }) => {
 
                 <div className="contentWrapper herosRidgePlaylist" data-wrapper="xl">
                     <div className="contentWrapper herosRidgePlaylist__embed" data-wrapper="xl">
-                        <iframe src={`https://www.youtube.com/embed/${playlist.items[currentHeroIndex].contentDetails.videoId}`} frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <iframe src={`https://www.youtube.com/embed/${playlist.items[currentHeroIndex].contentDetails.videoId}`} frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <h3>{parseTitle(playlist.items[currentHeroIndex].snippet.title)}</h3>
                         <p className="herosRidgePlaylist__description">{(playlist.items[currentHeroIndex].snippet.description)}</p>
                     </div>

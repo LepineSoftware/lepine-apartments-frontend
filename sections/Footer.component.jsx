@@ -21,7 +21,7 @@ const Footer = ({ findMyApartment, socialLinks, content }) => {
                 </div>
 
                 <div className="footer__utility">
-                    <p style={{ "user-select": "none" }}>&copy; Lépine Apartments. All Rights Reserved.</p>
+                    <p style={{ userSelect: "none" }}>&copy; Lépine Apartments. All Rights Reserved.</p>
 
                     <div className="footer__popup--container">
                         {content?.info?.email && <a href={`mailto:${content.info.email}`} rel="noreferrer">{content.info.email}</a>}

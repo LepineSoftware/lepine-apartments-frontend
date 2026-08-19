@@ -22,6 +22,8 @@ import "aos/dist/aos.css";
 import fetchInstagramRecentPosts from "../utils/fetchInstagramRecentPosts";
 import InstagramFeed from "../components/v3/InstagramFeed/InstagramFeed.component";
 import Newsroom from "../sections/Newsroom/Newsroom.component";
+import HomeFAQ from "../components/v3/FAQ/HomeFAQ.component";
+import HomeFAQs from "../static/home/faqs.json";
 import TestimonialsV3 from "../components/v3/Testimonials/Testimonials.component";
 import fetchNeighbourhoods from "../utils/fetchNeighbourhoods";
 import ContactPopupTrigger from "../components/v2/Contact/ContactPopupTrigger.component";
@@ -159,6 +161,8 @@ const Home = ({
         {posts.length > 0 && (
           <Newsroom header="Latest News" posts={posts} newsroom />
         )}
+
+        <HomeFAQ items={HomeFAQs} />
 
         {contact && (
           <ContactV2
