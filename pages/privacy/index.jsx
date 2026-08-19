@@ -15,6 +15,7 @@ const PrivacyPolicy = () => {
       </Head>
 
       <ContentWrapper cssClass="privacyPolicy" size="xl">
+        <h1 className="srOnly">Privacy Policy</h1>
         <Link className="privacyPolicy__logo" href="/">
           <Image src={Logo.src} height={87} width={288} alt="Lepine" />
         </Link>

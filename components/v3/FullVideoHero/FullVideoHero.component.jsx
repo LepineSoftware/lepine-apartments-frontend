@@ -11,6 +11,7 @@ const FullVideoHero = ({ id, header, subtitle, copy, video, featuredListingsLeng
             
             <ContentWrapper size="xl" cssClass="fullVideoHero__content">
                 {logos && logos.light && ImageLoader(logos.light, 'fullVideoHero__logo', '', 852, 130, 0.5)}
+                {header && <h1 className="srOnly">{header}</h1>}
                 {/* {header && <h1 className="fullVideoHero__header">{header}</h1>} */}
                 {subtitle && <h3 className="fullVideoHero__subtitle">{subtitle}</h3>}
                 {/* {copy && <p className="fullVideoHero__copy">{copy}</p>} */}

@@ -400,6 +400,7 @@ const SocialDashboard = ({
           <ContentWrapper cssClass="socialDashboard__logo" size="xl">
             <Link href="/">{ImageLoader(LogoDark.src, "", "", 288, 87)}</Link>
 
+            <h1 className="srOnly">Social Media Dashboard</h1>
             <h2>Social Media Dashboard</h2>
           </ContentWrapper>
 

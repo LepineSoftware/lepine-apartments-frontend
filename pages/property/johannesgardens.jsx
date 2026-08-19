@@ -367,6 +367,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           </div>
 
           <div className="jgHero__logo">
+            <h1 className="srOnly">Johannes Gardens — Lépine Apartments in Carleton Place</h1>
             <Image
               src="https://lepine-storage.nyc3.digitaloceanspaces.com/179df4c242f6adeb1be8c5034e208c24.svg"
               alt=""

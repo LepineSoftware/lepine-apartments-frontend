@@ -54,6 +54,8 @@ const Home = ({ posts, herosRidgeData, playlist, neighbourhoods }) => {
 
         <CondensedNav />
 
+        <h1 className="srOnly">Hero&apos;s Ridge</h1>
+
         <HerosRidgeHero
           id="hero"
           herosRidge={herosRidgeData.hero}

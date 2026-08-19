@@ -11,6 +11,7 @@ const Hero = ({ property }) => {
         <div className="comingSoonHero">
             <ContentWrapper cssClass="comingSoonHero__copy">
                 <div className="comingSoonHero__copy--wrapper">
+                    <h1 className="srOnly">{property.name}</h1>
                     <div>
                         <h3 style={{ marginBottom: '10px' }}>Coming Soon</h3>
                         <h2 className="themeHeader">{property.name}</h2>

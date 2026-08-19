@@ -25,6 +25,7 @@ const Property = ({ property, contactInfo, termsAndConditions }) => {
         </Head>
 
         <div className="registrationForm">
+          <h1 className="srOnly">Refer a Friend</h1>
           <div className="registrationForm__logo">
             <Image src={Logo} alt="Lépine" height="87" width="288" />
             <h2>Refer a Friend</h2>

@@ -91,6 +91,8 @@ const Home = ({
           rentCopy="Rent Today"
         />
 
+        <h1 className="srOnly">Lépine Apartments — Your Stage for Life&apos;s Play</h1>
+
         <VideoHero header={homeV2.hero.header} video={homeV2.hero.video} />
 
         <ImageCopyBlock
