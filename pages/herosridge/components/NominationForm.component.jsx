@@ -195,7 +195,7 @@ const NominationForm = () => {
                 <p>Deployments</p>
                 <input name="deployments" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.deployments} />
 
-                <p>Any career highlights they'd like to mention</p>
+                <p>Any career highlights they&apos;d like to mention</p>
                 <textarea name="careerHighlights" className="" onInput={(e) => updateFormValue(e)} value={form.careerHighlights}></textarea>
 
                 <p>Veteran Jersey Size</p>
