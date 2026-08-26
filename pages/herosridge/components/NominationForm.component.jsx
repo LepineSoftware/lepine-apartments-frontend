@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 
+const ALLOWED_PHOTO_TYPES = ["image/jpeg", "image/png", "image/webp"];
+const MAX_PHOTO_SIZE = 1 * 1024 * 1024; // 1MB
+
+const JERSEY_SIZES = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
+
 const NominationForm = () => {
     const [form, setForm] = useState({
         vetName: "",
@@ -8,6 +13,16 @@ const NominationForm = () => {
         vetEmail: "",
         vetPhoneNumber: "",
         vetBio: "",
+        element: "",
+        trade: "",
+        rank: "",
+        yearsOfService: "",
+        deployments: "",
+        careerHighlights: "",
+        jerseySize: "",
+        photoName: "",
+        photoType: "",
+        photoData: "",
         sponsorName: "",
         sponsorMailingAddress: "",
         sponsorEmail: "",
@@ -33,6 +48,16 @@ const NominationForm = () => {
                         vetEmail: form.vetEmail,
                         vetPhoneNumber: form.vetPhoneNumber,
                         vetBio: form.vetBio,
+                        element: form.element,
+                        trade: form.trade,
+                        rank: form.rank,
+                        yearsOfService: form.yearsOfService,
+                        deployments: form.deployments,
+                        careerHighlights: form.careerHighlights,
+                        jerseySize: form.jerseySize,
+                        photoName: form.photoName,
+                        photoType: form.photoType,
+                        photoData: form.photoData,
                         sponsorName: form.sponsorName,
                         sponsorMailingAddress: form.sponsorMailingAddress,
                         sponsorEmail: form.sponsorEmail,
@@ -52,7 +77,8 @@ const NominationForm = () => {
                         gtag && gtag('event', 'herosridge_form_submitted');
                         redirectToThankYou({ form: 'herosridge_nomination' });
                     } else {
-                        await setFormResponse(response.error);
+                        const data = await response.json().catch(() => ({}));
+                        setFormResponse(data.error || 'Something went wrong! Please email ryan.peterson@lepinecorp.com');
                     }
                 }, 2500);
             } catch (error) {
@@ -91,6 +117,45 @@ const NominationForm = () => {
         });
     }
 
+    const updatePhoto = (e) => {
+        setFormResponse('');
+        const file = e.target.files && e.target.files[0];
+
+        if (!file) {
+            setForm(prevState => ({ ...prevState, photoName: "", photoType: "", photoData: "" }));
+            return;
+        }
+
+        if (!ALLOWED_PHOTO_TYPES.includes(file.type)) {
+            setFormResponse('Please upload a JPG, PNG, or WEBP image.');
+            e.target.value = "";
+            setForm(prevState => ({ ...prevState, photoName: "", photoType: "", photoData: "" }));
+            return;
+        }
+
+        if (file.size > MAX_PHOTO_SIZE) {
+            setFormResponse('The photo must be 1MB or smaller.');
+            e.target.value = "";
+            setForm(prevState => ({ ...prevState, photoName: "", photoType: "", photoData: "" }));
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            setForm(prevState => ({
+                ...prevState,
+                photoName: file.name,
+                photoType: file.type,
+                photoData: reader.result
+            }));
+        };
+        reader.onerror = () => {
+            setFormResponse('Could not read the photo. Please try another file.');
+            e.target.value = "";
+        };
+        reader.readAsDataURL(file);
+    }
+
     return (
         <>
             <div className="herosRidge__nominationForm">
@@ -99,7 +164,7 @@ const NominationForm = () => {
 
                 <p>Veteran Mailing Address (required)</p>
                 <input required name="vetMailingAddress" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetMailingAddress} />
-                
+
                 <p>Veteran Email</p>
                 <input name="vetEmail" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetEmail} />
 
@@ -109,6 +174,41 @@ const NominationForm = () => {
                 <p>Veteran Bio (required, {500 - form.vetBio.length} characters remaining)</p>
                 <textarea maxLength={500} required name="vetBio" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetBio} placeholder="Tell us about the nominee. You may wish to include details such as your relationship to the nominee, their years of service in the Canadian Armed Forces, retired rank, current service status, or any other relevant information."></textarea>
 
+                <p>Element</p>
+                <select name="element" onChange={(e) => updateFormValue(e)} value={form.element}>
+                    <option value="">Select an element</option>
+                    <option value="Airforce">Airforce</option>
+                    <option value="Army">Army</option>
+                    <option value="Navy">Navy</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <p>Trade</p>
+                <input name="trade" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.trade} />
+
+                <p>Rank</p>
+                <input name="rank" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.rank} />
+
+                <p>Years of Service</p>
+                <input name="yearsOfService" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.yearsOfService} />
+
+                <p>Deployments</p>
+                <input name="deployments" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.deployments} />
+
+                <p>Any career highlights they'd like to mention</p>
+                <textarea name="careerHighlights" className="" onInput={(e) => updateFormValue(e)} value={form.careerHighlights}></textarea>
+
+                <p>Veteran Jersey Size</p>
+                <select name="jerseySize" onChange={(e) => updateFormValue(e)} value={form.jerseySize}>
+                    <option value="">Select a size</option>
+                    {JERSEY_SIZES.map((size) => (
+                        <option key={size} value={size}>{size}</option>
+                    ))}
+                </select>
+
+                <p>Veteran Photo (JPG, PNG or WEBP — max 1MB)</p>
+                <input name="photo" type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => updatePhoto(e)} />
+
                 <hr />
 
                 <p>Sponsor Name (required)</p>
@@ -116,7 +216,7 @@ const NominationForm = () => {
 
                 <p>Sponsor Mailing Address (required)</p>
                 <input required name="sponsorMailingAddress" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.sponsorMailingAddress} />
-                
+
                 <p>Sponsor Email</p>
                 <input name="sponsorEmail" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.sponsorEmail} />
 

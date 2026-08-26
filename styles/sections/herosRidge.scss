@@ -26,6 +26,21 @@
             width: 100%;
          }
 
+        select {
+            padding: 0.5rem;
+            height: 3rem;
+            width: 100%;
+            border: 1px inset rgb(118, 118, 118);
+            border-radius: 0;
+            background-color: #fff;
+        }
+
+        input[type="file"] {
+            padding: 0.5rem;
+            height: auto;
+            width: 100%;
+        }
+
         textarea {
             padding: 0.5rem !important;
             height: 12rem;
