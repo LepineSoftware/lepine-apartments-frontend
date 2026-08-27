@@ -162,7 +162,7 @@ const NominationForm = () => {
                 <p>Veteran Name (required)</p>
                 <input required name="vetName" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetName} />
 
-                <p>Veteran Mailing Address (required)</p>
+                <p>Veteran Home Address (required)</p>
                 <input required name="vetMailingAddress" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetMailingAddress} />
 
                 <p>Veteran Email</p>
@@ -171,8 +171,8 @@ const NominationForm = () => {
                 <p>Veteran Phone Number (required)</p>
                 <input required name="vetPhoneNumber" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetPhoneNumber} />
 
-                <p>Veteran Bio (required, {500 - form.vetBio.length} characters remaining)</p>
-                <textarea maxLength={500} required name="vetBio" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetBio} placeholder="Tell us about the nominee. You may wish to include details such as your relationship to the nominee, their years of service in the Canadian Armed Forces, retired rank, current service status, or any other relevant information."></textarea>
+                <p>Veteran Bio (required, {1000 - form.vetBio.length} characters remaining)</p>
+                <textarea maxLength={1000} required name="vetBio" type="text" className="" onInput={(e) => updateFormValue(e)} value={form.vetBio} placeholder="Tell us about the nominee. You may wish to include details such as your relationship to the nominee, their years of service in the Canadian Armed Forces, retired rank, current service status, or any other relevant information."></textarea>
 
                 <p>Element</p>
                 <select name="element" onChange={(e) => updateFormValue(e)} value={form.element}>
