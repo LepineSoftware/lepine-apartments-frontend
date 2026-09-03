@@ -111,7 +111,7 @@ function MyApp({ Component, pageProps }) {
       className={`${jost.variable} ${openSans.variable} ${poppins.variable} font-sans`}
     >
       <Head>
-        <link rel="canonical" href={canonical} />
+        <link rel="canonical" href={canonical} key="canonical" />
 
         <link
           rel="stylesheet"
