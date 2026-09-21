@@ -4,7 +4,7 @@ import { redirectToThankYou } from "../../../utils/redirectToThankYou";
 const ALLOWED_PHOTO_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_PHOTO_SIZE = 1 * 1024 * 1024; // 1MB
 
-const JERSEY_SIZES = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
+const HOODIE_SIZES = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
 
 const NominationForm = () => {
     const [form, setForm] = useState({
@@ -19,7 +19,7 @@ const NominationForm = () => {
         yearsOfService: "",
         deployments: "",
         careerHighlights: "",
-        jerseySize: "",
+        hoodieSize: "",
         photoName: "",
         photoType: "",
         photoData: "",
@@ -54,7 +54,7 @@ const NominationForm = () => {
                         yearsOfService: form.yearsOfService,
                         deployments: form.deployments,
                         careerHighlights: form.careerHighlights,
-                        jerseySize: form.jerseySize,
+                        hoodieSize: form.hoodieSize,
                         photoName: form.photoName,
                         photoType: form.photoType,
                         photoData: form.photoData,
@@ -199,9 +199,9 @@ const NominationForm = () => {
                 <textarea name="careerHighlights" className="" onInput={(e) => updateFormValue(e)} value={form.careerHighlights}></textarea>
 
                 <p>Veteran Hoodie Size</p>
-                <select name="jerseySize" onChange={(e) => updateFormValue(e)} value={form.jerseySize}>
+                <select name="hoodieSize" onChange={(e) => updateFormValue(e)} value={form.hoodieSize}>
                     <option value="">Select a size</option>
-                    {JERSEY_SIZES.map((size) => (
+                    {HOODIE_SIZES.map((size) => (
                         <option key={size} value={size}>{size}</option>
                     ))}
                 </select>

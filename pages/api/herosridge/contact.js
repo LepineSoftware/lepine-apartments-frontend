@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         const yearsOfService = req.body.yearsOfService;
         const deployments = req.body.deployments;
         const careerHighlights = req.body.careerHighlights;
-        const jerseySize = req.body.jerseySize;
+        const hoodieSize = req.body.hoodieSize;
         const photoName = req.body.photoName;
         const photoType = req.body.photoType;
         const photoData = req.body.photoData;
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
             <p>Years of Service: ${yearsOfService}</p>
             <p>Deployments: ${deployments}</p>
             <p>Career Highlights: ${careerHighlights}</p>
-            <p>Jersey Size: ${jerseySize}</p>
+            <p>Hoodie Size: ${hoodieSize}</p>
             <p>Photo: ${photoData ? photoName : 'None provided'}</p>
 
             <br/>
