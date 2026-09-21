@@ -198,7 +198,7 @@ const NominationForm = () => {
                 <p>Any career highlights they&apos;d like to mention</p>
                 <textarea name="careerHighlights" className="" onInput={(e) => updateFormValue(e)} value={form.careerHighlights}></textarea>
 
-                <p>Veteran Jersey Size</p>
+                <p>Veteran Hoodie Size</p>
                 <select name="jerseySize" onChange={(e) => updateFormValue(e)} value={form.jerseySize}>
                     <option value="">Select a size</option>
                     {JERSEY_SIZES.map((size) => (
