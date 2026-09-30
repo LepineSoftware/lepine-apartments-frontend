@@ -1,0 +1,19 @@
+[
+  {
+    "id": "johannesgardens-oct17",
+    "name": "Open House at Johanne's Gardens",
+    "streetAddress": "277 Coleman St",
+    "location": "Johanne's Gardens",
+    "body": "You are warmly invited to an Open House at Johanne's Gardens in Carleton Place on Saturday, October 17th, from 12:00 p.m. to 4:00 p.m.",
+    "city": "Carleton Place, ON",
+    "theme": "johannesgardens",
+    "date": "Saturday, October 17th",
+    "time": "12pm - 4pm",
+    "googleMaps": "https://www.google.com/maps/search/?api=1&query=277+Coleman+St,+Carleton+Place,+ON",
+    "startDate": "2026-09-30T00:00:00-04:00",
+    "endDate": "2026-10-17T16:00:00-04:00",
+    "eventStart": "2026-10-17T12:00:00-04:00",
+    "eventEnd": "2026-10-17T16:00:00-04:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/20251104_172346000_iOS%20(2).jpg"
+  }
+]

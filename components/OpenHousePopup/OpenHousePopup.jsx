@@ -9,11 +9,15 @@ import OutlookIcon from "../../assets/svg/icon-outlook-cal.svg";
 // Updated paths to static JSON files
 import smithsFallsOpenHouses from "../../static/openhouse/smithsFalls.json";
 import renfrewOpenHouses from "../../static/openhouse/renfrew.json";
+import carletonPlaceOpenHouses from "../../static/openhouse/carletonPlace.json";
+import kanataOpenHouses from "../../static/openhouse/kanata.json";
 
 // Combined data structure
 const DATA = {
   SMITHSFALLS: smithsFallsOpenHouses,
   RENFREW: renfrewOpenHouses,
+  CARLETONPLACE: carletonPlaceOpenHouses,
+  KANATA: kanataOpenHouses,
 };
 
 const getETNow = () => {

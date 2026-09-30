@@ -36,6 +36,7 @@ import Newsroom from "../../sections/Newsroom/Newsroom.component";
 import Image from "next/image";
 import ImageParallaxBar from "../../components/ImageParallaxBar.component";
 import PropertyGallery from "../../sections/PropertyGallery.component";
+import OpenHousePopup from "../../components/OpenHousePopup/OpenHousePopup";
 
 const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
   const { meta, pageId, logos, name, contact } = property;
@@ -338,6 +339,8 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           )}
           {meta?.keywords && <meta name="keywords" content={meta?.keywords} />}
         </Head>
+
+        <OpenHousePopup />
 
         <NavV3
           rentCopy="Rent Today"
