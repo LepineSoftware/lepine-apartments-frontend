@@ -1,0 +1,19 @@
+[
+  {
+    "id": "carresaintlouis-oct29",
+    "name": "Open House at Carré Saint Louis",
+    "streetAddress": "1050 Maritime Way",
+    "location": "Carré Saint Louis",
+    "body": "You are warmly invited to an Open House at Carré Saint Louis in Kanata on Thursday, October 29th, from 12:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "carresaintlouis",
+    "date": "Thursday, October 29th",
+    "time": "12pm - 4pm",
+    "googleMaps": "https://www.google.com/maps/search/?api=1&query=1050+Maritime+Way,+Kanata,+ON",
+    "startDate": "2026-09-30T00:00:00-04:00",
+    "endDate": "2026-10-29T16:00:00-04:00",
+    "eventStart": "2026-10-29T12:00:00-04:00",
+    "eventEnd": "2026-10-29T16:00:00-04:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/4fe9538ef4abcaefafc8c38b1efd4df1.jpg"
+  }
+]

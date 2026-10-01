@@ -328,6 +328,14 @@
     &[data-theme="saintemilion"] .dateText {
         color: #8C857B;
     }
+
+    &[data-theme="johannesgardens"] .dateText {
+        color: #415468;
+    }
+
+    &[data-theme="carresaintlouis"] .dateText {
+        color: #0b4566;
+    }
 }
 
 @keyframes fadeIn {

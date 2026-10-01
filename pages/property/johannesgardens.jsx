@@ -36,6 +36,7 @@ import Newsroom from "../../sections/Newsroom/Newsroom.component";
 import Image from "next/image";
 import ImageParallaxBar from "../../components/ImageParallaxBar.component";
 import PropertyGallery from "../../sections/PropertyGallery.component";
+import OpenHousePopup from "../../components/OpenHousePopup/OpenHousePopup";
 
 const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
   const { meta, pageId, logos, name, contact } = property;
@@ -215,7 +216,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
       type: "image",
       header: "A History of Excellence",
       copy: "Rooted in a legacy dating back to Montreal’s founding, the Lépine family has always pursued opportunity and progress. As a family-owned apartment development and property management company, we have spent the past 70 years pioneering multi-family real estate, and opening new rental markets across Eastern Ontario.<br/><br/>Lépine has set a new standard for sophisticated rental living – blending quality craftsmanship, elegant design, and modern convenience. Our resort-style rental apartment communities in Ottawa, Carleton Place, Renfrew, and Smiths Falls are designed with sustainability and accessibility in mind, offering carefree living in the neighbourhoods you know and love.",
-      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/3a4f7a317b49a8ce594da434d1583c67.jpg",
+      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/20251104_172346000_iOS%20(2).jpg",
     },
     {
       type: "image",
@@ -234,13 +235,13 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
       type: "image",
       header: "Designed for Accessibility",
       copy: "At Lépine Apartments inclusivity and barrier-free living are fundamental, ensuring that residents of all abilities can navigate the community with ease. Barrier-free entryways and wide doorways provide seamless mobility throughout the building, while accessible common areas, including the lobby, fitness centre, and social spaces, promote comfort and independence. Elevator access to all floors ensures that every resident can move freely, with spacious designs accommodating wheelchairs and mobility aids. Select suites feature adaptive layouts,",
-      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/61b29919be5c1c01587e6966d0277b10.jpg",
+      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01499.jpg",
     },
     {
       type: "image",
       header: "Built for Lasting Comfort",
       copy: "At Lépine Apartments, superior craftsmanship and high-quality materials ensure a safe, quiet, and comfortable living environment. Our reinforced concrete frame construction provides durability, while acoustically insulated slabs and walls enhance privacy and minimize noise between suites.<br/><br/>Fire safety is a top priority, with modern sprinkler systems, fire-resistant construction, and smoke alarms in every suite. Thoughtful insulation exceeds industry standards, ensuring a home that is both energy-efficient and environmentally responsible. Each suite features 100% air compartmentalization and individual fresh air intakes, creating a healthier and more controlled indoor environment.",
-      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/d825396a8f0ea1d1b365cdd7fcf0b4b3.jpg",
+      url: "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01933.jpg",
     },
     {
       type: "image",
@@ -257,13 +258,13 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
   ];
 
   const interiorGallery = [
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/6663a6cf0c69aa29a2512535ab4b55e5.jpg",
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/6f7935ae56b413e593f2891f9fc68f05.jpg",
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/6abb71b41d2e69184c54586881c123c7.jpg",
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/ffd637ec3b6eefd18949f510af779050.jpg",
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/88de34a7941ae2767258378282841059.jpg",
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/1e13dfc5a63232fa93baa9c391a1db2e.jpg",
-    "https://lepine-storage.nyc3.digitaloceanspaces.com/a065595e71f67764b30988893d527012.jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01924%20(4).jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01819.jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01846.jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01915.jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01927%20(2).jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01864%20(1).jpg",
+    "https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01906%20(1).jpg",
   ];
 
   const SuiteFeatures = () => {
@@ -339,6 +340,8 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           {meta?.keywords && <meta name="keywords" content={meta?.keywords} />}
         </Head>
 
+        <OpenHousePopup />
+
         <NavV3
           rentCopy="Rent Today"
           links={links}
@@ -357,7 +360,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
         <div className="jgHero">
           <div className="jgHero__image">
             {ImageLoader(
-              "https://lepine-storage.nyc3.digitaloceanspaces.com/3a4f7a317b49a8ce594da434d1583c67.jpg",
+              "https://lepine-storage.nyc3.digitaloceanspaces.com/20251104_172346000_iOS%20(2).jpg",
               "",
               "",
               1000,
@@ -459,7 +462,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
         </div>
 
         {/* <ImageParallaxBar image="https://lepine-storage.nyc3.digitaloceanspaces.com/96e1ee3a122b1866878c43a357c923ab.jpg" /> */}
-        <ImageParallaxBar image="https://lepine-storage.nyc3.digitaloceanspaces.com/e6168b9b0dcd2adcc565a258cdb0f9f9.jpg" />
+        <ImageParallaxBar image="https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01834%20(2).jpg" />
 
         <FeaturedFloorplans
           items={floorplans}
@@ -467,7 +470,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
           setContactPopupIsActive={setContactPopupIsActive}
         />
 
-        <ImageParallaxBar image="https://lepine-storage.nyc3.digitaloceanspaces.com/6663a6cf0c69aa29a2512535ab4b55e5.jpg" />
+        <ImageParallaxBar image="https://lepine-storage.nyc3.digitaloceanspaces.com/DSC01924%20(4).jpg" />
 
         <SuiteFeatures />
 
