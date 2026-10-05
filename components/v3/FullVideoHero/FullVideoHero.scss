@@ -89,3 +89,8 @@
         max-width: 800px;
     }
 }
+
+// Carré Saint Louis: anchor the hero photo to the bottom so the entrance stays visible
+.container[data-theme="carresaintlouis"] .fullVideoHero__video img {
+    object-position: center bottom;
+}
