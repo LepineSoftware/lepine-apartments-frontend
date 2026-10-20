@@ -206,7 +206,7 @@ const Property = ({ property, city, contactInfo, posts, instagramPosts }) => {
       sqft: 830,
       description: `1-bedroom suite with a private 13' x 7' balcony at Johanne's Gardens by Lépine Apartments in Carleton Place. Featuring an open-concept living and dining area (14' x 20'), a modern kitchen (9' x 11'), a large bedroom (13' x 13'), and an elegant bathroom, this home offers comfort, natural light, and thoughtful design.`,
       image:
-        "https://lepine-storage.nyc3.digitaloceanspaces.com/daaeb2ca86a19ebac37baf5ed60f80c0.png",
+        "https://lepine-storage.nyc3.digitaloceanspaces.com/daaeb2ca86a19ebac37baf5ed60f80j1.png",
       pdf: "https://lepine-storage.nyc3.digitaloceanspaces.com/dda683902e64d55745915d4194d7ce3b.pdf",
     },
   ];
