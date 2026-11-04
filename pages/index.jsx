@@ -33,6 +33,21 @@ import ContactPopup2025 from "../components/v2/Contact/ContactPopup2025.componen
 import contact from "../static/global/contact.json";
 import OpenHousePopup from "../components/OpenHousePopup/OpenHousePopup";
 
+// FAQPage structured data, built from the same source as the visible FAQ
+// section so the schema always matches the on-page content.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: HomeFAQs.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer,
+    },
+  })),
+};
+
 const Home = ({
   testimonials,
   posts,
@@ -81,6 +96,11 @@ const Home = ({
           {homeV2.meta?.description && (
             <meta name="description" content={homeV2.meta?.description} />
           )}
+          <script
+            key="home-faq-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
         </Head>
 
         <OpenHousePopup />
