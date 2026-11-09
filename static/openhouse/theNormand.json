@@ -1,0 +1,53 @@
+[
+  {
+    "id": "thenormand-nov17",
+    "name": "Open House at The Normand",
+    "streetAddress": "1088 Maritime Way",
+    "location": "The Normand",
+    "body": "You are warmly invited to an Open House at The Normand in Kanata on Tuesday, November 17th, from 1:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "thenormand",
+    "date": "November 17, 18 & 19",
+    "time": "1pm - 4pm",
+    "googleMaps": "https://maps.app.goo.gl/2cwZaCgJyrVLHj7G9",
+    "startDate": "2026-11-09T00:00:00-05:00",
+    "endDate": "2026-11-17T16:00:00-05:00",
+    "eventStart": "2026-11-17T13:00:00-05:00",
+    "eventEnd": "2026-11-17T16:00:00-05:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/26c15922c3cbf64e15862c8f3be2b426.jpg"
+  },
+  {
+    "id": "thenormand-nov18",
+    "name": "Open House at The Normand",
+    "streetAddress": "1088 Maritime Way",
+    "location": "The Normand",
+    "body": "You are warmly invited to an Open House at The Normand in Kanata on Wednesday, November 18th, from 1:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "thenormand",
+    "date": "November 17, 18 & 19",
+    "time": "1pm - 4pm",
+    "googleMaps": "https://maps.app.goo.gl/2cwZaCgJyrVLHj7G9",
+    "startDate": "2026-11-17T16:00:00-05:00",
+    "endDate": "2026-11-18T16:00:00-05:00",
+    "eventStart": "2026-11-18T13:00:00-05:00",
+    "eventEnd": "2026-11-18T16:00:00-05:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/26c15922c3cbf64e15862c8f3be2b426.jpg"
+  },
+  {
+    "id": "thenormand-nov19",
+    "name": "Open House at The Normand",
+    "streetAddress": "1088 Maritime Way",
+    "location": "The Normand",
+    "body": "You are warmly invited to an Open House at The Normand in Kanata on Thursday, November 19th, from 1:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "thenormand",
+    "date": "November 17, 18 & 19",
+    "time": "1pm - 4pm",
+    "googleMaps": "https://maps.app.goo.gl/2cwZaCgJyrVLHj7G9",
+    "startDate": "2026-11-18T16:00:00-05:00",
+    "endDate": "2026-11-19T16:00:00-05:00",
+    "eventStart": "2026-11-19T13:00:00-05:00",
+    "eventEnd": "2026-11-19T16:00:00-05:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/26c15922c3cbf64e15862c8f3be2b426.jpg"
+  }
+]

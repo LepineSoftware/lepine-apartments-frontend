@@ -11,6 +11,8 @@ import smithsFallsOpenHouses from "../../static/openhouse/smithsFalls.json";
 import renfrewOpenHouses from "../../static/openhouse/renfrew.json";
 import carletonPlaceOpenHouses from "../../static/openhouse/carletonPlace.json";
 import kanataOpenHouses from "../../static/openhouse/kanata.json";
+import saintEmilionOpenHouses from "../../static/openhouse/saintEmilion.json";
+import theNormandOpenHouses from "../../static/openhouse/theNormand.json";
 
 // Combined data structure
 const DATA = {
@@ -18,13 +20,25 @@ const DATA = {
   RENFREW: renfrewOpenHouses,
   CARLETONPLACE: carletonPlaceOpenHouses,
   KANATA: kanataOpenHouses,
+  SAINTEMILION: saintEmilionOpenHouses,
+  THENORMAND: theNormandOpenHouses,
 };
 
-const getETNow = () => {
-  return new Date(
-    new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
-  );
+// All dates in the JSON files carry their own UTC offset, so comparing them
+// against the real current instant is correct in every visitor timezone.
+// In development, `?ohNow=<ISO date>` simulates a different moment for testing.
+const getNow = () => {
+  if (process.env.NODE_ENV !== "production" && typeof window !== "undefined") {
+    const override = new URLSearchParams(window.location.search).get("ohNow");
+    if (override && !isNaN(new Date(override))) {
+      const offset = new Date(override) - window.__ohPageLoad;
+      return new Date(Date.now() + offset);
+    }
+  }
+  return new Date();
 };
+
+if (typeof window !== "undefined") window.__ohPageLoad = Date.now();
 
 const formatGCalDate = (dateString) =>
   new Date(dateString).toISOString().replace(/-|:|\.\d\d\d/g, "");
@@ -32,13 +46,14 @@ const formatOutlookDate = (dateString) => new Date(dateString).toISOString();
 
 const OpenHouseItem = ({ event, handleClose }) => {
   const [timeLeft, setTimeLeft] = useState(null);
+  const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      const now = getETNow();
-      const target = new Date(event.eventStart);
-      const diff = target - now;
+    const tick = () => {
+      const now = getNow();
+      const diff = new Date(event.eventStart) - now;
       if (diff > 0) {
+        setIsLive(false);
         setTimeLeft({
           d: Math.floor(diff / (1000 * 60 * 60 * 24)),
           h: Math.floor((diff / (1000 * 60 * 60)) % 24),
@@ -47,8 +62,11 @@ const OpenHouseItem = ({ event, handleClose }) => {
         });
       } else {
         setTimeLeft(null);
+        setIsLive(now < new Date(event.eventEnd));
       }
-    }, 1000);
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
   }, [event]);
 
@@ -123,6 +141,12 @@ const OpenHouseItem = ({ event, handleClose }) => {
             </span>
           </div>
         )}
+        {isLive && (
+          <div className={styles.countdown}>
+            <h4>Happening Now:</h4>
+            <span>Until {event.time.split("-").pop().trim()}</span>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -134,9 +158,8 @@ const OpenHousePopup = () => {
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
-    const now = getETNow();
+    const now = getNow();
     const foundEvents = [];
-
     // Check each property category for valid upcoming events
     Object.keys(DATA).forEach((locationKey) => {
       const upcoming = DATA[locationKey].find((p) => {
