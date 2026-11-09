@@ -42,6 +42,7 @@ import SuiteDesignAndFeatures from "../../components/v3/SuiteDesignAndFeatures/S
 import ContactFormPopup from "../../components/v3/ContactFormPopup/ContactFormPopup.component";
 import ContactPopup2025 from "../../components/v2/Contact/ContactPopup2025.component";
 import ContactPopupTrigger from "../../components/v2/Contact/ContactPopupTrigger.component";
+import OpenHousePopup from "../../components/OpenHousePopup/OpenHousePopup";
 
 import TheNormandFAQs from "../../static/property/thenormand/faqs.json";
 import TheNormandListings from "../../static/property/thenormand/listings.json";
@@ -224,6 +225,8 @@ const Property = ({
             content={baseUrl(property.hero.content.image.data.attributes.url)}
           />
         </Head>
+
+        <OpenHousePopup />
 
 
         <NavV3

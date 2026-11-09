@@ -1,0 +1,53 @@
+[
+  {
+    "id": "saintemilion-nov17",
+    "name": "Open House at Saint Emilion",
+    "streetAddress": "1136 Maritime Way",
+    "location": "Saint Emilion",
+    "body": "You are warmly invited to an Open House at Saint Emilion in Kanata on Tuesday, November 17th, from 1:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "saintemilion",
+    "date": "November 17, 18 & 19",
+    "time": "1pm - 4pm",
+    "googleMaps": "https://maps.app.goo.gl/p88w78TFvMjoMyUc6",
+    "startDate": "2026-11-09T00:00:00-05:00",
+    "endDate": "2026-11-17T16:00:00-05:00",
+    "eventStart": "2026-11-17T13:00:00-05:00",
+    "eventEnd": "2026-11-17T16:00:00-05:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/3a955ee0355198df40ab0b25e126eec5.jpg"
+  },
+  {
+    "id": "saintemilion-nov18",
+    "name": "Open House at Saint Emilion",
+    "streetAddress": "1136 Maritime Way",
+    "location": "Saint Emilion",
+    "body": "You are warmly invited to an Open House at Saint Emilion in Kanata on Wednesday, November 18th, from 1:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "saintemilion",
+    "date": "November 17, 18 & 19",
+    "time": "1pm - 4pm",
+    "googleMaps": "https://maps.app.goo.gl/p88w78TFvMjoMyUc6",
+    "startDate": "2026-11-17T16:00:00-05:00",
+    "endDate": "2026-11-18T16:00:00-05:00",
+    "eventStart": "2026-11-18T13:00:00-05:00",
+    "eventEnd": "2026-11-18T16:00:00-05:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/3a955ee0355198df40ab0b25e126eec5.jpg"
+  },
+  {
+    "id": "saintemilion-nov19",
+    "name": "Open House at Saint Emilion",
+    "streetAddress": "1136 Maritime Way",
+    "location": "Saint Emilion",
+    "body": "You are warmly invited to an Open House at Saint Emilion in Kanata on Thursday, November 19th, from 1:00 p.m. to 4:00 p.m.",
+    "city": "Kanata, ON",
+    "theme": "saintemilion",
+    "date": "November 17, 18 & 19",
+    "time": "1pm - 4pm",
+    "googleMaps": "https://maps.app.goo.gl/p88w78TFvMjoMyUc6",
+    "startDate": "2026-11-18T16:00:00-05:00",
+    "endDate": "2026-11-19T16:00:00-05:00",
+    "eventStart": "2026-11-19T13:00:00-05:00",
+    "eventEnd": "2026-11-19T16:00:00-05:00",
+    "image": "https://lepine-storage.nyc3.digitaloceanspaces.com/3a955ee0355198df40ab0b25e126eec5.jpg"
+  }
+]
