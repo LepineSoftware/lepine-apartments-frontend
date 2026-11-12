@@ -1,3 +1,12 @@
+import thankYouProperties from "../static/property/thankYouProperties.json";
+
+const propertySlugs = new Set(thankYouProperties.map((p) => p.slug));
+
+export const getThankYouPath = (property) =>
+  property && propertySlugs.has(property)
+    ? `/property/${property}/thank-you`
+    : "/thank-you";
+
 export const redirectToThankYou = (params = {}) => {
   if (typeof window === "undefined") return;
 
@@ -8,6 +17,7 @@ export const redirectToThankYou = (params = {}) => {
     }
   });
 
+  const path = getThankYouPath(params.property);
   const qs = search.toString();
-  window.location.assign(qs ? `/thank-you?${qs}` : "/thank-you");
+  window.location.assign(qs ? `${path}?${qs}` : path);
 };
